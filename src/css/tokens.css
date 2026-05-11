@@ -1,0 +1,197 @@
+/* Ravenswood Bluff Design Tokens */
+
+/* ── Font face declarations ──────────────────────────────────────────────────
+   Font files belong at public/fonts/. See CONVENTIONS.md for download details.
+   Until files are placed, pages fall back to the generic serif family.
+   ─────────────────────────────────────────────────────────────────────────── */
+@font-face {
+  font-family: 'Cinzel Decorative';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Cinzel Decorative Regular'), local('CinzelDecorative-Regular'),
+       url('/fonts/cinzel-decorative-regular.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Cinzel Decorative';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: local('Cinzel Decorative Bold'), local('CinzelDecorative-Bold'),
+       url('/fonts/cinzel-decorative-bold.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Cinzel';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Cinzel Regular'), local('Cinzel-Regular'),
+       url('/fonts/cinzel-regular.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Cinzel';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: local('Cinzel SemiBold'), local('Cinzel-SemiBold'),
+       url('/fonts/cinzel-semibold.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Cinzel';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: local('Cinzel Bold'), local('Cinzel-Bold'),
+       url('/fonts/cinzel-bold.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Lora';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Lora Regular'), local('Lora-Regular'),
+       url('/fonts/lora-regular.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Lora';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Lora Italic'), local('Lora-Italic'),
+       url('/fonts/lora-italic.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Lora';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: local('Lora Bold'), local('Lora-Bold'),
+       url('/fonts/lora-bold.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Spectral';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: local('Spectral Bold'), url('/fonts/spectral-bold.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Libre Baskerville';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Libre Baskerville Regular'), url('/fonts/libre-baskerville-regular.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Libre Baskerville';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: local('Libre Baskerville Bold'), url('/fonts/libre-baskerville-bold.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'MedievalSharp';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/fonts/medievalsharp-regular.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Gothicus';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/fonts/gothicus-regular.woff2') format('woff2');
+}
+
+/* ── Custom properties ───────────────────────────────────────────────────── */
+
+:root {
+
+  /* Palette */
+  --parchment:   #ede3cc;
+  --parchment2:  #e4d8bc;
+  --parchment3:  #d5c9a8;
+  --ink:         #1a1208;
+  --ink2:        #2e2010;
+  --amber:       #c8900a;
+  --amber-lt:    #e8a820;
+  --crimson:     #8b1c1c;
+  --crimson-lt:  #b02828;
+  --muted:       #4a3b28;
+  --slate:       #5a5650;
+  --stone:       #e8e6e0;
+  --stone-2:     #d8d5cc;
+  --stone-3:     #c5c1b4;
+  --crimson-vivid: #c43232;
+  --dark:          #0d0a08;
+  --link-vivid:    #f07070;  /* WCAG AA crimson text on dark surfaces */
+  --btn-crimson:   #9e2020;  /* WCAG AA crimson button bg with --parchment text */
+  --btn-crimson-hi: #b02020;
+
+  /* Semantic aliases */
+  --surface:         #1e1913;
+  --surface-2:       #261f17;
+  --surface-3:       #2e261d;
+  --text:            var(--parchment);
+  --text-dim:        #a89070;
+  --accent:          var(--crimson-vivid);
+  --accent-hi:       #d84848;
+  --emphasis:        var(--crimson-vivid);
+  --border-hairline: rgba(237, 227, 204, 0.09);
+  --focus-ring:      #d84848;
+
+  /* Team accent colours */
+  --team-townsfolk:  #1a4a7a;
+  --team-outsider:   #7a5208;
+  --team-minion:     #7a3010;
+  --team-demon:      var(--crimson);
+  --team-traveller:  var(--muted);
+  --team-fabled:     var(--amber-lt);
+
+  /* Spacing scale (base 0.25rem = 4px) */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.5rem;
+  --space-6: 2rem;
+  --space-7: 3rem;
+  --space-8: 4rem;
+  --space-9: 6rem;
+
+  /* Radius scale
+     --radius-1: cards and inline elements (manuscript-square feel)
+     --radius-2: overlays, hero boxes, modals
+     --radius-3: badges, chips, pills */
+  --radius-1: 2px;
+  --radius-2: 4px;
+  --radius-3: 8px;
+
+  /* Motion */
+  --motion-fast:    150ms;
+  --motion-slow:    250ms;
+  --easing-default: ease-out;
+
+  /* Shadow scale */
+  --shadow-1: 0 2px 8px rgba(26, 18, 8, 0.08);
+  --shadow-2: 0 4px 16px rgba(26, 18, 8, 0.12);
+  --shadow-3: 0 8px 32px rgba(26, 18, 8, 0.20);
+
+  /* Amber opacity variants – used in the dark nav where gold reads better */
+  --amber-dim:   rgba(200, 144, 10, 0.30);
+  --amber-ghost: rgba(200, 144, 10, 0.18);
+
+  /* Accent (crimson) opacity variants – used for borders and ghost states */
+  --accent-dim:   rgba(196, 50, 50, 0.30);
+  --accent-ghost: rgba(196, 50, 50, 0.15);
+
+  /* Z-index scale */
+  --z-nav:   100;
+  --z-modal: 200;
+
+  /* Font families */
+  --font-d: 'Cinzel Decorative', serif;
+  --font-h: 'Cinzel', serif;
+  --font-b: 'Lora', serif;
+}

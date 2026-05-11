@@ -1,0 +1,5041 @@
+[
+  {
+    "id": "acrobat",
+    "name": "Acrobat",
+    "team": "townsfolk",
+    "ability": "Each night*, if either good living neighbour is drunk or poisoned, you die.",
+    "setup": "",
+    "iconPath": "icons/alt/Acrobat_icon.png",
+    "iconPathOfficial": "icons/official/Acrobat_icon.png",
+    "markerCount": 2,
+    "each_night_info_shape": "death_as_info",
+    "death_as_info": true,
+    "section_refs": [
+      "6c"
+    ],
+    "status": "verified",
+    "jinxes": [],
+    "open_questions": []
+  },
+  {
+    "id": "alchemist",
+    "name": "Alchemist",
+    "team": "townsfolk",
+    "ability": "You have a not-in-play Minion ability.",
+    "setup": "",
+    "iconPath": "icons/alt/Alchemist_icon.png",
+    "iconPathOfficial": "icons/official/Alchemist_icon.png",
+    "markerCount": 1,
+    "ability_acquisition": "setup_acquisition",
+    "jinx_burden": 8,
+    "section_refs": [
+      "6d"
+    ],
+    "status": "verified",
+    "jinxes": [
+      {
+        "partner_id": "boffin",
+        "sub_type": "mechanical-patch",
+        "canonical_text": "If the Alchemist has the Boffin ability, the Alchemist does not learn what ability the Demon has."
+      },
+      {
+        "partner_id": "marionette",
+        "sub_type": "mechanical-patch",
+        "canonical_text": "An Alchemist-Marionette has no Marionette ability & the Marionette is in play."
+      },
+      {
+        "partner_id": "mastermind",
+        "sub_type": "mechanical-patch",
+        "canonical_text": "An Alchemist-Mastermind has no Mastermind ability & the Mastermind is not-in-play."
+      },
+      {
+        "partner_id": "organ-grinder",
+        "sub_type": "mechanical-patch",
+        "canonical_text": "If the Alchemist has the Organ Grinder ability, the Organ Grinder is in play. If both are sober, both are drunk."
+      },
+      {
+        "partner_id": "spy",
+        "sub_type": "mechanical-patch",
+        "canonical_text": "An Alchemist-Spy has no Spy ability & a Spy is in play. After each execution, a living Alchemist-Spy may publicly guess a living player as the Spy. If correct, the Demon must choose the Spy tonight."
+      },
+      {
+        "partner_id": "summoner",
+        "sub_type": "mechanical-patch",
+        "canonical_text": "The Alchemist-Summoner does not get bluffs, and chooses which Demon but not which player. If they die before this happens, evil wins."
+      },
+      {
+        "partner_id": "widow",
+        "sub_type": "mechanical-patch",
+        "canonical_text": "An Alchemist-Widow has no Widow ability & a Widow is in play. After each execution, a living Alchemist-Widow may publicly guess a living player as the Widow. If correct, the Demon must choose the Widow tonight."
+      },
+      {
+        "partner_id": "wraith",
+        "sub_type": "mechanical-patch",
+        "canonical_text": "An Alchemist-Wraith has no Wraith ability & a Wraith is in play. After each execution, a living Alchemist-Wraith may publicly guess a living player as the Wraith. If correct, the Demon must choose the Wraith tonight."
+      }
+    ],
+    "open_questions": []
+  },
+  {
+    "id": "alsaahir",
+    "name": "Alsaahir",
+    "team": "townsfolk",
+    "ability": "Each day, if you publicly guess ¶which players are Minion(s) ¶and which are Demon(s), good wins.",
+    "setup": "",
+    "iconPath": "icons/alt/Alsaahir_icon.png",
+    "iconPathOfficial": "icons/official/Alsaahir_icon.png",
+    "markerCount": 0,
+    "wincon_alt_path": "good_favourable",
+    "day_phase_info": true,
+    "jinx_burden": 1,
+    "section_refs": [
+      "6d"
+    ],
+    "status": "verified",
+    "jinxes": [
+      {
+        "partner_id": "vizier",
+        "sub_type": "mechanical-patch",
+        "canonical_text": "The Storyteller doesn't declare the Vizier is in play."
+      }
+    ],
+    "open_questions": []
+  },
+  {
+    "id": "amnesiac",
+    "name": "Amnesiac",
+    "team": "townsfolk",
+    "ability": "You do not know what your ability is. ¶Each day, privately guess what it is: ¶you learn how accurate you are.",
+    "setup": "",
+    "iconPath": "icons/alt/Amnesiac_icon.png",
+    "iconPathOfficial": "icons/official/Amnesiac_icon.png",
+    "markerCount": 2,
+    "lint": {
+      "nonconformistInfo": true
+    },
+    "st_crafted_info": "st_crafts_ability",
+    "section_refs": [
+      "6d"
+    ],
+    "status": "verified",
+    "jinxes": [],
+    "open_questions": []
+  },
+  {
+    "id": "artist",
+    "name": "Artist",
+    "team": "townsfolk",
+    "ability": "Once per game, during the day, ¶privately ask the Storyteller any yes/no question.",
+    "setup": "",
+    "iconPath": "icons/alt/Artist_icon.png",
+    "iconPathOfficial": "icons/official/Artist_icon.png",
+    "markerCount": 1,
+    "lint": {
+      "nonconformistInfo": true
+    },
+    "vortox_detector": true,
+    "st_crafted_info": "st_crafts_content",
+    "day_phase_info": true,
+    "section_refs": [
+      "2.2"
+    ],
+    "status": "verified",
+    "jinxes": [],
+    "open_questions": []
+  },
+  {
+    "id": "atheist",
+    "name": "Atheist",
+    "team": "townsfolk",
+    "ability": "The Storyteller can break the game rules, & ¶if executed, good wins, even if you are dead. ¶",
+    "setup": "[No evil characters]",
+    "iconPath": "icons/alt/Atheist_icon.png",
+    "iconPathOfficial": "icons/official/Atheist_icon.png",
+    "markerCount": 0,
+    "lint": {
+      "vortoxFlag": true
+    },
+    "wincon_alt": "atheist",
+    "wincon_rewriting_role": true,
+    "jinx_burden": 1,
+    "section_refs": [
+      "6"
+    ],
+    "status": "verified",
+    "jinxes": [
+      {
+        "partner_id": "riot",
+        "sub_type": "mechanical-patch",
+        "canonical_text": "During a riot, if the Storyteller is nominated, players vote. If they are 'about to die', the game ends. If not, they nominate again."
+      }
+    ],
+    "open_questions": []
+  },
+  {
+    "id": "balloonist",
+    "name": "Balloonist",
+    "team": "townsfolk",
+    "ability": "Each night, you learn 1 player of each character type, until there are no more types to learn. ¶",
+    "setup": "[+1 Outsider]",
+    "iconPath": "icons/alt/Balloonist_icon.png",
+    "iconPathOfficial": "icons/official/Balloonist_icon.png",
+    "markerCount": 1,
+    "lint": {
+      "oMod": "+1",
+      "grimpeekerNeeded": true
+    },
+    "confirmations": [
+      {
+        "type": "info",
+        "signature": "Each-night info on a different role-type per night.",
+        "info_bluff_cover": [
+          {
+            "id": "spy"
+          },
+          {
+            "id": "widow"
+          }
+        ],
+        "section_ref": "2.2"
+      }
+    ],
+    "each_night_info_shape": "type_sequence_info",
+    "vortox_detector": true,
+    "jinx_burden": 1,
+    "section_refs": [
+      "2.2"
+    ],
+    "status": "verified",
+    "jinxes": [
+      {
+        "partner_id": "marionette",
+        "sub_type": "mechanical-patch",
+        "canonical_text": "If the Marionette thinks that they are the Balloonist, an Outsider might have been added during setup."
+      }
+    ],
+    "open_questions": []
+  },
+  {
+    "id": "banshee",
+    "name": "Banshee",
+    "team": "townsfolk",
+    "ability": "If the Demon kills you, all players learn this. ¶From now on, you may nominate twice per day ¶and vote twice per nomination.",
+    "setup": "",
+    "iconPath": "icons/alt/Banshee_icon.png",
+    "iconPathOfficial": "icons/official/Banshee_icon.png",
+    "markerCount": 1,
+    "triggers_on_death": "demon_kill_triggered_post_death_voting_power",
+    "posthumous_confirmation": true,
+    "post_death_voting_power": true,
+    "jinx_burden": 3,
+    "section_refs": [
+      "6e"
+    ],
+    "status": "verified",
+    "jinxes": [
+      {
+        "partner_id": "leviathan",
+        "sub_type": "mechanical-patch",
+        "canonical_text": "Each night*, the Leviathan chooses an alive good player (different to previous nights): a chosen Banshee dies & gains their ability."
+      },
+      {
+        "partner_id": "riot",
+        "sub_type": "mechanical-patch",
+        "canonical_text": "Each night*, Riot chooses an alive good player (different to previous nights): a chosen Banshee dies & gains their ability."
+      },
+      {
+        "partner_id": "vortox",
+        "sub_type": "mechanical-patch",
+        "canonical_text": "If the Vortox kills the Banshee, all players learn that the Banshee has died."
+      }
+    ],
+    "open_questions": []
+  },
+  {
+    "id": "bounty-hunter",
+    "name": "Bounty Hunter",
+    "team": "townsfolk",
+    "ability": "You start knowing 1 evil player. If the player ¶you know dies, you learn another evil player tonight. ¶",
+    "setup": "[1 Townsfolk is evil]",
+    "iconPath": "icons/alt/Bounty Hunter_icon.png",
+    "iconPathOfficial": "icons/official/Bounty Hunter_icon.png",
+    "markerCount": 1,
+    "lint": {
+      "extraEvil": "strong"
+    },
+    "setup_alters": [
+      "alignment"
+    ],
+    "setup_modifying_role": "setup_adds_evil",
+    "iterative_info": true,
+    "jinx_burden": 2,
+    "section_refs": [
+      "1",
+      "2.3",
+      "11",
+      "12"
+    ],
+    "status": "verified",
+    "jinxes": [
+      {
+        "partner_id": "kazali",
+        "sub_type": "mechanical-patch",
+        "canonical_text": "If the Kazali turns the Bounty Hunter into a Minion, an evil Townsfolk is not created."
+      },
+      {
+        "partner_id": "philosopher",
+        "sub_type": "mechanical-patch",
+        "canonical_text": "If the Philosopher gains the Bounty Hunter ability, a Townsfolk might turn evil."
+      }
+    ],
+    "open_questions": []
+  },
+  {
+    "id": "cannibal",
+    "name": "Cannibal",
+    "team": "townsfolk",
+    "ability": "You have the ability of the recently killed executee. ¶If they are evil, you are poisoned until ¶a good player dies by execution.",
+    "setup": "",
+    "iconPath": "icons/alt/Cannibal_icon.png",
+    "iconPathOfficial": "icons/official/Cannibal_icon.png",
+    "markerCount": 2,
+    "lint": {
+      "shabalothCounterpart": true
+    },
+    "ability_acquisition": "executed_acquisition",
+    "is_drunkenness_source": "self_droison_on_evil_eat",
+    "jinx_burden": 4,
+    "section_refs": [
+      "6e"
+    ],
+    "status": "verified",
+    "jinxes": [
+      {
+        "partner_id": "butler",
+        "sub_type": "mechanical-patch",
+        "canonical_text": "If the Cannibal gains the Butler ability, the Cannibal learns this."
+      },
+      {
+        "partner_id": "juggler",
+        "sub_type": "mechanical-patch",
+        "canonical_text": "If the Juggler guesses on their first day and dies by execution, tonight the living Cannibal learns how many guesses the Juggler got correct."
+      },
+      {
+        "partner_id": "princess",
+        "sub_type": "mechanical-patch",
+        "canonical_text": "If the Cannibal nominated, executed, & killed the Princess today, the Demon doesn't kill tonight."
+      },
+      {
+        "partner_id": "zealot",
+        "sub_type": "mechanical-patch",
+        "canonical_text": "If the Cannibal gains the Zealot ability, the Cannibal learns this."
+      }
+    ],
+    "open_questions": []
+  },
+  {
+    "id": "chambermaid",
+    "name": "Chambermaid",
+    "team": "townsfolk",
+    "ability": "Each night, choose 2 alive players (not yourself): ¶you learn how many woke tonight due to their ability.",
+    "setup": "",
+    "iconPath": "icons/alt/Chambermaid_icon.png",
+    "iconPathOfficial": "icons/official/Chambermaid_icon.png",
+    "markerCount": 0,
+    "lint": {
+      "grimpeekerNeeded": true
+    },
+    "confirmations": [
+      {
+        "type": "info",
+        "signature": "Each-night info on who woke during the night.",
+        "info_bluff_cover": [
+          {
+            "id": "spy"
+          },
+          {
+            "id": "widow"
+          }
+        ],
+        "section_ref": "2.2"
+      }
+    ],
+    "behaviour_detection": "wake_detection",
+    "each_night_info_shape": "wake_detection",
+    "section_refs": [
+      "2.2"
+    ],
+    "status": "verified",
+    "jinxes": [
+      {
+        "partner_id": "mathematician",
+        "sub_type": "info-amplifying",
+        "canonical_text": "The Chambermaid can detect if the Mathematician will wake tonight."
+      }
+    ],
+    "open_questions": []
+  },
+  {
+    "id": "chef",
+    "name": "Chef",
+    "team": "townsfolk",
+    "ability": "You start knowing how many pairs ¶of evil players there are.",
+    "setup": "",
+    "iconPath": "icons/alt/Chef_icon.png",
+    "iconPathOfficial": "icons/official/Chef_icon.png",
+    "markerCount": 0,
+    "section_refs": [
+      "2.2"
+    ],
+    "status": "verified",
+    "jinxes": [],
+    "open_questions": []
+  },
+  {
+    "id": "choirboy",
+    "name": "Choirboy",
+    "team": "townsfolk",
+    "ability": "If the Demon kills the King, ¶you learn which player is the Demon.",
+    "setup": "[+ the King]",
+    "iconPath": "icons/alt/Choirboy_icon.png",
+    "iconPathOfficial": "icons/official/Choirboy_icon.png",
+    "markerCount": 0,
+    "setup_modifying_role": "forces_specific_role",
+    "triggers_on_death": "demon_kill_of_other_role_as_info",
+    "section_refs": [
+      "6e"
+    ],
+    "status": "verified",
+    "jinxes": [],
+    "open_questions": []
+  },
+  {
+    "id": "clockmaker",
+    "name": "Clockmaker",
+    "team": "townsfolk",
+    "ability": "You start knowing how many steps ¶from the Demon to its nearest Minion.",
+    "setup": "",
+    "iconPath": "icons/alt/Clockmaker_icon.png",
+    "iconPathOfficial": "icons/official/Clockmaker_icon.png",
+    "markerCount": 0,
+    "section_refs": [
+      "2.2"
+    ],
+    "status": "verified",
+    "jinxes": [
+      {
+        "partner_id": "summoner",
+        "sub_type": "mechanical-patch",
+        "canonical_text": "The Summoner registers as the Demon to the Clockmaker."
+      }
+    ],
+    "open_questions": []
+  },
+  {
+    "id": "courtier",
+    "name": "Courtier",
+    "team": "townsfolk",
+    "ability": "Once per game, at night, choose a character: ¶they are drunk for 3 nights & 3 days.",
+    "setup": "",
+    "iconPath": "icons/alt/Courtier_icon.png",
+    "iconPathOfficial": "icons/official/Courtier_icon.png",
+    "markerCount": 4,
+    "is_drunkenness_source": "character_target_droison",
+    "section_refs": [
+      "2.2"
+    ],
+    "status": "verified",
+    "jinxes": [
+      {
+        "partner_id": "summoner",
+        "sub_type": "mechanical-patch",
+        "canonical_text": "If the living Summoner has no ability, the Storyteller has the Summoner ability."
+      },
+      {
+        "partner_id": "vizier",
+        "sub_type": "mechanical-patch",
+        "canonical_text": "If the Vizier loses their ability, they learn this, and cannot die during the day."
+      }
+    ],
+    "open_questions": []
+  },
+  {
+    "id": "cult-leader",
+    "name": "Cult Leader",
+    "team": "townsfolk",
+    "ability": "Each night, you become the alignment ¶of an alive neighbour. If all good players choose ¶to join your cult, your team wins.",
+    "setup": "",
+    "iconPath": "icons/alt/Cult Leader_icon.png",
+    "iconPathOfficial": "icons/official/Cult Leader_icon.png",
+    "markerCount": 0,
+    "alignment_swap": "becomes_neighbour_alignment",
+    "wincon_alt": "cult-leader",
+    "wincon_alt_path": "good_favourable",
+    "jinx_burden": 2,
+    "section_refs": [
+      "6e"
+    ],
+    "status": "verified",
+    "jinxes": [
+      {
+        "partner_id": "boffin",
+        "sub_type": "mechanical-patch",
+        "canonical_text": "If the Demon has the Cult Leader ability, they can't turn good due to this ability."
+      },
+      {
+        "partner_id": "pit-hag",
+        "sub_type": "mechanical-patch",
+        "canonical_text": "If the Pit-Hag turns an evil player into the Cult Leader, they can't turn good due to their own ability."
+      }
+    ],
+    "open_questions": []
+  },
+  {
+    "id": "dreamer",
+    "name": "Dreamer",
+    "team": "townsfolk",
+    "ability": "Each night, choose a player (not yourself or Travellers): ¶you learn 1 good & 1 evil character, 1 of which is correct.",
+    "setup": "",
+    "iconPath": "icons/alt/Dreamer_icon.png",
+    "iconPathOfficial": "icons/official/Dreamer_icon.png",
+    "markerCount": 0,
+    "built_in_confound": "ambiguous_binary",
+    "vortox_detector": true,
+    "section_refs": [
+      "2.2"
+    ],
+    "status": "verified",
+    "jinxes": [],
+    "open_questions": []
+  },
+  {
+    "id": "empath",
+    "name": "Empath",
+    "team": "townsfolk",
+    "ability": "Each night, you learn ¶how many of your 2 alive neighbours are evil.",
+    "setup": "",
+    "iconPath": "icons/alt/Empath_icon.png",
+    "iconPathOfficial": "icons/official/Empath_icon.png",
+    "markerCount": 0,
+    "section_refs": [
+      "2.2"
+    ],
+    "status": "verified",
+    "jinxes": [],
+    "open_questions": []
+  },
+  {
+    "id": "engineer",
+    "name": "Engineer",
+    "team": "townsfolk",
+    "ability": "Once per game, at night, ¶choose which Minions or which Demon is in play.",
+    "setup": "",
+    "iconPath": "icons/alt/Engineer_icon.png",
+    "iconPathOfficial": "icons/official/Engineer_icon.png",
+    "markerCount": 1,
+    "mid_game_setup_modifier": true,
+    "jinx_burden": 2,
+    "section_refs": [
+      "6a"
+    ],
+    "status": "verified",
+    "jinxes": [
+      {
+        "partner_id": "summoner",
+        "sub_type": "mechanical-patch",
+        "canonical_text": "If the living Summoner is removed from play, the Storyteller has the Summoner ability."
+      },
+      {
+        "partner_id": "legion",
+        "sub_type": "mechanical-patch",
+        "canonical_text": "If Legion is created, all evil players become Legion. If Legion is in play, the Engineer starts knowing this but has no ability."
+      }
+    ],
+    "open_questions": []
+  },
+  {
+    "id": "exorcist",
+    "name": "Exorcist",
+    "team": "townsfolk",
+    "ability": "Each night*, choose a player (different to last night): ¶the Demon, if chosen, learns who you are ¶then doesn't wake tonight.",
+    "setup": "",
+    "iconPath": "icons/alt/Exorcist_icon.png",
+    "iconPathOfficial": "icons/official/Exorcist_icon.png",
+    "markerCount": 1,
+    "is_drunkenness_source": false,
+    "informs_demon_identity": true,
+    "section_refs": [
+      "2.2"
+    ],
+    "status": "verified",
+    "jinxes": [
+      {
+        "partner_id": "leviathan",
+        "sub_type": "mechanical-patch",
+        "canonical_text": "If the Leviathan nominates and executes the Exorcist-chosen player, good wins."
+      },
+      {
+        "partner_id": "riot",
+        "sub_type": "mechanical-patch",
+        "canonical_text": "If Riot nominates and executes the Exorcist-chosen player, good wins."
+      },
+      {
+        "partner_id": "yaggababble",
+        "sub_type": "mechanical-patch",
+        "canonical_text": "If the Exorcist chooses the Yaggababble, the Yaggababble does not kill tonight."
+      }
+    ],
+    "open_questions": []
+  },
+  {
+    "id": "farmer",
+    "name": "Farmer",
+    "team": "townsfolk",
+    "ability": "If you die at night, ¶an alive good player becomes a Farmer.",
+    "setup": "",
+    "iconPath": "icons/alt/Farmer_icon.png",
+    "iconPathOfficial": "icons/official/Farmer_icon.png",
+    "markerCount": 0,
+    "triggers_on_death": "triggers_on_own_night_death_creates_replacement",
+    "multi_instance_role": "runtime_multi_instance",
+    "jinx_burden": 2,
+    "section_refs": [
+      "6e"
+    ],
+    "status": "verified",
+    "jinxes": [
+      {
+        "partner_id": "leviathan",
+        "sub_type": "mechanical-patch",
+        "canonical_text": "Each night*, the Leviathan chooses an alive good player (different to previous nights): a chosen Farmer uses their ability but does not die."
+      },
+      {
+        "partner_id": "riot",
+        "sub_type": "mechanical-patch",
+        "canonical_text": "Each night*, Riot chooses an alive good player (different to previous nights): a chosen Farmer uses their ability but does not die."
+      }
+    ],
+    "open_questions": []
+  },
+  {
+    "id": "fisherman",
+    "name": "Fisherman",
+    "team": "townsfolk",
+    "ability": "Once per game, during the day, ¶visit the Storyteller for some advice ¶to help you win.",
+    "setup": "",
+    "iconPath": "icons/alt/Fisherman_icon.png",
+    "iconPathOfficial": "icons/official/Fisherman_icon.png",
+    "markerCount": 1,
+    "st_crafted_info": "st_crafted_advice",
+    "section_refs": [
+      "6d"
+    ],
+    "status": "verified",
+    "jinxes": [],
+    "open_questions": []
+  },
+  {
+    "id": "flowergirl",
+    "name": "Flowergirl",
+    "team": "townsfolk",
+    "ability": "Each night*, you learn if ¶a Demon voted today.",
+    "setup": "",
+    "iconPath": "icons/alt/Flowergirl_icon.png",
+    "iconPathOfficial": "icons/official/Flowergirl_icon.png",
+    "markerCount": 2,
+    "vortox_detector": true,
+    "behaviour_detection": "vote_detection",
+    "section_refs": [
+      "2.2"
+    ],
+    "status": "verified",
+    "jinxes": [],
+    "open_questions": []
+  },
+  {
+    "id": "fool",
+    "name": "Fool",
+    "team": "townsfolk",
+    "ability": "The 1st time you die, ¶you don't.",
+    "setup": "",
+    "iconPath": "icons/alt/Fool_icon.png",
+    "iconPathOfficial": "icons/official/Fool_icon.png",
+    "markerCount": 1,
+    "lint": {
+      "confirmationRole": true,
+      "confirmationCounterpart": [
+        "devils-advocate"
+      ],
+      "powerRole": true,
+      "powerCounterpart": [
+        "devils-advocate"
+      ]
+    },
+    "confirmations": [
+      {
+        "mode": "execution",
+        "type": "hard",
+        "signature": "Fool's first death does not happen on execution.",
+        "proc_confounders": [
+          {
+            "id": "devils-advocate"
+          },
+          {
+            "id": "lleech",
+            "partial": true,
+            "notes": "v2 22.2: Lleech is the Demon, not a Minion."
+          },
+          {
+            "id": "boffin",
+            "partial": true,
+            "condition": "fool on script but not in play"
+          }
+        ],
+        "claim_confounders": [],
+        "section_ref": "2.1"
+      },
+      {
+        "mode": "night",
+        "type": "soft",
+        "signature": "Fool's first death does not happen on a night attack.",
+        "proc_confounders": [],
+        "claim_confounders": [],
+        "section_ref": "2.2"
+      }
+    ],
+    "section_refs": [
+      "2.1",
+      "2.2",
+      "21.8"
+    ],
+    "open_questions": [
+      "22.2"
+    ],
+    "status": "verified",
+    "jinxes": []
+  },
+  {
+    "id": "fortune-teller",
+    "name": "Fortune Teller",
+    "team": "townsfolk",
+    "ability": "Each night, choose 2 players: you learn if either is a Demon. ¶There is a good player that registers as a Demon to you.",
+    "setup": "",
+    "iconPath": "icons/alt/Fortune Teller_icon.png",
+    "iconPathOfficial": "icons/official/Fortune Teller_icon.png",
+    "markerCount": 1,
+    "built_in_confound": "spatial_fixed_target",
+    "section_refs": [
+      "2.2"
+    ],
+    "status": "verified",
+    "jinxes": [],
+    "open_questions": []
+  },
+  {
+    "id": "gambler",
+    "name": "Gambler",
+    "team": "townsfolk",
+    "ability": "Each night*, choose a player & guess their character: ¶if you guess wrong, you die.",
+    "setup": "",
+    "iconPath": "icons/alt/Gambler_icon.png",
+    "iconPathOfficial": "icons/official/Gambler_icon.png",
+    "markerCount": 1,
+    "retroactive_soft_confirmation": true,
+    "section_refs": [
+      "2.2",
+      "2.3"
+    ],
+    "status": "verified",
+    "jinxes": [],
+    "open_questions": []
+  },
+  {
+    "id": "general",
+    "name": "General",
+    "team": "townsfolk",
+    "ability": "Each night, you learn which alignment ¶the Storyteller believes is winning: ¶good, evil, or neither.",
+    "setup": "",
+    "iconPath": "icons/alt/General_icon.png",
+    "iconPathOfficial": "icons/official/General_icon.png",
+    "markerCount": 0,
+    "each_night_info_shape": "st_judgement_info",
+    "st_crafted_info": "st_judgement_info",
+    "section_refs": [
+      "6c"
+    ],
+    "status": "verified",
+    "jinxes": [],
+    "open_questions": []
+  },
+  {
+    "id": "gossip",
+    "name": "Gossip",
+    "team": "townsfolk",
+    "ability": "Each day, you may make a public statement. ¶Tonight, if it was true, a player dies.",
+    "setup": "",
+    "iconPath": "icons/alt/Gossip_icon.png",
+    "iconPathOfficial": "icons/official/Gossip_icon.png",
+    "markerCount": 1,
+    "kill_attribution_confound": true,
+    "section_refs": [
+      "2.2"
+    ],
+    "status": "verified",
+    "jinxes": [],
+    "open_questions": []
+  },
+  {
+    "id": "grandmother",
+    "name": "Grandmother",
+    "team": "townsfolk",
+    "ability": "You start knowing a good player & their character. ¶If the Demon kills them, you die too.",
+    "setup": "",
+    "iconPath": "icons/alt/Grandmother_icon.png",
+    "iconPathOfficial": "icons/official/Grandmother_icon.png",
+    "markerCount": 1,
+    "re_triggers_on_resurrection": true,
+    "triggers_on_death": "related_death",
+    "section_refs": [
+      "2.2",
+      "2.4"
+    ],
+    "status": "verified",
+    "jinxes": [
+      {
+        "partner_id": "leviathan",
+        "sub_type": "mechanical-patch",
+        "canonical_text": "If the Leviathan is in play and the Grandchild dies by execution, evil wins."
+      },
+      {
+        "partner_id": "riot",
+        "sub_type": "mechanical-patch",
+        "canonical_text": "If Riot is in play and the Grandchild dies by execution, evil wins."
+      }
+    ],
+    "open_questions": []
+  },
+  {
+    "id": "high-priestess",
+    "name": "High Priestess",
+    "team": "townsfolk",
+    "ability": "Each night, learn which player ¶the Storyteller believes you should talk to most.",
+    "setup": "",
+    "iconPath": "icons/alt/High Priestess_icon.png",
+    "iconPathOfficial": "icons/official/High Priestess_icon.png",
+    "markerCount": 0,
+    "each_night_info_shape": "st_chosen_target",
+    "st_crafted_info": "st_chooses_target",
+    "section_refs": [
+      "6b",
+      "6c"
+    ],
+    "status": "verified",
+    "jinxes": [],
+    "open_questions": []
+  },
+  {
+    "id": "huntsman",
+    "name": "Huntsman",
+    "team": "townsfolk",
+    "ability": "Once per game, at night, choose a living player: ¶the Damsel, if chosen, ¶becomes a not-in-play Townsfolk.",
+    "setup": "[+the Damsel]",
+    "iconPath": "icons/alt/Huntsman_icon.png",
+    "iconPathOfficial": "icons/official/Huntsman_icon.png",
+    "markerCount": 1,
+    "setup_modifying_role": "setup_adds_outsider",
+    "character_replacement": true,
+    "jinx_burden": 1,
+    "section_refs": [
+      "6a"
+    ],
+    "status": "verified",
+    "jinxes": [
+      {
+        "partner_id": "marionette",
+        "sub_type": "mechanical-patch",
+        "canonical_text": "If the Marionette thinks that they are the Huntsman, the Damsel was added during setup."
+      }
+    ],
+    "open_questions": []
+  },
+  {
+    "id": "innkeeper",
+    "name": "Innkeeper",
+    "team": "townsfolk",
+    "ability": "Each night*, choose 2 players: ¶they can't die tonight, but ¶1 is drunk until dusk.",
+    "setup": "",
+    "iconPath": "icons/alt/Innkeeper_icon.png",
+    "iconPathOfficial": "icons/official/Innkeeper_icon.png",
+    "markerCount": 2,
+    "lint": {
+      "misinfo": true,
+      "misinfoShape": "arbitrary",
+      "mathematicianLoad": true
+    },
+    "confirmations": [
+      {
+        "type": "soft",
+        "signature": "Innkeeper's two chosen players do not die at night (one is drunk).",
+        "proc_confounders": [],
+        "claim_confounders": [],
+        "section_ref": "2.2"
+      }
+    ],
+    "signature_breadth": "any_death",
+    "is_drunkenness_source": "nightly_droison",
+    "section_refs": [
+      "2.2"
+    ],
+    "status": "verified",
+    "jinxes": [
+      {
+        "partner_id": "leviathan",
+        "sub_type": "mechanical-patch",
+        "canonical_text": "If the Leviathan nominates and executes an Innkeeper-protected player, good wins."
+      },
+      {
+        "partner_id": "riot",
+        "sub_type": "mechanical-patch",
+        "canonical_text": "If Riot nominates and executes an Innkeeper-protected player, good wins."
+      }
+    ],
+    "open_questions": []
+  },
+  {
+    "id": "investigator",
+    "name": "Investigator",
+    "team": "townsfolk",
+    "ability": "You start knowing that 1 of 2 ¶players is a particular Minion.",
+    "setup": "",
+    "iconPath": "icons/alt/Investigator_icon.png",
+    "iconPathOfficial": "icons/official/Investigator_icon.png",
+    "markerCount": 2,
+    "re_triggers_on_resurrection": true,
+    "section_refs": [
+      "2.2"
+    ],
+    "status": "verified",
+    "jinxes": [
+      {
+        "partner_id": "vizier",
+        "sub_type": "mechanical-patch",
+        "canonical_text": "The Storyteller doesn't declare the Vizier is in play."
+      }
+    ],
+    "open_questions": []
+  },
+  {
+    "id": "juggler",
+    "name": "Juggler",
+    "team": "townsfolk",
+    "ability": "On your 1st day, publicly guess ¶up to 5 players' characters. ¶That night, you learn how many you got correct.",
+    "setup": "",
+    "iconPath": "icons/alt/Juggler_icon.png",
+    "iconPathOfficial": "icons/official/Juggler_icon.png",
+    "markerCount": 5,
+    "delayed_info": true,
+    "vortox_detector": true,
+    "section_refs": [
+      "2.2"
+    ],
+    "status": "verified",
+    "jinxes": [
+      {
+        "partner_id": "cannibal",
+        "sub_type": "mechanical-patch",
+        "canonical_text": "If the Juggler guesses on their first day and dies by execution, tonight the living Cannibal learns how many guesses the Juggler got correct."
+      }
+    ],
+    "open_questions": []
+  },
+  {
+    "id": "king",
+    "name": "King",
+    "team": "townsfolk",
+    "ability": "Each night, if the dead outnumber the living, ¶you learn 1 alive character. ¶The Demon knows who you are.",
+    "setup": "",
+    "iconPath": "icons/alt/King_icon.png",
+    "iconPathOfficial": "icons/official/King_icon.png",
+    "markerCount": 0,
+    "each_night_info_shape": "conditional_alive_character_reveal",
+    "info_flow_to_evil": "setup_only",
+    "demon_knows_role_at_setup": true,
+    "jinx_burden": 2,
+    "section_refs": [
+      "6e"
+    ],
+    "status": "verified",
+    "jinxes": [
+      {
+        "partner_id": "leviathan",
+        "sub_type": "mechanical-patch",
+        "canonical_text": "If the Leviathan is in play, and at least 1 player is dead, the King learns an alive character each night."
+      },
+      {
+        "partner_id": "riot",
+        "sub_type": "mechanical-patch",
+        "canonical_text": "If Riot is in play, and at least 1 player is dead, the King learns an alive character each night."
+      }
+    ],
+    "open_questions": []
+  },
+  {
+    "id": "knight",
+    "name": "Knight",
+    "team": "townsfolk",
+    "ability": "You start knowing 2 players ¶that are not the Demon.",
+    "setup": "",
+    "iconPath": "icons/alt/Knight_icon.png",
+    "iconPathOfficial": "icons/official/Knight_icon.png",
+    "markerCount": 2,
+    "start_knowing_info_shape": "negative_info",
+    "vortox_detector": true,
+    "re_triggers_on_resurrection": true,
+    "section_refs": [
+      "6b"
+    ],
+    "status": "verified",
+    "jinxes": [],
+    "open_questions": []
+  },
+  {
+    "id": "librarian",
+    "name": "Librarian",
+    "team": "townsfolk",
+    "ability": "You start knowing that 1 of 2 players ¶is a particular Outsider. (Or that zero are in play.)",
+    "setup": "",
+    "iconPath": "icons/alt/Librarian_icon.png",
+    "iconPathOfficial": "icons/official/Librarian_icon.png",
+    "markerCount": 2,
+    "re_triggers_on_resurrection": true,
+    "section_refs": [
+      "2.2"
+    ],
+    "status": "verified",
+    "jinxes": [],
+    "open_questions": []
+  },
+  {
+    "id": "lycanthrope",
+    "name": "Lycanthrope",
+    "team": "townsfolk",
+    "ability": "Each night*, choose a living player: if good, they die, ¶but they are the only player that can die tonight.",
+    "setup": "",
+    "iconPath": "icons/alt/Lycanthrope_icon.png",
+    "iconPathOfficial": "icons/official/Lycanthrope_icon.png",
+    "markerCount": 2,
+    "lint": {
+      "misregistration": true,
+      "mathematicianLoad": true
+    },
+    "each_night_info_shape": "kill_as_info",
+    "kill_as_info": true,
+    "setup_misregister_source": "good_to_evil",
+    "conditional_demon_block": true,
+    "section_refs": [
+      "6c"
+    ],
+    "status": "verified",
+    "jinxes": [],
+    "open_questions": []
+  },
+  {
+    "id": "magician",
+    "name": "Magician",
+    "team": "townsfolk",
+    "ability": "The Demon thinks you are a Minion. ¶Minions think you are a Demon.",
+    "setup": "",
+    "iconPath": "icons/alt/Magician_icon.png",
+    "iconPathOfficial": "icons/official/Magician_icon.png",
+    "markerCount": 0,
+    "lint": {
+      "confirmationRole": true,
+      "confirmationCounterpart": [
+        "marionette",
+        "mezepheles",
+        "boffin",
+        "bounty-hunter"
+      ]
+    },
+    "jinx_burden": 7,
+    "section_refs": [
+      "6a"
+    ],
+    "status": "verified",
+    "jinxes": [
+      {
+        "partner_id": "legion",
+        "sub_type": "mechanical-patch",
+        "canonical_text": "The Magician wakes with Legion and might register as evil. Legion knows if a Magician is in play, but not which player it is."
+      },
+      {
+        "partner_id": "marionette",
+        "sub_type": "mechanical-patch",
+        "canonical_text": "If the Magician is alive, the Demon doesn't know which neighbor is the Marionette."
+      },
+      {
+        "partner_id": "spy",
+        "sub_type": "setup-transparency-altering",
+        "canonical_text": "When the Spy sees the Grimoire, the Demon and Magician's character tokens are removed."
+      },
+      {
+        "partner_id": "vizier",
+        "sub_type": "mechanical-patch",
+        "canonical_text": "If the Vizier is in play, the Magician has no ability but is immune to the Vizier's ability."
+      },
+      {
+        "partner_id": "widow",
+        "sub_type": "setup-transparency-altering",
+        "canonical_text": "When the Widow sees the Grimoire, the Demon and Magician's character tokens are removed."
+      },
+      {
+        "partner_id": "wraith",
+        "sub_type": "mechanical-patch",
+        "canonical_text": "After each execution, the living Magician may publicly guess a living player as the Wraith. If correct, the Demon must choose the Wraith tonight."
+      },
+      {
+        "partner_id": "lil-monsta",
+        "sub_type": "mechanical-patch",
+        "canonical_text": "If the Magician is alive, the Storyteller chooses which Minion babysits Lil' Monsta."
+      }
+    ],
+    "open_questions": []
+  },
+  {
+    "id": "mathematician",
+    "name": "Mathematician",
+    "team": "townsfolk",
+    "ability": "Each night, you learn how many ¶players' abilities worked abnormally (since dawn) ¶due to another character's ability.",
+    "setup": "",
+    "iconPath": "icons/alt/Mathematician_icon.png",
+    "iconPathOfficial": "icons/official/Mathematician_icon.png",
+    "markerCount": 5,
+    "lint": {
+      "grimpeekerNeeded": true
+    },
+    "confirmations": [
+      {
+        "type": "info",
+        "signature": "Each-night info on how many abilities worked abnormally.",
+        "info_bluff_cover": [
+          {
+            "id": "spy"
+          },
+          {
+            "id": "widow"
+          }
+        ],
+        "section_ref": "2.2"
+      }
+    ],
+    "vortox_detector": true,
+    "each_night_info_shape": "meta_abnormality_count",
+    "jinx_burden": 4,
+    "section_refs": [
+      "2.2",
+      "16"
+    ],
+    "status": "verified",
+    "jinxes": [
+      {
+        "partner_id": "chambermaid",
+        "sub_type": "info-amplifying",
+        "canonical_text": "The Chambermaid can detect if the Mathematician will wake tonight."
+      },
+      {
+        "partner_id": "drunk",
+        "sub_type": "info-amplifying",
+        "canonical_text": "The Mathematician might learn if the Drunk's ability yielded false info or failed to work properly."
+      },
+      {
+        "partner_id": "lunatic",
+        "sub_type": "info-amplifying",
+        "canonical_text": "The Mathematician might learn if the Lunatic attacks a different player than the real Demon attacked."
+      },
+      {
+        "partner_id": "marionette",
+        "sub_type": "info-amplifying",
+        "canonical_text": "The Mathematician might learn if the Marionette's ability yielded false info or failed to work properly."
+      }
+    ],
+    "open_questions": []
+  },
+  {
+    "id": "mayor",
+    "name": "Mayor",
+    "team": "townsfolk",
+    "ability": "If only 3 players live & ¶no execution occurs, your team wins. ¶If you die at night, another player might die instead.",
+    "setup": "",
+    "iconPath": "icons/alt/Mayor_icon.png",
+    "iconPathOfficial": "icons/official/Mayor_icon.png",
+    "markerCount": 0,
+    "lint": {
+      "confirmationRole": true,
+      "confirmationCounterpart": [
+        "marionette",
+        "mezepheles",
+        "cerenovus",
+        "philosopher",
+        "drunk",
+        "bounty-hunter"
+      ],
+      "powerRole": true,
+      "powerCounterpart": [
+        "lunatic",
+        "magician",
+        "marionette",
+        "mezepheles"
+      ]
+    },
+    "confirmations": [
+      {
+        "mode": "claim",
+        "type": "load_bearing_soft",
+        "signature": "Player claims Mayor; alt-win-lane requires good to skip execution at final 3.",
+        "proc_confounders": [],
+        "claim_confounders": [
+          {
+            "id": "drunk"
+          },
+          {
+            "id": "marionette"
+          },
+          {
+            "id": "mezepheles"
+          },
+          {
+            "id": "cerenovus"
+          },
+          {
+            "id": "philosopher",
+            "notes": "v2 22.7: good-on-good doubt rather than evil bluff."
+          },
+          {
+            "id": "bounty-hunter"
+          },
+          {
+            "id": "boffin",
+            "partial": true,
+            "condition": "mayor on script but not in play"
+          },
+          {
+            "id": "pixie",
+            "partial": true,
+            "condition": "cerenovus on script"
+          }
+        ],
+        "section_ref": "2.3"
+      },
+      {
+        "mode": "bounce",
+        "type": "soft",
+        "signature": "Mayor is attacked at night; another player dies instead.",
+        "proc_confounders": [],
+        "claim_confounders": [],
+        "section_ref": "2.2"
+      }
+    ],
+    "wincon_alt": "mayor",
+    "section_refs": [
+      "2.2",
+      "2.3",
+      "6",
+      "21.11"
+    ],
+    "open_questions": [
+      "22.5"
+    ],
+    "status": "verified",
+    "jinxes": [
+      {
+        "partner_id": "leviathan",
+        "sub_type": "wincon-modifying",
+        "canonical_text": "If the Leviathan and the Mayor are alive on day 5 & no execution occurs, good wins."
+      },
+      {
+        "partner_id": "riot",
+        "sub_type": "wincon-modifying",
+        "canonical_text": "The Mayor may choose to stop the riot. If they do so when only 1 Riot is alive, good wins. Otherwise, evil wins."
+      }
+    ]
+  },
+  {
+    "id": "minstrel",
+    "name": "Minstrel",
+    "team": "townsfolk",
+    "ability": "When a Minion dies by execution, ¶all other players (except Travellers) ¶are drunk until dusk tomorrow.",
+    "setup": "",
+    "iconPath": "icons/alt/Minstrel_icon.png",
+    "iconPathOfficial": "icons/official/Minstrel_icon.png",
+    "markerCount": 1,
+    "triggers_on_death": "external_death_trigger",
+    "is_drunkenness_source": "mass_trigger_droison",
+    "section_refs": [
+      "2.4"
+    ],
+    "status": "verified",
+    "jinxes": [
+      {
+        "partner_id": "legion",
+        "sub_type": "mechanical-patch",
+        "canonical_text": "If Legion died by execution today, Legion keeps their ability, but the Minstrel might learn they are Legion."
+      }
+    ],
+    "open_questions": []
+  },
+  {
+    "id": "monk",
+    "name": "Monk",
+    "team": "townsfolk",
+    "ability": "Each night*, choose a player (not yourself): ¶they are safe from the Demon tonight.",
+    "setup": "",
+    "iconPath": "icons/alt/Monk_icon.png",
+    "iconPathOfficial": "icons/official/Monk_icon.png",
+    "markerCount": 1,
+    "lint": {
+      "confirmationRole": true,
+      "confirmationCounterpart": [
+        "devils-advocate"
+      ]
+    },
+    "confirmations": [
+      {
+        "type": "soft",
+        "signature": "Monk's chosen player does not die from the Demon at night.",
+        "proc_confounders": [],
+        "claim_confounders": [],
+        "section_ref": "2.2"
+      }
+    ],
+    "signature_breadth": "demon_only",
+    "section_refs": [
+      "2.2"
+    ],
+    "status": "verified",
+    "jinxes": [
+      {
+        "partner_id": "leviathan",
+        "sub_type": "mechanical-patch",
+        "canonical_text": "If the Leviathan nominates and executes the Monk-protected player, good wins."
+      },
+      {
+        "partner_id": "riot",
+        "sub_type": "mechanical-patch",
+        "canonical_text": "If Riot nominates and executes the Monk-protected player, good wins."
+      }
+    ],
+    "open_questions": []
+  },
+  {
+    "id": "nightwatchman",
+    "name": "Nightwatchman",
+    "team": "townsfolk",
+    "ability": "Once per game, at night, choose a player: ¶they learn who you are.",
+    "setup": "",
+    "iconPath": "icons/alt/Nightwatchman_icon.png",
+    "iconPathOfficial": "icons/official/Nightwatchman_icon.png",
+    "markerCount": 1,
+    "each_night_info_shape": "outbound_info",
+    "outbound_info": true,
+    "section_refs": [
+      "6c"
+    ],
+    "status": "verified",
+    "jinxes": [],
+    "open_questions": []
+  },
+  {
+    "id": "noble",
+    "name": "Noble",
+    "team": "townsfolk",
+    "ability": "You start knowing 3 players, ¶1 and only 1 of which is evil.",
+    "setup": "",
+    "iconPath": "icons/alt/Noble_icon.png",
+    "iconPathOfficial": "icons/official/Noble_icon.png",
+    "markerCount": 3,
+    "start_knowing_info_shape": "n1_evil_count_in_set",
+    "re_triggers_on_resurrection": true,
+    "section_refs": [
+      "6b"
+    ],
+    "status": "verified",
+    "jinxes": [],
+    "open_questions": []
+  },
+  {
+    "id": "oracle",
+    "name": "Oracle",
+    "team": "townsfolk",
+    "ability": "Each night*, you learn ¶how many dead players are evil.",
+    "setup": "",
+    "iconPath": "icons/alt/Oracle_icon.png",
+    "iconPathOfficial": "icons/official/Oracle_icon.png",
+    "markerCount": 0,
+    "lint": {
+      "grimpeekerNeeded": true
+    },
+    "confirmations": [
+      {
+        "type": "info",
+        "signature": "Each-night info on how many dead players are evil.",
+        "info_bluff_cover": [
+          {
+            "id": "spy"
+          },
+          {
+            "id": "widow"
+          }
+        ],
+        "section_ref": "2.2"
+      }
+    ],
+    "each_night_info_shape": "dead_evil_count",
+    "section_refs": [
+      "2.2"
+    ],
+    "status": "verified",
+    "jinxes": [],
+    "open_questions": []
+  },
+  {
+    "id": "pacifist",
+    "name": "Pacifist",
+    "team": "townsfolk",
+    "ability": "Executed good players ¶might not die.",
+    "setup": "",
+    "iconPath": "icons/alt/Pacifist_icon.png",
+    "iconPathOfficial": "icons/official/Pacifist_icon.png",
+    "markerCount": 0,
+    "lint": {
+      "confirmationRole": true,
+      "confirmationCounterpart": [
+        "devils-advocate"
+      ],
+      "powerRole": true,
+      "powerCounterpart": [
+        "devils-advocate"
+      ]
+    },
+    "confirmations": [
+      {
+        "type": "hard",
+        "signature": "Executed good player does not die.",
+        "proc_confounders": [
+          {
+            "id": "devils-advocate"
+          },
+          {
+            "id": "lleech",
+            "partial": true,
+            "notes": "v2 22.2: Lleech is the Demon, not a Minion."
+          },
+          {
+            "id": "boffin",
+            "partial": true,
+            "condition": "pacifist on script but not in play"
+          }
+        ],
+        "claim_confounders": [],
+        "section_ref": "2.1"
+      }
+    ],
+    "proc_is_st_discretionary": true,
+    "section_refs": [
+      "2.1",
+      "21.8"
+    ],
+    "status": "verified",
+    "jinxes": [],
+    "open_questions": [
+      "22.2"
+    ]
+  },
+  {
+    "id": "philosopher",
+    "name": "Philosopher",
+    "team": "townsfolk",
+    "ability": "Once per game, at night, choose a good character: ¶gain that ability. ¶If this character is in play, they are drunk.",
+    "setup": "",
+    "iconPath": "icons/alt/Philosopher_icon.png",
+    "iconPathOfficial": "icons/official/Philosopher_icon.png",
+    "markerCount": 2,
+    "is_drunkenness_source": "setup_acquire_droison",
+    "ability_acquisition": "chosen_acquisition",
+    "section_refs": [
+      "2.2"
+    ],
+    "status": "verified",
+    "jinxes": [
+      {
+        "partner_id": "bounty-hunter",
+        "sub_type": "mechanical-patch",
+        "canonical_text": "If the Philosopher gains the Bounty Hunter ability, a Townsfolk might turn evil."
+      }
+    ],
+    "open_questions": []
+  },
+  {
+    "id": "pixie",
+    "name": "Pixie",
+    "team": "townsfolk",
+    "ability": "You start knowing 1 in-play Townsfolk. ¶If you were mad that you were this character, ¶you gain their ability when they die.",
+    "setup": "",
+    "iconPath": "icons/alt/Pixie_icon.png",
+    "iconPathOfficial": "icons/official/Pixie_icon.png",
+    "markerCount": 2,
+    "ability_acquisition": "triggered_acquisition",
+    "madness_mechanic": true,
+    "triggers_on_death": "related_death",
+    "proc_condition_is_st_judged": true,
+    "re_triggers_on_resurrection": true,
+    "section_refs": [
+      "6b"
+    ],
+    "status": "verified",
+    "jinxes": [],
+    "open_questions": []
+  },
+  {
+    "id": "poppy-grower",
+    "name": "Poppy Grower",
+    "team": "townsfolk",
+    "ability": "Minions & Demons do not know each other. ¶If you die, they learn who each other are that night.",
+    "setup": "",
+    "iconPath": "icons/alt/Poppy Grower_icon.png",
+    "iconPathOfficial": "icons/official/Poppy Grower_icon.png",
+    "markerCount": 0,
+    "setup_modifying_role": "setup_suppresses_evil_info",
+    "jinx_burden": 4,
+    "section_refs": [
+      "6a"
+    ],
+    "status": "verified",
+    "jinxes": [
+      {
+        "partner_id": "spy",
+        "sub_type": "setup-transparency-altering",
+        "canonical_text": "If the Poppy Grower has their ability, the Spy does not see the Grimoire."
+      },
+      {
+        "partner_id": "summoner",
+        "sub_type": "mechanical-patch",
+        "canonical_text": "If the Poppy Grower is alive on the 3rd night, the Summoner chooses which Demon but not which player."
+      },
+      {
+        "partner_id": "widow",
+        "sub_type": "setup-transparency-altering",
+        "canonical_text": "If the Poppy Grower has their ability, the Widow does not see the Grimoire."
+      },
+      {
+        "partner_id": "lil-monsta",
+        "sub_type": "mechanical-patch",
+        "canonical_text": "If Lil' Monsta & the Poppy Grower are alive, Minions wake one by one, until one of them chooses to take the Lil' Monsta token."
+      }
+    ],
+    "open_questions": []
+  },
+  {
+    "id": "preacher",
+    "name": "Preacher",
+    "team": "townsfolk",
+    "ability": "Each night, choose a player: ¶a Minion, if chosen, learns this. ¶All chosen Minions have no ability.",
+    "setup": "",
+    "iconPath": "icons/alt/Preacher_icon.png",
+    "iconPathOfficial": "icons/official/Preacher_icon.png",
+    "markerCount": 4,
+    "is_ability_disable_source": "player_target_minion_disable",
+    "jinx_burden": 3,
+    "section_refs": [
+      "6c"
+    ],
+    "status": "verified",
+    "jinxes": [
+      {
+        "partner_id": "summoner",
+        "sub_type": "mechanical-patch",
+        "canonical_text": "If the living Summoner has no ability, the Storyteller has the Summoner ability."
+      },
+      {
+        "partner_id": "vizier",
+        "sub_type": "mechanical-patch",
+        "canonical_text": "If the Vizier loses their ability, they learn this, and cannot die during the day."
+      },
+      {
+        "partner_id": "legion",
+        "sub_type": "mechanical-patch",
+        "canonical_text": "If the Preacher chooses Legion, Legion keeps their ability, but the Preacher might learn they are Legion."
+      }
+    ],
+    "open_questions": []
+  },
+  {
+    "id": "princess",
+    "name": "Princess",
+    "team": "townsfolk",
+    "ability": "On your 1st day, if you nominated and executed a player, ¶the Demon doesn't kill tonight.",
+    "setup": "",
+    "iconPath": "icons/alt/Princess_icon.png",
+    "iconPathOfficial": "icons/official/Princess_icon.png",
+    "markerCount": 1,
+    "confirmations": [
+      {
+        "type": "soft",
+        "signature": "Demon does not kill on night 1 if Princess nominated and executed a player that day.",
+        "proc_confounders": [],
+        "claim_confounders": [],
+        "section_ref": "6a"
+      }
+    ],
+    "conditional_demon_block": "d1_conditional_block",
+    "jinx_burden": 2,
+    "section_refs": [
+      "6a"
+    ],
+    "status": "verified",
+    "jinxes": [
+      {
+        "partner_id": "cannibal",
+        "sub_type": "mechanical-patch",
+        "canonical_text": "If the Cannibal nominated, executed, & killed the Princess today, the Demon doesn't kill tonight."
+      },
+      {
+        "partner_id": "al-hadikhia",
+        "sub_type": "mechanical-patch",
+        "canonical_text": "If the Princess nominated & executed a player on their 1st day, no one dies to the Al-Hadikhia tonight."
+      }
+    ],
+    "open_questions": []
+  },
+  {
+    "id": "professor",
+    "name": "Professor",
+    "team": "townsfolk",
+    "ability": "Once per game, at night*, choose a dead player: ¶if they are a Townsfolk, they are resurrected.",
+    "setup": "",
+    "iconPath": "icons/alt/Professor_icon.png",
+    "iconPathOfficial": "icons/official/Professor_icon.png",
+    "markerCount": 2,
+    "lint": {
+      "confirmationRole": true,
+      "confirmationCounterpart": [
+        "shabaloth",
+        "cannibal"
+      ]
+    },
+    "confirmations": [
+      {
+        "type": "hard",
+        "signature": "Dead Townsfolk publicly resurrects in response to Professor's choice.",
+        "proc_confounders": [
+          {
+            "id": "shabaloth"
+          },
+          {
+            "id": "cannibal",
+            "notes": "Cannibal-as-Professor; v2 22.6 (good-on-good)."
+          },
+          {
+            "id": "boffin",
+            "partial": true,
+            "condition": "professor on script but not in play"
+          }
+        ],
+        "claim_confounders": [],
+        "section_ref": "2.1"
+      }
+    ],
+    "section_refs": [
+      "2.1",
+      "21.12"
+    ],
+    "open_questions": [
+      "22.6"
+    ],
+    "status": "verified",
+    "jinxes": []
+  },
+  {
+    "id": "ravenkeeper",
+    "name": "Ravenkeeper",
+    "team": "townsfolk",
+    "ability": "If you die at night, you are woken to choose a player: ¶you learn their character.",
+    "setup": "",
+    "iconPath": "icons/alt/Ravenkeeper_icon.png",
+    "iconPathOfficial": "icons/official/Ravenkeeper_icon.png",
+    "markerCount": 0,
+    "triggers_on_death": "own_death",
+    "section_refs": [
+      "2.2"
+    ],
+    "status": "verified",
+    "jinxes": [
+      {
+        "partner_id": "leviathan",
+        "sub_type": "mechanical-patch",
+        "canonical_text": "Each night*, the Leviathan chooses an alive player (different to previous nights): a chosen Ravenkeeper uses their ability but does not die."
+      },
+      {
+        "partner_id": "riot",
+        "sub_type": "mechanical-patch",
+        "canonical_text": "Each night*, Riot chooses an alive good player (different to previous nights): a chosen Ravenkeeper uses their ability but does not die."
+      }
+    ],
+    "open_questions": []
+  },
+  {
+    "id": "sage",
+    "name": "Sage",
+    "team": "townsfolk",
+    "ability": "If the Demon kills you, ¶you learn that it is 1 of 2 players.",
+    "setup": "",
+    "iconPath": "icons/alt/Sage_icon.png",
+    "iconPathOfficial": "icons/official/Sage_icon.png",
+    "markerCount": 0,
+    "triggers_on_death": "own_death",
+    "posthumous_confirmation": true,
+    "section_refs": [
+      "2.2",
+      "5"
+    ],
+    "status": "verified",
+    "jinxes": [
+      {
+        "partner_id": "recluse",
+        "sub_type": "info-amplifying",
+        "canonical_text": "The Recluse might register as the Demon to the Sage."
+      },
+      {
+        "partner_id": "leviathan",
+        "sub_type": "mechanical-patch",
+        "canonical_text": "Each night*, the Leviathan chooses an alive good player (different to previous nights): a chosen Sage uses their ability but does not die."
+      },
+      {
+        "partner_id": "riot",
+        "sub_type": "mechanical-patch",
+        "canonical_text": "Each night*, Riot chooses an alive good player (different to previous nights): a chosen Sage uses their ability but does not die."
+      }
+    ],
+    "open_questions": []
+  },
+  {
+    "id": "sailor",
+    "name": "Sailor",
+    "team": "townsfolk",
+    "ability": "Each night, choose an alive player: ¶either you or they are drunk until dusk. ¶You can't die.",
+    "setup": "",
+    "iconPath": "icons/alt/Sailor_icon.png",
+    "iconPathOfficial": "icons/official/Sailor_icon.png",
+    "markerCount": 1,
+    "lint": {
+      "confirmationRole": true,
+      "confirmationCounterpart": [
+        "devils-advocate"
+      ],
+      "powerRole": true,
+      "powerCounterpart": [
+        "devils-advocate"
+      ]
+    },
+    "confirmations": [
+      {
+        "mode": "execution",
+        "type": "hard",
+        "signature": "Sailor is executed and does not die.",
+        "proc_confounders": [
+          {
+            "id": "devils-advocate"
+          },
+          {
+            "id": "lleech",
+            "partial": true,
+            "notes": "v2 22.2: Lleech is the Demon, not a Minion."
+          },
+          {
+            "id": "boffin",
+            "partial": true,
+            "condition": "sailor on script but not in play"
+          }
+        ],
+        "claim_confounders": [],
+        "section_ref": "2.1"
+      },
+      {
+        "mode": "night",
+        "type": "soft",
+        "signature": "Sailor does not die at night.",
+        "proc_confounders": [],
+        "claim_confounders": [],
+        "section_ref": "2.2"
+      }
+    ],
+    "is_drunkenness_source": "nightly_droison",
+    "signature_breadth": "any_death",
+    "section_refs": [
+      "2.1",
+      "2.2",
+      "21.8"
+    ],
+    "open_questions": [
+      "22.2"
+    ],
+    "status": "verified",
+    "jinxes": []
+  },
+  {
+    "id": "savant",
+    "name": "Savant",
+    "team": "townsfolk",
+    "ability": "Each day, you may visit the Storyteller ¶to learn 2 things in private: 1 is true & 1 is false.",
+    "setup": "",
+    "iconPath": "icons/alt/Savant_icon.png",
+    "iconPathOfficial": "icons/official/Savant_icon.png",
+    "markerCount": 0,
+    "lint": {
+      "nonconformistInfo": true
+    },
+    "built_in_confound": "ambiguous_binary",
+    "vortox_detector": true,
+    "st_crafted_info": "st_crafts_content",
+    "day_phase_info": true,
+    "section_refs": [
+      "2.2"
+    ],
+    "status": "verified",
+    "jinxes": [],
+    "open_questions": []
+  },
+  {
+    "id": "seamstress",
+    "name": "Seamstress",
+    "team": "townsfolk",
+    "ability": "Once per game, at night, ¶choose 2 players (not yourself): ¶you learn if they are the same alignment.",
+    "setup": "",
+    "iconPath": "icons/alt/Seamstress_icon.png",
+    "iconPathOfficial": "icons/official/Seamstress_icon.png",
+    "markerCount": 1,
+    "alignment_comparison": true,
+    "section_refs": [
+      "2.2"
+    ],
+    "status": "verified",
+    "jinxes": [],
+    "open_questions": []
+  },
+  {
+    "id": "shugenja",
+    "name": "Shugenja",
+    "team": "townsfolk",
+    "ability": "You start knowing if your closest evil player ¶is clockwise or anti-clockwise. ¶If equidistant, this info is arbitrary.",
+    "setup": "",
+    "iconPath": "icons/alt/Shugenja_icon.png",
+    "iconPathOfficial": "icons/official/Shugenja_icon.png",
+    "markerCount": 0,
+    "start_knowing_info_shape": "directional_info",
+    "arbitrary_when_equidistant": true,
+    "re_triggers_on_resurrection": true,
+    "section_refs": [
+      "6b"
+    ],
+    "status": "verified",
+    "jinxes": [],
+    "open_questions": []
+  },
+  {
+    "id": "slayer",
+    "name": "Slayer",
+    "team": "townsfolk",
+    "ability": "Once per game, during the day, ¶publicly choose a player: ¶if they are the Demon, they die.",
+    "setup": "",
+    "iconPath": "icons/alt/Slayer_icon.png",
+    "iconPathOfficial": "icons/official/Slayer_icon.png",
+    "markerCount": 1,
+    "confirmations": [
+      {
+        "type": "hard",
+        "signature": "Slayer's public day-time shot kills a player.",
+        "proc_confounders": [
+          {
+            "id": "spy",
+            "notes": "Spy registers as Demon to Slayer's shot."
+          },
+          {
+            "id": "recluse",
+            "notes": "Recluse may misregister as Demon; kill happens, proof ambiguous."
+          },
+          {
+            "id": "scarlet-woman",
+            "notes": "Star-pass: Slayer kills Imp, SW becomes Imp, game continues."
+          },
+          {
+            "id": "boffin",
+            "partial": true,
+            "condition": "slayer on script but not in play"
+          }
+        ],
+        "claim_confounders": [],
+        "section_ref": "2.1"
+      }
+    ],
+    "section_refs": [
+      "2.1",
+      "21.10"
+    ],
+    "open_questions": [
+      "22.4"
+    ],
+    "status": "verified",
+    "jinxes": [
+      {
+        "partner_id": "lleech",
+        "sub_type": "mechanical-patch",
+        "canonical_text": "If the Slayer slays the Lleech host, the host dies."
+      }
+    ]
+  },
+  {
+    "id": "snake-charmer",
+    "name": "Snake Charmer",
+    "team": "townsfolk",
+    "ability": "Each night, choose an alive player: a chosen Demon ¶swaps characters & alignments with you & ¶is then poisoned.",
+    "setup": "",
+    "iconPath": "icons/alt/Snake Charmer_icon.png",
+    "iconPathOfficial": "icons/official/Snake Charmer_icon.png",
+    "markerCount": 1,
+    "alignment_swap": "swap_with_demon",
+    "vortox_resistant": true,
+    "section_refs": [
+      "2.2"
+    ],
+    "status": "verified",
+    "jinxes": [],
+    "open_questions": []
+  },
+  {
+    "id": "soldier",
+    "name": "Soldier",
+    "team": "townsfolk",
+    "ability": "You are safe ¶from the Demon.",
+    "setup": "",
+    "iconPath": "icons/alt/Soldier_icon.png",
+    "iconPathOfficial": "icons/official/Soldier_icon.png",
+    "markerCount": 0,
+    "lint": {
+      "confirmationRole": true,
+      "confirmationCounterpart": [
+        "devils-advocate"
+      ],
+      "powerRole": true,
+      "powerCounterpart": [
+        "devils-advocate"
+      ]
+    },
+    "confirmations": [
+      {
+        "type": "soft",
+        "signature": "Soldier is chosen by the Demon at night and does not die.",
+        "proc_confounders": [],
+        "claim_confounders": [],
+        "section_ref": "2.2"
+      }
+    ],
+    "signature_breadth": "demon_only",
+    "section_refs": [
+      "2.2"
+    ],
+    "status": "verified",
+    "jinxes": [
+      {
+        "partner_id": "leviathan",
+        "sub_type": "mechanical-patch",
+        "canonical_text": "If the Leviathan nominates and executes the Soldier, good wins."
+      },
+      {
+        "partner_id": "riot",
+        "sub_type": "mechanical-patch",
+        "canonical_text": "If Riot nominates and executes the Soldier, good wins."
+      }
+    ],
+    "open_questions": []
+  },
+  {
+    "id": "steward",
+    "name": "Steward",
+    "team": "townsfolk",
+    "ability": "You start knowing ¶1 good player.",
+    "setup": "",
+    "iconPath": "icons/alt/Steward_icon.png",
+    "iconPathOfficial": "icons/official/Steward_icon.png",
+    "markerCount": 1,
+    "start_knowing_info_shape": "simple_good_ping",
+    "re_triggers_on_resurrection": true,
+    "section_refs": [
+      "6b"
+    ],
+    "status": "verified",
+    "jinxes": [],
+    "open_questions": []
+  },
+  {
+    "id": "tea-lady",
+    "name": "Tea Lady",
+    "team": "townsfolk",
+    "ability": "If both your alive neighbours are good, ¶they can't die.",
+    "setup": "",
+    "iconPath": "icons/alt/Tea Lady_icon.png",
+    "iconPathOfficial": "icons/official/Tea Lady_icon.png",
+    "markerCount": 2,
+    "lint": {
+      "confirmationRole": true,
+      "confirmationCounterpart": [
+        "devils-advocate",
+        "sailor",
+        "pacifist",
+        "fool"
+      ],
+      "powerRole": true,
+      "powerCounterpart": [
+        "devils-advocate",
+        "sailor",
+        "pacifist",
+        "fool"
+      ]
+    },
+    "confirmations": [
+      {
+        "mode": "execution",
+        "type": "hard",
+        "signature": "Tea Lady's neighbour is executed and does not die.",
+        "proc_confounders": [
+          {
+            "id": "devils-advocate"
+          },
+          {
+            "id": "lleech",
+            "partial": true,
+            "notes": "v2 22.2: Lleech is the Demon, not a Minion."
+          },
+          {
+            "id": "boffin",
+            "partial": true,
+            "condition": "tea-lady on script but not in play"
+          }
+        ],
+        "claim_confounders": [],
+        "section_ref": "2.1"
+      },
+      {
+        "mode": "night",
+        "type": "soft",
+        "signature": "Tea Lady's neighbours do not die at night when the Demon attacks them.",
+        "proc_confounders": [],
+        "claim_confounders": [],
+        "section_ref": "2.2"
+      }
+    ],
+    "section_refs": [
+      "2.1",
+      "2.2",
+      "21.8",
+      "22.1"
+    ],
+    "open_questions": [
+      "22.1",
+      "22.2"
+    ],
+    "status": "verified",
+    "jinxes": []
+  },
+  {
+    "id": "town-crier",
+    "name": "Town Crier",
+    "team": "townsfolk",
+    "ability": "Each night*, you learn if ¶a Minion nominated today.",
+    "setup": "",
+    "iconPath": "icons/alt/Town Crier_icon.png",
+    "iconPathOfficial": "icons/official/Town Crier_icon.png",
+    "markerCount": 2,
+    "behaviour_detection": "nominate_detection",
+    "section_refs": [
+      "2.2"
+    ],
+    "status": "verified",
+    "jinxes": [],
+    "open_questions": []
+  },
+  {
+    "id": "undertaker",
+    "name": "Undertaker",
+    "team": "townsfolk",
+    "ability": "Each night*, you learn ¶which character died by execution today.",
+    "setup": "",
+    "iconPath": "icons/alt/Undertaker_icon.png",
+    "iconPathOfficial": "icons/official/Undertaker_icon.png",
+    "markerCount": 1,
+    "lint": {
+      "grimpeekerNeeded": true
+    },
+    "confirmations": [
+      {
+        "type": "info",
+        "signature": "Each-night info on which character died by execution today.",
+        "info_bluff_cover": [
+          {
+            "id": "spy"
+          },
+          {
+            "id": "widow"
+          }
+        ],
+        "section_ref": "2.2"
+      }
+    ],
+    "each_night_info_shape": "execute_reveals_character",
+    "section_refs": [
+      "2.2"
+    ],
+    "status": "verified",
+    "jinxes": [],
+    "open_questions": []
+  },
+  {
+    "id": "village-idiot",
+    "name": "Village Idiot",
+    "team": "townsfolk",
+    "ability": "Each night, choose a player: ¶you learn their alignment. ¶",
+    "setup": "[+0 to +2 Village Idiots. 1 of the extras is drunk]",
+    "iconPath": "icons/alt/Village Idiot_icon.png",
+    "iconPathOfficial": "icons/official/Village Idiot_icon.png",
+    "markerCount": 1,
+    "multi_instance_role": "setup_multi_instance",
+    "built_in_confound": "cohort_built_in_confound",
+    "jinx_burden": 2,
+    "section_refs": [
+      "6d"
+    ],
+    "status": "verified",
+    "jinxes": [
+      {
+        "partner_id": "boffin",
+        "sub_type": "mechanical-patch",
+        "canonical_text": "If there is a spare token, the Boffin can give the Demon the Village Idiot ability."
+      },
+      {
+        "partner_id": "pit-hag",
+        "sub_type": "mechanical-patch",
+        "canonical_text": "If there is a spare token, the Pit-Hag can create an extra Village Idiot. If so, the drunk Village Idiot might change."
+      }
+    ],
+    "open_questions": []
+  },
+  {
+    "id": "virgin",
+    "name": "Virgin",
+    "team": "townsfolk",
+    "ability": "The 1st time you are nominated, ¶if the nominator is a Townsfolk, ¶they are executed immediately.",
+    "setup": "",
+    "iconPath": "icons/alt/Virgin_icon.png",
+    "iconPathOfficial": "icons/official/Virgin_icon.png",
+    "markerCount": 1,
+    "lint": {
+      "confirmationRole": true,
+      "confirmationCounterpart": [
+        "spy",
+        "widow"
+      ]
+    },
+    "confirmations": [
+      {
+        "type": "hard",
+        "severity": "soft_warning",
+        "signature": "Townsfolk nominator dies on first nomination of Virgin.",
+        "proc_confounders": [
+          {
+            "id": "spy",
+            "notes": "Spy registers as Townsfolk; Virgin proc fires, game continues."
+          },
+          {
+            "id": "recluse",
+            "notes": "Recluse may misregister as not-Townsfolk and suppress proc."
+          },
+          {
+            "id": "marionette",
+            "notes": "Marionette is a Minion who thinks they are Townsfolk; nomination does not fire the proc, but neither player knows why."
+          },
+          {
+            "id": "boffin",
+            "partial": true,
+            "condition": "virgin on script but not in play"
+          }
+        ],
+        "claim_confounders": [],
+        "section_ref": "2.1"
+      }
+    ],
+    "section_refs": [
+      "2.1",
+      "21.9"
+    ],
+    "status": "verified",
+    "jinxes": [],
+    "open_questions": []
+  },
+  {
+    "id": "washerwoman",
+    "name": "Washerwoman",
+    "team": "townsfolk",
+    "ability": "You start knowing that 1 of 2 players ¶is a particular Townsfolk.",
+    "setup": "",
+    "iconPath": "icons/alt/Washerwoman_icon.png",
+    "iconPathOfficial": "icons/official/Washerwoman_icon.png",
+    "markerCount": 2,
+    "re_triggers_on_resurrection": true,
+    "section_refs": [
+      "2.2"
+    ],
+    "status": "verified",
+    "jinxes": [],
+    "open_questions": []
+  },
+  {
+    "id": "barber",
+    "name": "Barber",
+    "team": "outsider",
+    "ability": "If you died today or tonight, the Demon may ¶choose 2 players (not another Demon) ¶to swap characters.",
+    "setup": "",
+    "iconPath": "icons/alt/Barber_icon.png",
+    "iconPathOfficial": "icons/official/Barber_icon.png",
+    "markerCount": 1,
+    "is_passive_handicap_outsider": true,
+    "triggers_on_death": "triggers_on_own_any_death_grants_evil_action",
+    "info_flow_to_evil": "death_grants_swap_action",
+    "character_replacement": true,
+    "re_triggers_start_knowing": true,
+    "re_triggers_once_per_game": true,
+    "prevents_self_chain": true,
+    "section_refs": [],
+    "status": "verified",
+    "jinxes": [],
+    "open_questions": []
+  },
+  {
+    "id": "butler",
+    "name": "Butler",
+    "team": "outsider",
+    "ability": "Each night, choose a player (not yourself): ¶tomorrow, you may only vote if they are voting too.",
+    "setup": "",
+    "iconPath": "icons/alt/Butler_icon.png",
+    "iconPathOfficial": "icons/official/Butler_icon.png",
+    "markerCount": 1,
+    "is_passive_handicap_outsider": true,
+    "vote_restriction_role": "vote_conditional",
+    "social_drag": true,
+    "section_refs": [],
+    "status": "verified",
+    "jinxes": [
+      {
+        "partner_id": "cannibal",
+        "sub_type": "mechanical-patch",
+        "canonical_text": "If the Cannibal gains the Butler ability, the Cannibal learns this."
+      },
+      {
+        "partner_id": "organ-grinder",
+        "sub_type": "mechanical-patch",
+        "canonical_text": "If the Organ Grinder is causing eyes closed voting, the Butler may raise their hand to vote but their vote is only counted if their master voted too."
+      }
+    ],
+    "open_questions": []
+  },
+  {
+    "id": "damsel",
+    "name": "Damsel",
+    "team": "outsider",
+    "ability": "All Minions know you are in play. ¶If a Minion publicly guesses you (once), ¶your team loses.",
+    "setup": "",
+    "iconPath": "icons/alt/Damsel_icon.png",
+    "iconPathOfficial": "icons/official/Damsel_icon.png",
+    "markerCount": 1,
+    "info_flow_to_evil": "setup_only_revealed_to_minions",
+    "wincon_alt_path": "evil_favourable_via_minion_guess",
+    "section_refs": [],
+    "status": "verified",
+    "jinxes": [
+      {
+        "partner_id": "pit-hag",
+        "sub_type": "mechanical-patch",
+        "canonical_text": "If a Pit-Hag creates a Damsel, the Storyteller chooses which player it is."
+      },
+      {
+        "partner_id": "spy",
+        "sub_type": "mechanical-patch",
+        "canonical_text": "If the Spy is (or has been) in play, the Damsel is poisoned."
+      },
+      {
+        "partner_id": "widow",
+        "sub_type": "mechanical-patch",
+        "canonical_text": "If the Widow is (or has been) in play, the Damsel is poisoned."
+      }
+    ],
+    "open_questions": []
+  },
+  {
+    "id": "drunk",
+    "name": "Drunk",
+    "team": "outsider",
+    "ability": "You do not know you are the Drunk. ¶You think you are a Townsfolk character, ¶but you are not.",
+    "setup": "",
+    "iconPath": "icons/alt/Drunk_icon.png",
+    "iconPathOfficial": "icons/official/Drunk_icon.png",
+    "markerCount": 1,
+    "lint": {
+      "misinfo": true,
+      "misinfoShape": "persistent-column",
+      "oHide": true,
+      "mathematicianLoad": true
+    },
+    "setup_alters": [
+      "townsfolk_to_drunk"
+    ],
+    "generic_confirmation_counterpart": {
+      "applies": true,
+      "scope": "any Townsfolk-ability claim",
+      "caveat": "Undermines claims; does not fake the proc.",
+      "section_ref": "2.5"
+    },
+    "is_passive_handicap_outsider": true,
+    "is_setup_deception_role": true,
+    "section_refs": [
+      "1",
+      "2.5",
+      "4",
+      "11"
+    ],
+    "status": "verified",
+    "jinxes": [
+      {
+        "partner_id": "mathematician",
+        "sub_type": "info-amplifying",
+        "canonical_text": "The Mathematician might learn if the Drunk's ability yielded false info or failed to work properly."
+      },
+      {
+        "partner_id": "boffin",
+        "sub_type": "mechanical-patch",
+        "canonical_text": "The Demon cannot have the Drunk ability."
+      }
+    ],
+    "open_questions": []
+  },
+  {
+    "id": "golem",
+    "name": "Golem",
+    "team": "outsider",
+    "ability": "You may only nominate once per game. ¶When you do, if the nominee is not the Demon, ¶they die.",
+    "setup": "",
+    "iconPath": "icons/alt/Golem_icon.png",
+    "iconPathOfficial": "icons/official/Golem_icon.png",
+    "markerCount": 1,
+    "is_active_ability_outsider": true,
+    "signature_breadth": "once_per_game_nominate",
+    "section_refs": [],
+    "status": "verified",
+    "jinxes": [],
+    "open_questions": []
+  },
+  {
+    "id": "goon",
+    "name": "Goon",
+    "team": "outsider",
+    "ability": "Each night, the 1st player to choose you ¶with their ability is drunk until dusk. ¶You become their alignment.",
+    "setup": "",
+    "iconPath": "icons/alt/Goon_icon.png",
+    "iconPathOfficial": "icons/official/Goon_icon.png",
+    "markerCount": 1,
+    "lint": {
+      "extraEvil": "soft"
+    },
+    "is_passive_handicap_outsider": true,
+    "alignment_swap": "becomes_chooser_alignment",
+    "team_aware_wincon_mechanic": true,
+    "is_drunkenness_source": "first_chooser_droison",
+    "section_refs": [],
+    "status": "verified",
+    "jinxes": [
+      {
+        "partner_id": "boffin",
+        "sub_type": "mechanical-patch",
+        "canonical_text": "If the Demon has the Goon ability, they can't turn good due to this ability."
+      },
+      {
+        "partner_id": "pit-hag",
+        "sub_type": "mechanical-patch",
+        "canonical_text": "If the Pit-Hag turns an evil player into the Goon, they can't turn good due to their own ability."
+      }
+    ],
+    "open_questions": []
+  },
+  {
+    "id": "hatter",
+    "name": "Hatter",
+    "team": "outsider",
+    "ability": "If you died today or tonight, ¶the Minion and Demon players may choose ¶new Minion and Demon characters to be.",
+    "setup": "",
+    "iconPath": "icons/alt/Hatter_icon.png",
+    "iconPathOfficial": "icons/official/Hatter_icon.png",
+    "markerCount": 1,
+    "is_passive_handicap_outsider": true,
+    "triggers_on_death": "triggers_on_own_any_death_grants_evil_character_change",
+    "character_replacement": true,
+    "re_triggers_start_knowing": true,
+    "re_triggers_once_per_game": true,
+    "prevents_self_chain": true,
+    "section_refs": [],
+    "status": "verified",
+    "jinxes": [
+      {
+        "partner_id": "summoner",
+        "sub_type": "mechanical-patch",
+        "canonical_text": "If the Summoner creates a second living Demon, deaths tonight are arbitrary."
+      },
+      {
+        "partner_id": "legion",
+        "sub_type": "mechanical-patch",
+        "canonical_text": "If Legion is created, all evil players become Legion. If Legion is in play, the Hatter has no ability."
+      },
+      {
+        "partner_id": "leviathan",
+        "sub_type": "mechanical-patch",
+        "canonical_text": "The Leviathan cannot enter play after day 5."
+      },
+      {
+        "partner_id": "lil-monsta",
+        "sub_type": "mechanical-patch",
+        "canonical_text": "If the Hatter dies & the Demon chooses Lil' Monsta, they also choose a Minion to become."
+      }
+    ],
+    "open_questions": []
+  },
+  {
+    "id": "heretic",
+    "name": "Heretic",
+    "team": "outsider",
+    "ability": "Whoever wins, loses ¶& whoever loses, wins, ¶even if you are dead.",
+    "setup": "",
+    "iconPath": "icons/alt/Heretic_icon.png",
+    "iconPathOfficial": "icons/official/Heretic_icon.png",
+    "markerCount": 0,
+    "lint": {
+      "hateJinxPartners": [
+        "spy",
+        "widow",
+        "baron",
+        "godfather",
+        "lleech",
+        "pit-hag"
+      ]
+    },
+    "wincon_alt": "heretic",
+    "wincon_rewriting_role": true,
+    "even_if_dead_persistence": true,
+    "section_refs": [
+      "6",
+      "15",
+      "21-soft-12"
+    ],
+    "status": "verified",
+    "jinxes": [
+      {
+        "partner_id": "baron",
+        "sub_type": "hate",
+        "canonical_text": "Only 1 jinxed character can be in play."
+      },
+      {
+        "partner_id": "godfather",
+        "sub_type": "hate",
+        "canonical_text": "Only 1 jinxed character can be in play."
+      },
+      {
+        "partner_id": "lleech",
+        "sub_type": "hate",
+        "canonical_text": "Only 1 jinxed character can be in play."
+      },
+      {
+        "partner_id": "pit-hag",
+        "sub_type": "hate",
+        "canonical_text": "Only 1 jinxed character can be in play."
+      },
+      {
+        "partner_id": "spy",
+        "sub_type": "hate",
+        "canonical_text": "Only 1 jinxed character can be in play."
+      },
+      {
+        "partner_id": "widow",
+        "sub_type": "hate",
+        "canonical_text": "Only 1 jinxed character can be in play."
+      },
+      {
+        "partner_id": "boffin",
+        "sub_type": "mechanical-patch",
+        "canonical_text": "The Demon cannot have the Heretic ability."
+      }
+    ],
+    "open_questions": []
+  },
+  {
+    "id": "hermit",
+    "name": "Hermit",
+    "team": "outsider",
+    "ability": "You have all Outsider abilities.",
+    "setup": "[-0 or -1 Outsider]",
+    "iconPath": "icons/alt/Hermit_icon.png",
+    "iconPathOfficial": "icons/official/Hermit_icon.png",
+    "markerCount": 2,
+    "is_active_ability_outsider": true,
+    "ability_acquisition": "multi_role_ability_acquisition",
+    "setup_modifying_role": "setup_removes_outsider_optional",
+    "section_refs": [],
+    "status": "verified",
+    "jinxes": [],
+    "open_questions": []
+  },
+  {
+    "id": "klutz",
+    "name": "Klutz",
+    "team": "outsider",
+    "ability": "When you learn that you died, publicly choose 1 alive player: if they are evil, your team loses.",
+    "setup": "",
+    "iconPath": "icons/alt/Klutz_icon.png",
+    "iconPathOfficial": "icons/official/Klutz_icon.png",
+    "markerCount": 0,
+    "wincon_alt": "klutz",
+    "wincon_alt_path": "evil_favourable_via_postdeath_choice",
+    "is_passive_handicap_outsider": true,
+    "triggers_on_death": "triggers_on_own_any_death_creates_postdeath_choice",
+    "team_aware_wincon_mechanic": true,
+    "vortox_resistant": true,
+    "section_refs": [
+      "6"
+    ],
+    "status": "verified",
+    "jinxes": [],
+    "open_questions": []
+  },
+  {
+    "id": "lunatic",
+    "name": "Lunatic",
+    "team": "outsider",
+    "ability": "You think you are a Demon, but you are not. ¶The Demon knows who you are & ¶who you choose at night.",
+    "setup": "",
+    "iconPath": "icons/alt/Lunatic_icon.png",
+    "iconPathOfficial": "icons/official/Lunatic_icon.png",
+    "markerCount": 4,
+    "lint": {
+      "misinfo": true,
+      "misinfoShape": "persistent-column",
+      "oHide": true,
+      "mathematicianLoad": true
+    },
+    "is_passive_handicap_outsider": true,
+    "is_setup_deception_role": true,
+    "info_flow_to_evil": "each_night_choices",
+    "section_refs": [],
+    "status": "verified",
+    "jinxes": [
+      {
+        "partner_id": "mathematician",
+        "sub_type": "info-amplifying",
+        "canonical_text": "The Mathematician might learn if the Lunatic attacks a different player than the real Demon attacked."
+      }
+    ],
+    "open_questions": []
+  },
+  {
+    "id": "moonchild",
+    "name": "Moonchild",
+    "team": "outsider",
+    "ability": "When you learn that you died, publicly choose 1 alive player. Tonight, if it was a good player, they die.",
+    "setup": "",
+    "iconPath": "icons/alt/Moonchild_icon.png",
+    "iconPathOfficial": "icons/official/Moonchild_icon.png",
+    "markerCount": 1,
+    "posthumous_confirmation": "any_death_triggers_public_choice",
+    "triggers_on_death": "own_death",
+    "section_refs": [],
+    "status": "verified",
+    "jinxes": [],
+    "open_questions": []
+  },
+  {
+    "id": "mutant",
+    "name": "Mutant",
+    "team": "outsider",
+    "ability": "If you are \"mad\" about being an Outsider, ¶you might be executed.",
+    "setup": "",
+    "iconPath": "icons/alt/Mutant_icon.png",
+    "iconPathOfficial": "icons/official/Mutant_icon.png",
+    "markerCount": 0,
+    "lint": {
+      "oHide": true
+    },
+    "is_passive_handicap_outsider": true,
+    "madness_mechanic": "mad_about_being_outsider",
+    "proc_is_st_discretionary": true,
+    "section_refs": [],
+    "status": "verified",
+    "jinxes": [],
+    "open_questions": []
+  },
+  {
+    "id": "ogre",
+    "name": "Ogre",
+    "team": "outsider",
+    "ability": "On your 1st night, choose a player (not yourself): ¶you become their alignment (you don't know which) ¶even if drunk or poisoned.",
+    "setup": "",
+    "iconPath": "icons/alt/Ogre_icon.png",
+    "iconPathOfficial": "icons/official/Ogre_icon.png",
+    "markerCount": 0,
+    "lint": {
+      "extraEvil": "soft"
+    },
+    "is_active_ability_outsider": true,
+    "alignment_swap": "becomes_chosen_player_alignment_n1",
+    "is_drunkenness_immune": true,
+    "info_blocked_from_self": "no_self_target_info",
+    "section_refs": [],
+    "status": "verified",
+    "jinxes": [
+      {
+        "partner_id": "recluse",
+        "sub_type": "mechanical-patch",
+        "canonical_text": "If the Recluse registers as evil to the Ogre, the Ogre learns that they are evil."
+      },
+      {
+        "partner_id": "boffin",
+        "sub_type": "mechanical-patch",
+        "canonical_text": "The Demon cannot have the Ogre ability."
+      },
+      {
+        "partner_id": "pit-hag",
+        "sub_type": "mechanical-patch",
+        "canonical_text": "If the Pit-Hag turns an evil player into the Ogre, they can't turn good due to their own ability."
+      },
+      {
+        "partner_id": "spy",
+        "sub_type": "setup-transparency-altering",
+        "canonical_text": "The Spy registers as evil to the Ogre."
+      }
+    ],
+    "open_questions": []
+  },
+  {
+    "id": "plague-doctor",
+    "name": "Plague Doctor",
+    "team": "outsider",
+    "ability": "When you die, the Storyteller gains ¶a Minion ability.",
+    "setup": "",
+    "iconPath": "icons/alt/Plague Doctor_icon.png",
+    "iconPathOfficial": "icons/official/Plague Doctor_icon.png",
+    "markerCount": 1,
+    "lint": {
+      "oHide": true
+    },
+    "setup_alters": [
+      "demon_ability"
+    ],
+    "triggers_on_death_grants_storyteller_ability": true,
+    "is_active_ability_outsider": true,
+    "section_refs": [
+      "11"
+    ],
+    "status": "verified",
+    "jinxes": [
+      {
+        "partner_id": "baron",
+        "sub_type": "mechanical-patch",
+        "canonical_text": "If the Storyteller would gain the Baron ability, up to two players become Outsiders."
+      },
+      {
+        "partner_id": "boomdandy",
+        "sub_type": "mechanical-patch",
+        "canonical_text": "If the Storyteller would gain the Boomdandy ability, a player becomes the Boomdandy."
+      },
+      {
+        "partner_id": "evil-twin",
+        "sub_type": "mechanical-patch",
+        "canonical_text": "If the Storyteller would gain the Evil Twin ability, a player becomes the Evil Twin."
+      },
+      {
+        "partner_id": "fearmonger",
+        "sub_type": "mechanical-patch",
+        "canonical_text": "If the Storyteller would gain the Fearmonger ability, a Minion gains it, and learns this."
+      },
+      {
+        "partner_id": "goblin",
+        "sub_type": "mechanical-patch",
+        "canonical_text": "If the Storyteller would gain the Goblin ability, a Minion gains it, and learns this."
+      },
+      {
+        "partner_id": "marionette",
+        "sub_type": "mechanical-patch",
+        "canonical_text": "If the Storyteller would gain the Marionette ability, one of the Demon's good neighbors becomes the Marionette."
+      },
+      {
+        "partner_id": "scarlet-woman",
+        "sub_type": "mechanical-patch",
+        "canonical_text": "If the Storyteller would gain the Scarlet Woman ability, a Minion gains it, and learns this."
+      },
+      {
+        "partner_id": "spy",
+        "sub_type": "mechanical-patch",
+        "canonical_text": "If the Storyteller would gain the Spy ability, a Minion gains it, and learns this."
+      },
+      {
+        "partner_id": "wraith",
+        "sub_type": "mechanical-patch",
+        "canonical_text": "If the Storyteller would gain the Wraith ability, a Minion gains it, and learns this."
+      }
+    ],
+    "open_questions": []
+  },
+  {
+    "id": "politician",
+    "name": "Politician",
+    "team": "outsider",
+    "ability": "If you were the player most responsible ¶for your team losing, you change alignment & win, ¶even if dead.",
+    "setup": "",
+    "iconPath": "icons/alt/Politician_icon.png",
+    "iconPathOfficial": "icons/official/Politician_icon.png",
+    "markerCount": 0,
+    "lint": {
+      "extraEvil": "soft",
+      "oHide": true
+    },
+    "wincon_alt": "politician",
+    "alignment_swap": "becomes_responsible_team_loser",
+    "wincon_alt_path": "loss_responsibility_inverts_alignment",
+    "proc_is_st_discretionary": true,
+    "even_if_dead_persistence": true,
+    "section_refs": [
+      "6",
+      "11",
+      "12"
+    ],
+    "status": "verified",
+    "jinxes": [
+      {
+        "partner_id": "boffin",
+        "sub_type": "mechanical-patch",
+        "canonical_text": "The Demon cannot have the Politician ability."
+      },
+      {
+        "partner_id": "pit-hag",
+        "sub_type": "mechanical-patch",
+        "canonical_text": "If the Pit-Hag turns an evil player into the Politician, they can't turn good due to their own ability."
+      },
+      {
+        "partner_id": "vizier",
+        "sub_type": "mechanical-patch",
+        "canonical_text": "The Politician might register as evil to the Vizier."
+      },
+      {
+        "partner_id": "legion",
+        "sub_type": "mechanical-patch",
+        "canonical_text": "The Politician might register as evil to Legion."
+      }
+    ],
+    "open_questions": []
+  },
+  {
+    "id": "puzzlemaster",
+    "name": "Puzzlemaster",
+    "team": "outsider",
+    "ability": "1 player is drunk, even if you die. ¶If you guess (once) who it is, learn the Demon player, ¶but guess wrong & get false info.",
+    "setup": "",
+    "iconPath": "icons/alt/Puzzlemaster_icon.png",
+    "iconPathOfficial": "icons/official/Puzzlemaster_icon.png",
+    "markerCount": 1,
+    "lint": {
+      "misinfo": true,
+      "misinfoShape": "persistent-column",
+      "oHide": true,
+      "mathematicianLoad": true
+    },
+    "is_drunkenness_source": "setup_other_droison_with_guess_reward",
+    "even_if_dead_persistence": true,
+    "section_refs": [],
+    "status": "verified",
+    "jinxes": [],
+    "open_questions": []
+  },
+  {
+    "id": "recluse",
+    "name": "Recluse",
+    "team": "outsider",
+    "ability": "You might register as evil & ¶as a Minion or Demon, ¶even if dead.",
+    "setup": "",
+    "iconPath": "icons/alt/Recluse_icon.png",
+    "iconPathOfficial": "icons/official/Recluse_icon.png",
+    "markerCount": 0,
+    "lint": {
+      "misregistration": true,
+      "mathematicianLoad": true
+    },
+    "setup_misregister_source": "evil_to_good",
+    "even_if_dead_persistence": true,
+    "st_crafted_info": "st_chooses_misregistration_outcome",
+    "is_passive_handicap_outsider": true,
+    "section_refs": [
+      "3",
+      "11"
+    ],
+    "status": "verified",
+    "jinxes": [
+      {
+        "partner_id": "ogre",
+        "sub_type": "mechanical-patch",
+        "canonical_text": "If the Recluse registers as evil to the Ogre, the Ogre learns that they are evil."
+      },
+      {
+        "partner_id": "sage",
+        "sub_type": "info-amplifying",
+        "canonical_text": "The Recluse might register as the Demon to the Sage."
+      }
+    ],
+    "open_questions": []
+  },
+  {
+    "id": "saint",
+    "name": "Saint",
+    "team": "outsider",
+    "ability": "If you die by execution, ¶your team loses.",
+    "setup": "",
+    "iconPath": "icons/alt/Saint_icon.png",
+    "iconPathOfficial": "icons/official/Saint_icon.png",
+    "markerCount": 0,
+    "wincon_alt": "saint",
+    "is_passive_handicap_outsider": true,
+    "wincon_alt_path": "evil_favourable_via_execution",
+    "team_aware_wincon_mechanic": true,
+    "section_refs": [
+      "6"
+    ],
+    "status": "verified",
+    "jinxes": [],
+    "open_questions": []
+  },
+  {
+    "id": "snitch",
+    "name": "Snitch",
+    "team": "outsider",
+    "ability": "Minions start knowing 3 not-in-play characters.",
+    "setup": "",
+    "iconPath": "icons/alt/Snitch_icon.png",
+    "iconPathOfficial": "icons/official/Snitch_icon.png",
+    "markerCount": 0,
+    "lint": {
+      "oHide": true
+    },
+    "info_flow_to_evil": "setup_only_grants_bluffs_to_minions",
+    "section_refs": [],
+    "status": "verified",
+    "jinxes": [],
+    "open_questions": []
+  },
+  {
+    "id": "sweetheart",
+    "name": "Sweetheart",
+    "team": "outsider",
+    "ability": "When you die, ¶1 player is drunk from now on.",
+    "setup": "",
+    "iconPath": "icons/alt/Sweetheart_icon.png",
+    "iconPathOfficial": "icons/official/Sweetheart_icon.png",
+    "markerCount": 1,
+    "lint": {
+      "misinfo": true,
+      "misinfoShape": "persistent-column",
+      "mathematicianLoad": true
+    },
+    "is_passive_handicap_outsider": true,
+    "triggers_on_death": "triggers_on_own_any_death_creates_droison",
+    "even_if_dead_persistence": true,
+    "section_refs": [],
+    "status": "verified",
+    "jinxes": [],
+    "open_questions": []
+  },
+  {
+    "id": "tinker",
+    "name": "Tinker",
+    "team": "outsider",
+    "ability": "You might die at any time.",
+    "setup": "",
+    "iconPath": "icons/alt/Tinker_icon.png",
+    "iconPathOfficial": "icons/official/Tinker_icon.png",
+    "markerCount": 0,
+    "triggers_on_death": "st_fiat",
+    "kill_attribution_confound": true,
+    "section_refs": [],
+    "status": "verified",
+    "jinxes": [],
+    "open_questions": []
+  },
+  {
+    "id": "zealot",
+    "name": "Zealot",
+    "team": "outsider",
+    "ability": "If there are 5 or more players alive, ¶you must vote for every nomination.",
+    "setup": "",
+    "iconPath": "icons/alt/Zealot_icon.png",
+    "iconPathOfficial": "icons/official/Zealot_icon.png",
+    "markerCount": 0,
+    "is_active_ability_outsider": true,
+    "vote_restriction_role": "vote_compulsion",
+    "section_refs": [],
+    "status": "verified",
+    "jinxes": [
+      {
+        "partner_id": "cannibal",
+        "sub_type": "mechanical-patch",
+        "canonical_text": "If the Cannibal gains the Zealot ability, the Cannibal learns this."
+      },
+      {
+        "partner_id": "vizier",
+        "sub_type": "mechanical-patch",
+        "canonical_text": "The Zealot might register as evil to the Vizier."
+      },
+      {
+        "partner_id": "legion",
+        "sub_type": "mechanical-patch",
+        "canonical_text": "The Zealot might register as evil to Legion."
+      }
+    ],
+    "open_questions": []
+  },
+  {
+    "id": "assassin",
+    "name": "Assassin",
+    "team": "minion",
+    "ability": "Once per game, at night*, choose a player: ¶they die, even if for some reason they could not.",
+    "setup": "",
+    "iconPath": "icons/alt/Assassin_icon.png",
+    "iconPathOfficial": "icons/official/Assassin_icon.png",
+    "markerCount": 2,
+    "lint": {
+      "volume": "silent"
+    },
+    "unblockable_kill_source": true,
+    "signature_breadth": "once_per_game_at_night",
+    "section_refs": [],
+    "status": "verified",
+    "jinxes": [],
+    "open_questions": []
+  },
+  {
+    "id": "baron",
+    "name": "Baron",
+    "team": "minion",
+    "ability": "There are extra Outsiders in play. ¶",
+    "setup": "[+2 Outsiders]",
+    "iconPath": "icons/alt/Baron_icon.png",
+    "iconPathOfficial": "icons/official/Baron_icon.png",
+    "markerCount": 0,
+    "lint": {
+      "oMod": "+2",
+      "volume": "silent",
+      "hateJinxPartners": [
+        "heretic"
+      ]
+    },
+    "setup_alters": [
+      "outsider_count"
+    ],
+    "setup_modifying_role": "setup_adds_outsider_fixed",
+    "section_refs": [
+      "8",
+      "10",
+      "11"
+    ],
+    "status": "verified",
+    "jinxes": [
+      {
+        "partner_id": "heretic",
+        "sub_type": "hate",
+        "canonical_text": "Only 1 jinxed character can be in play."
+      },
+      {
+        "partner_id": "plague-doctor",
+        "sub_type": "mechanical-patch",
+        "canonical_text": "If the Storyteller would gain the Baron ability, up to two players become Outsiders."
+      }
+    ],
+    "open_questions": []
+  },
+  {
+    "id": "boffin",
+    "name": "Boffin",
+    "team": "minion",
+    "ability": "The Demon (even if drunk or poisoned) ¶has a not-in-play good character's ability. ¶You both know which.",
+    "setup": "",
+    "iconPath": "icons/alt/Boffin_icon.png",
+    "iconPathOfficial": "icons/official/Boffin_icon.png",
+    "markerCount": 1,
+    "lint": {
+      "volume": "silent"
+    },
+    "setup_alters": [
+      "demon_ability"
+    ],
+    "generic_confirmation_counterpart": {
+      "applies": true,
+      "scope": "any confirmable good-team ability that is on script but not in play",
+      "caveat": "Boffin-as-X only fires when X is on script but not in play, and Boffin must survive.",
+      "section_ref": "2.5"
+    },
+    "section_refs": [
+      "2.5",
+      "10",
+      "11"
+    ],
+    "open_questions": [
+      "22.3"
+    ],
+    "status": "verified",
+    "jinxes": [
+      {
+        "partner_id": "alchemist",
+        "sub_type": "mechanical-patch",
+        "canonical_text": "If the Alchemist has the Boffin ability, the Alchemist does not learn what ability the Demon has."
+      },
+      {
+        "partner_id": "cult-leader",
+        "sub_type": "mechanical-patch",
+        "canonical_text": "If the Demon has the Cult Leader ability, they can't turn good due to this ability."
+      },
+      {
+        "partner_id": "drunk",
+        "sub_type": "mechanical-patch",
+        "canonical_text": "The Demon cannot have the Drunk ability."
+      },
+      {
+        "partner_id": "goon",
+        "sub_type": "mechanical-patch",
+        "canonical_text": "If the Demon has the Goon ability, they can't turn good due to this ability."
+      },
+      {
+        "partner_id": "heretic",
+        "sub_type": "mechanical-patch",
+        "canonical_text": "The Demon cannot have the Heretic ability."
+      },
+      {
+        "partner_id": "ogre",
+        "sub_type": "mechanical-patch",
+        "canonical_text": "The Demon cannot have the Ogre ability."
+      },
+      {
+        "partner_id": "politician",
+        "sub_type": "mechanical-patch",
+        "canonical_text": "The Demon cannot have the Politician ability."
+      },
+      {
+        "partner_id": "village-idiot",
+        "sub_type": "mechanical-patch",
+        "canonical_text": "If there is a spare token, the Boffin can give the Demon the Village Idiot ability."
+      }
+    ]
+  },
+  {
+    "id": "boomdandy",
+    "name": "Boomdandy",
+    "team": "minion",
+    "ability": "If you are executed, all but 3 players die. ¶1 minute later, ¶the player with the most players pointing at them dies.",
+    "setup": "",
+    "iconPath": "icons/alt/Boomdandy_icon.png",
+    "iconPathOfficial": "icons/official/Boomdandy_icon.png",
+    "markerCount": 0,
+    "lint": {
+      "volume": "confoundable"
+    },
+    "triggers_on_death": "execution_only",
+    "mass_kill_source": "execution_triggered",
+    "unblockable_kill_source": true,
+    "mid_game_phase_modifier": "countdown_phase",
+    "section_refs": [],
+    "status": "verified",
+    "jinxes": [
+      {
+        "partner_id": "plague-doctor",
+        "sub_type": "mechanical-patch",
+        "canonical_text": "If the Storyteller would gain the Boomdandy ability, a player becomes the Boomdandy."
+      }
+    ],
+    "open_questions": []
+  },
+  {
+    "id": "cerenovus",
+    "name": "Cerenovus",
+    "team": "minion",
+    "ability": "Each night, choose a player & a good character: ¶they are mad they are this character tomorrow, ¶or might be executed.",
+    "setup": "",
+    "iconPath": "icons/alt/Cerenovus_icon.png",
+    "iconPathOfficial": "icons/official/Cerenovus_icon.png",
+    "markerCount": 1,
+    "lint": {
+      "volume": "pseudosilent"
+    },
+    "madness_mechanic": "chosen_good_character_or_die",
+    "social_drag": true,
+    "section_refs": [],
+    "status": "verified",
+    "jinxes": [
+      {
+        "partner_id": "goblin",
+        "sub_type": "mechanical-patch",
+        "canonical_text": "The Cerenovus may choose to make a player mad that they are the Goblin."
+      }
+    ],
+    "open_questions": []
+  },
+  {
+    "id": "devils-advocate",
+    "name": "Devil's Advocate",
+    "team": "minion",
+    "ability": "Each night, choose a living player ¶(different to last night): ¶if executed tomorrow, they don't die.",
+    "setup": "",
+    "iconPath": "icons/alt/Devil's Advocate_icon.png",
+    "iconPathOfficial": "icons/official/Devil's Advocate_icon.png",
+    "markerCount": 1,
+    "lint": {
+      "volume": "silent"
+    },
+    "execution_block_source": "target_based",
+    "target_rotation_constraint": true,
+    "section_refs": [],
+    "status": "verified",
+    "jinxes": [],
+    "open_questions": []
+  },
+  {
+    "id": "evil-twin",
+    "name": "Evil Twin",
+    "team": "minion",
+    "ability": "You & an opposing player know each other. ¶If the good player is executed, evil wins. ¶Good can't win if you both live.",
+    "setup": "",
+    "iconPath": "icons/alt/Evil Twin_icon.png",
+    "iconPathOfficial": "icons/official/Evil Twin_icon.png",
+    "markerCount": 1,
+    "lint": {
+      "volume": "pseudosilent"
+    },
+    "wincon_alt_path": "evil_favourable_via_pair_execution",
+    "wincon_extends_postdemon_death": true,
+    "team_aware_wincon_mechanic": true,
+    "info_flow_to_evil": "setup_only_pair_reveal",
+    "start_knowing_info_shape": "paired_player",
+    "section_refs": [],
+    "status": "verified",
+    "jinxes": [
+      {
+        "partner_id": "plague-doctor",
+        "sub_type": "mechanical-patch",
+        "canonical_text": "If the Storyteller would gain the Evil Twin ability, a player becomes the Evil Twin."
+      }
+    ],
+    "open_questions": []
+  },
+  {
+    "id": "fearmonger",
+    "name": "Fearmonger",
+    "team": "minion",
+    "ability": "Each night, choose a player: ¶if you nominate & execute them, their team loses. ¶All players know if you choose a new player.",
+    "setup": "",
+    "iconPath": "icons/alt/Fearmonger_icon.png",
+    "iconPathOfficial": "icons/official/Fearmonger_icon.png",
+    "markerCount": 1,
+    "lint": {
+      "volume": "one-good-knows"
+    },
+    "wincon_alt": "fearmonger",
+    "vote_restriction_role": "team_loss_via_targeted_execution",
+    "target_rotation_constraint": true,
+    "wincon_alt_path": "chosen_player_team_loss_on_execution",
+    "section_refs": [
+      "6",
+      "10"
+    ],
+    "status": "verified",
+    "jinxes": [
+      {
+        "partner_id": "plague-doctor",
+        "sub_type": "mechanical-patch",
+        "canonical_text": "If the Storyteller would gain the Fearmonger ability, a Minion gains it, and learns this."
+      },
+      {
+        "partner_id": "vizier",
+        "sub_type": "mechanical-patch",
+        "canonical_text": "The Vizier wakes with the Fearmonger, learns who they choose and cannot choose to immediately execute that player."
+      }
+    ],
+    "open_questions": []
+  },
+  {
+    "id": "goblin",
+    "name": "Goblin",
+    "team": "minion",
+    "ability": "If you publicly claim ¶to be the Goblin when nominated & ¶are executed that day, your team wins.",
+    "setup": "",
+    "iconPath": "icons/alt/Goblin_icon.png",
+    "iconPathOfficial": "icons/official/Goblin_icon.png",
+    "markerCount": 0,
+    "lint": {
+      "volume": "confoundable"
+    },
+    "wincon_alt": "goblin",
+    "wincon_alt_path": "evil_favourable_via_voluntary_execution_after_public_claim",
+    "section_refs": [
+      "6",
+      "10"
+    ],
+    "status": "verified",
+    "jinxes": [
+      {
+        "partner_id": "plague-doctor",
+        "sub_type": "mechanical-patch",
+        "canonical_text": "If the Storyteller would gain the Goblin ability, a Minion gains it, and learns this."
+      },
+      {
+        "partner_id": "cerenovus",
+        "sub_type": "mechanical-patch",
+        "canonical_text": "The Cerenovus may choose to make a player mad that they are the Goblin."
+      }
+    ],
+    "open_questions": []
+  },
+  {
+    "id": "godfather",
+    "name": "Godfather",
+    "team": "minion",
+    "ability": "You start knowing which Outsiders are in play. ¶If 1 died today, choose a player tonight: they die. ¶",
+    "setup": "[-1 or +1 Outsiders]",
+    "iconPath": "icons/alt/Godfather_icon.png",
+    "iconPathOfficial": "icons/official/Godfather_icon.png",
+    "markerCount": 2,
+    "lint": {
+      "oMod": "-1",
+      "volume": "silent",
+      "hateJinxPartners": [
+        "heretic"
+      ]
+    },
+    "setup_alters": [
+      "outsider_count"
+    ],
+    "start_knowing_info_shape": "outsiders_in_play",
+    "triggers_on_other_death": "outsider_execution_grants_demon_kill",
+    "setup_modifying_role": "setup_adds_outsider_modal",
+    "section_refs": [
+      "8",
+      "10",
+      "11"
+    ],
+    "status": "verified",
+    "jinxes": [
+      {
+        "partner_id": "heretic",
+        "sub_type": "hate",
+        "canonical_text": "Only 1 jinxed character can be in play."
+      }
+    ],
+    "open_questions": []
+  },
+  {
+    "id": "harpy",
+    "name": "Harpy",
+    "team": "minion",
+    "ability": "Each night, choose 2 players: ¶tomorrow, the 1st player is mad that the 2nd is evil, ¶or one or both might die.",
+    "setup": "",
+    "iconPath": "icons/alt/Harpy_icon.png",
+    "iconPathOfficial": "icons/official/Harpy_icon.png",
+    "markerCount": 2,
+    "lint": {
+      "volume": "pseudosilent"
+    },
+    "madness_mechanic": "chosen_pair_evil_madness",
+    "kill_attribution_confound": true,
+    "proc_is_st_discretionary": true,
+    "section_refs": [],
+    "status": "verified",
+    "jinxes": [],
+    "open_questions": []
+  },
+  {
+    "id": "marionette",
+    "name": "Marionette",
+    "team": "minion",
+    "ability": "You think you are a good character, but you are not. ¶The Demon knows who you are. ¶",
+    "setup": "[You neighbour the Demon]",
+    "iconPath": "icons/alt/Marionette_icon.png",
+    "iconPathOfficial": "icons/official/Marionette_icon.png",
+    "markerCount": 0,
+    "lint": {
+      "volume": "silent"
+    },
+    "setup_alters": [
+      "townsfolk_to_outsider"
+    ],
+    "is_setup_deception_role": true,
+    "seating_constraint": "neighbours_demon",
+    "info_blocked_from_self": "no_minion_info_no_jinx_awareness",
+    "even_if_dead_persistence": true,
+    "section_refs": [
+      "2.3",
+      "10",
+      "11"
+    ],
+    "status": "verified",
+    "jinxes": [
+      {
+        "partner_id": "alchemist",
+        "sub_type": "mechanical-patch",
+        "canonical_text": "An Alchemist-Marionette has no Marionette ability & the Marionette is in play."
+      },
+      {
+        "partner_id": "magician",
+        "sub_type": "mechanical-patch",
+        "canonical_text": "If the Magician is alive, the Demon doesn't know which neighbor is the Marionette."
+      },
+      {
+        "partner_id": "mathematician",
+        "sub_type": "info-amplifying",
+        "canonical_text": "The Mathematician might learn if the Marionette's ability yielded false info or failed to work properly."
+      },
+      {
+        "partner_id": "plague-doctor",
+        "sub_type": "mechanical-patch",
+        "canonical_text": "If the Storyteller would gain the Marionette ability, one of the Demon's good neighbors becomes the Marionette."
+      },
+      {
+        "partner_id": "balloonist",
+        "sub_type": "mechanical-patch",
+        "canonical_text": "If the Marionette thinks that they are the Balloonist, an Outsider might have been added during setup."
+      },
+      {
+        "partner_id": "huntsman",
+        "sub_type": "mechanical-patch",
+        "canonical_text": "If the Marionette thinks that they are the Huntsman, the Damsel was added during setup."
+      },
+      {
+        "partner_id": "kazali",
+        "sub_type": "mechanical-patch",
+        "canonical_text": "If there would be a Marionette in play, they enter play after the Demon & must start as their neighbor."
+      },
+      {
+        "partner_id": "lil-monsta",
+        "sub_type": "mechanical-patch",
+        "canonical_text": "If there would be a Marionette in play, they enter play after the Demon & must start as their neighbor."
+      },
+      {
+        "partner_id": "summoner",
+        "sub_type": "mechanical-patch",
+        "canonical_text": "If there would be a Marionette in play, they enter play after the Demon & must start as their neighbor."
+      }
+    ],
+    "open_questions": []
+  },
+  {
+    "id": "mastermind",
+    "name": "Mastermind",
+    "team": "minion",
+    "ability": "If the Demon dies by execution (ending the game), ¶play for 1 more day. ¶If a player is then executed, their team loses.",
+    "setup": "",
+    "iconPath": "icons/alt/Mastermind_icon.png",
+    "iconPathOfficial": "icons/official/Mastermind_icon.png",
+    "markerCount": 0,
+    "lint": {
+      "volume": "silent"
+    },
+    "wincon_alt_path": "evil_favourable_via_postdemon_execution",
+    "wincon_extends_postdemon_death": true,
+    "section_refs": [],
+    "status": "verified",
+    "jinxes": [
+      {
+        "partner_id": "alchemist",
+        "sub_type": "mechanical-patch",
+        "canonical_text": "An Alchemist-Mastermind has no Mastermind ability & the Mastermind is not-in-play."
+      },
+      {
+        "partner_id": "vigormortis",
+        "sub_type": "mechanical-patch",
+        "canonical_text": "A Mastermind that has their ability keeps it if the Vigormortis dies."
+      },
+      {
+        "partner_id": "al-hadikhia",
+        "sub_type": "mechanical-patch",
+        "canonical_text": "If the Al-Hadikhia dies by execution, and the Mastermind is alive, the Al-Hadikhia chooses 3 good players tonight: if all 3 choose to live, evil wins. Otherwise, good wins."
+      },
+      {
+        "partner_id": "lleech",
+        "sub_type": "mechanical-patch",
+        "canonical_text": "If the Mastermind is alive and the Lleech host dies by execution, the Lleech lives but loses their ability."
+      }
+    ],
+    "open_questions": []
+  },
+  {
+    "id": "mezepheles",
+    "name": "Mezepheles",
+    "team": "minion",
+    "ability": "You start knowing a secret word. ¶The 1st good player to say this word ¶becomes evil that night.",
+    "setup": "",
+    "iconPath": "icons/alt/Mezepheles_icon.png",
+    "iconPathOfficial": "icons/official/Mezepheles_icon.png",
+    "markerCount": 1,
+    "lint": {
+      "extraEvil": "strong",
+      "volume": "loud"
+    },
+    "setup_alters": [
+      "alignment"
+    ],
+    "alignment_swap": "secret_word_conversion",
+    "start_knowing_info_shape": "secret_word",
+    "info_flow_to_evil": "post_conversion_info_flow",
+    "social_drag": true,
+    "section_refs": [
+      "2.3",
+      "10",
+      "11",
+      "12"
+    ],
+    "status": "verified",
+    "jinxes": [],
+    "open_questions": []
+  },
+  {
+    "id": "organ-grinder",
+    "name": "Organ Grinder",
+    "team": "minion",
+    "ability": "All players keep their eyes closed when voting ¶and the vote tally is secret. ¶Each night, choose if you are drunk until dusk.",
+    "setup": "",
+    "iconPath": "icons/alt/Organ Grinder_icon.png",
+    "iconPathOfficial": "icons/official/Organ Grinder_icon.png",
+    "markerCount": 1,
+    "lint": {
+      "volume": "loud"
+    },
+    "vote_modification_source": "eyes_closed_secret_tally",
+    "is_drunkenness_source": "self_target_optional",
+    "section_refs": [],
+    "status": "verified",
+    "jinxes": [
+      {
+        "partner_id": "alchemist",
+        "sub_type": "mechanical-patch",
+        "canonical_text": "If the Alchemist has the Organ Grinder ability, the Organ Grinder is in play. If both are sober, both are drunk."
+      },
+      {
+        "partner_id": "butler",
+        "sub_type": "mechanical-patch",
+        "canonical_text": "If the Organ Grinder is causing eyes closed voting, the Butler may raise their hand to vote but their vote is only counted if their master voted too."
+      }
+    ],
+    "open_questions": []
+  },
+  {
+    "id": "pit-hag",
+    "name": "Pit-Hag",
+    "team": "minion",
+    "ability": "Each night*, choose a player & ¶a character they become (if not in play). ¶If a Demon is made, deaths tonight are arbitrary.",
+    "setup": "",
+    "iconPath": "icons/alt/Pit-Hag_icon.png",
+    "iconPathOfficial": "icons/official/Pit-Hag_icon.png",
+    "markerCount": 0,
+    "lint": {
+      "volume": "confoundable",
+      "hateJinxPartners": [
+        "heretic"
+      ]
+    },
+    "character_replacement": "each_night_role_changer",
+    "creates_demon_mechanic": true,
+    "built_in_confound": "arbitrary_deaths_on_demon_creation",
+    "section_refs": [],
+    "status": "verified",
+    "jinxes": [
+      {
+        "partner_id": "heretic",
+        "sub_type": "hate",
+        "canonical_text": "Only 1 jinxed character can be in play."
+      },
+      {
+        "partner_id": "cult-leader",
+        "sub_type": "mechanical-patch",
+        "canonical_text": "If the Pit-Hag turns an evil player into the Cult Leader, they can't turn good due to their own ability."
+      },
+      {
+        "partner_id": "damsel",
+        "sub_type": "mechanical-patch",
+        "canonical_text": "If a Pit-Hag creates a Damsel, the Storyteller chooses which player it is."
+      },
+      {
+        "partner_id": "goon",
+        "sub_type": "mechanical-patch",
+        "canonical_text": "If the Pit-Hag turns an evil player into the Goon, they can't turn good due to their own ability."
+      },
+      {
+        "partner_id": "ogre",
+        "sub_type": "mechanical-patch",
+        "canonical_text": "If the Pit-Hag turns an evil player into the Ogre, they can't turn good due to their own ability."
+      },
+      {
+        "partner_id": "politician",
+        "sub_type": "mechanical-patch",
+        "canonical_text": "If the Pit-Hag turns an evil player into the Politician, they can't turn good due to their own ability."
+      },
+      {
+        "partner_id": "village-idiot",
+        "sub_type": "mechanical-patch",
+        "canonical_text": "If there is a spare token, the Pit-Hag can create an extra Village Idiot. If so, the drunk Village Idiot might change."
+      },
+      {
+        "partner_id": "summoner",
+        "sub_type": "mechanical-patch",
+        "canonical_text": "If the Summoner creates a second living Demon, deaths tonight are arbitrary."
+      },
+      {
+        "partner_id": "leviathan",
+        "sub_type": "mechanical-patch",
+        "canonical_text": "The Leviathan cannot enter play after day 5."
+      }
+    ],
+    "open_questions": []
+  },
+  {
+    "id": "poisoner",
+    "name": "Poisoner",
+    "team": "minion",
+    "ability": "Each night, choose a player: ¶they are poisoned tonight and tomorrow day.",
+    "setup": "",
+    "iconPath": "icons/alt/Poisoner_icon.png",
+    "iconPathOfficial": "icons/official/Poisoner_icon.png",
+    "markerCount": 1,
+    "lint": {
+      "misinfo": true,
+      "misinfoShape": "arbitrary",
+      "volume": "silent",
+      "mathematicianLoad": true
+    },
+    "is_poison_source": "each_night_player_target",
+    "section_refs": [],
+    "status": "verified",
+    "jinxes": [],
+    "open_questions": []
+  },
+  {
+    "id": "psychopath",
+    "name": "Psychopath",
+    "team": "minion",
+    "ability": "Each day, before nominations, ¶you may publicly choose a player: they die. ¶If executed, you only die if you lose roshambo.",
+    "setup": "",
+    "iconPath": "icons/alt/Psychopath_icon.png",
+    "iconPathOfficial": "icons/official/Psychopath_icon.png",
+    "markerCount": 0,
+    "lint": {
+      "volume": "one-good-knows"
+    },
+    "kill_as_info": "public_day_kill_with_self_outing",
+    "unblockable_kill_source": true,
+    "execution_block_source": "roshambo_minigame",
+    "section_refs": [],
+    "status": "verified",
+    "jinxes": [
+      {
+        "partner_id": "lil-monsta",
+        "sub_type": "mechanical-patch",
+        "canonical_text": "If the Psychopath is babysitting Lil' Monsta, they die when executed."
+      }
+    ],
+    "open_questions": []
+  },
+  {
+    "id": "scarlet-woman",
+    "name": "Scarlet Woman",
+    "team": "minion",
+    "ability": "If there are 5 or more players alive & the Demon dies, ¶you become the Demon. (Travellers don't count.)",
+    "setup": "",
+    "iconPath": "icons/alt/Scarlet Woman_icon.png",
+    "iconPathOfficial": "icons/official/Scarlet Woman_icon.png",
+    "markerCount": 0,
+    "lint": {
+      "volume": "silent",
+      "deadCanBeEvil": true
+    },
+    "posthumous_role_promotion": true,
+    "section_refs": [],
+    "status": "verified",
+    "jinxes": [
+      {
+        "partner_id": "plague-doctor",
+        "sub_type": "mechanical-patch",
+        "canonical_text": "If the Storyteller would gain the Scarlet Woman ability, a Minion gains it, and learns this."
+      },
+      {
+        "partner_id": "al-hadikhia",
+        "sub_type": "mechanical-patch",
+        "canonical_text": "If there would be two Demons, one of which was the Scarlet Woman, the Scarlet Woman becomes the Scarlet Woman again."
+      },
+      {
+        "partner_id": "fang-gu",
+        "sub_type": "mechanical-patch",
+        "canonical_text": "If there would be two Demons, one of which was the Scarlet Woman, the Scarlet Woman remains the Scarlet Woman."
+      },
+      {
+        "partner_id": "lil-monsta",
+        "sub_type": "mechanical-patch",
+        "canonical_text": "If Lil' Monsta dies with 5 or more players alive, the Scarlet Woman babysits Lil' Monsta for the rest of the game."
+      }
+    ],
+    "open_questions": []
+  },
+  {
+    "id": "spy",
+    "name": "Spy",
+    "team": "minion",
+    "ability": "Each night, you see the Grimoire. ¶You might register as good & as a Townsfolk or Outsider, even if dead.",
+    "setup": "",
+    "iconPath": "icons/alt/Spy_icon.png",
+    "iconPathOfficial": "icons/official/Spy_icon.png",
+    "markerCount": 0,
+    "lint": {
+      "volume": "silent",
+      "grimpeeker": true,
+      "misregistration": true,
+      "hateJinxPartners": [
+        "heretic"
+      ],
+      "mathematicianLoad": true
+    },
+    "setup_misregister_source": "good_to_evil",
+    "grimoire_peek": true,
+    "even_if_dead_persistence": true,
+    "section_refs": [],
+    "status": "verified",
+    "jinxes": [
+      {
+        "partner_id": "heretic",
+        "sub_type": "hate",
+        "canonical_text": "Only 1 jinxed character can be in play."
+      },
+      {
+        "partner_id": "alchemist",
+        "sub_type": "mechanical-patch",
+        "canonical_text": "An Alchemist-Spy has no Spy ability & a Spy is in play. After each execution, a living Alchemist-Spy may publicly guess a living player as the Spy. If correct, the Demon must choose the Spy tonight."
+      },
+      {
+        "partner_id": "magician",
+        "sub_type": "setup-transparency-altering",
+        "canonical_text": "When the Spy sees the Grimoire, the Demon and Magician's character tokens are removed."
+      },
+      {
+        "partner_id": "plague-doctor",
+        "sub_type": "mechanical-patch",
+        "canonical_text": "If the Storyteller would gain the Spy ability, a Minion gains it, and learns this."
+      },
+      {
+        "partner_id": "damsel",
+        "sub_type": "mechanical-patch",
+        "canonical_text": "If the Spy is (or has been) in play, the Damsel is poisoned."
+      },
+      {
+        "partner_id": "ogre",
+        "sub_type": "setup-transparency-altering",
+        "canonical_text": "The Spy registers as evil to the Ogre."
+      },
+      {
+        "partner_id": "poppy-grower",
+        "sub_type": "setup-transparency-altering",
+        "canonical_text": "If the Poppy Grower has their ability, the Spy does not see the Grimoire."
+      }
+    ],
+    "open_questions": []
+  },
+  {
+    "id": "summoner",
+    "name": "Summoner",
+    "team": "minion",
+    "ability": "You get 3 bluffs. On the 3rd night, ¶choose a player: they become ¶an evil Demon of your choice.",
+    "setup": "[No Demon]",
+    "iconPath": "icons/alt/Summoner_icon.png",
+    "iconPathOfficial": "icons/official/Summoner_icon.png",
+    "markerCount": 3,
+    "lint": {
+      "volume": "confoundable"
+    },
+    "character_replacement": "creates_demon",
+    "delayed_proc": "night_3_only",
+    "setup_modifying_role": "no_initial_demon",
+    "is_setup_deception_role": true,
+    "creates_demon_mechanic": true,
+    "section_refs": [],
+    "status": "verified",
+    "jinxes": [
+      {
+        "partner_id": "alchemist",
+        "sub_type": "mechanical-patch",
+        "canonical_text": "The Alchemist-Summoner does not get bluffs, and chooses which Demon but not which player. If they die before this happens, evil wins."
+      },
+      {
+        "partner_id": "marionette",
+        "sub_type": "mechanical-patch",
+        "canonical_text": "If there would be a Marionette in play, they enter play after the Demon & must start as their neighbor."
+      },
+      {
+        "partner_id": "clockmaker",
+        "sub_type": "mechanical-patch",
+        "canonical_text": "The Summoner registers as the Demon to the Clockmaker."
+      },
+      {
+        "partner_id": "courtier",
+        "sub_type": "mechanical-patch",
+        "canonical_text": "If the living Summoner has no ability, the Storyteller has the Summoner ability."
+      },
+      {
+        "partner_id": "engineer",
+        "sub_type": "mechanical-patch",
+        "canonical_text": "If the living Summoner is removed from play, the Storyteller has the Summoner ability."
+      },
+      {
+        "partner_id": "hatter",
+        "sub_type": "mechanical-patch",
+        "canonical_text": "If the Summoner creates a second living Demon, deaths tonight are arbitrary."
+      },
+      {
+        "partner_id": "kazali",
+        "sub_type": "mechanical-patch",
+        "canonical_text": "If the Summoner creates a second living Demon, deaths tonight are arbitrary."
+      },
+      {
+        "partner_id": "lord-of-typhon",
+        "sub_type": "mechanical-patch",
+        "canonical_text": "If a Lord of Typhon is summoned, they must neighbor a Minion & their other neighbor becomes an evil Minion."
+      },
+      {
+        "partner_id": "pit-hag",
+        "sub_type": "mechanical-patch",
+        "canonical_text": "If the Summoner creates a second living Demon, deaths tonight are arbitrary."
+      },
+      {
+        "partner_id": "poppy-grower",
+        "sub_type": "mechanical-patch",
+        "canonical_text": "If the Poppy Grower is alive on the 3rd night, the Summoner chooses which Demon but not which player."
+      },
+      {
+        "partner_id": "preacher",
+        "sub_type": "mechanical-patch",
+        "canonical_text": "If the living Summoner has no ability, the Storyteller has the Summoner ability."
+      },
+      {
+        "partner_id": "pukka",
+        "sub_type": "mechanical-patch",
+        "canonical_text": "The Summoner may summon a Pukka on the 2nd night instead of the 3rd."
+      },
+      {
+        "partner_id": "zombuul",
+        "sub_type": "mechanical-patch",
+        "canonical_text": "If the Summoner summons a dead player into the Zombuul, the Zombuul has already 'died once'."
+      },
+      {
+        "partner_id": "legion",
+        "sub_type": "mechanical-patch",
+        "canonical_text": "If Legion is summoned, all evil players become Legion."
+      }
+    ],
+    "open_questions": []
+  },
+  {
+    "id": "vizier",
+    "name": "Vizier",
+    "team": "minion",
+    "ability": "All players know you are the Vizier. ¶You cannot die during the day. If good voted, ¶you may choose to execute immediately.",
+    "setup": "",
+    "iconPath": "icons/alt/Vizier_icon.png",
+    "iconPathOfficial": "icons/official/Vizier_icon.png",
+    "markerCount": 0,
+    "lint": {
+      "volume": "loud"
+    },
+    "public_identity_at_setup": true,
+    "execution_block_source": "day_protection",
+    "unblockable_execute_source": true,
+    "section_refs": [],
+    "status": "verified",
+    "jinxes": [
+      {
+        "partner_id": "magician",
+        "sub_type": "mechanical-patch",
+        "canonical_text": "If the Vizier is in play, the Magician has no ability but is immune to the Vizier's ability."
+      },
+      {
+        "partner_id": "alsaahir",
+        "sub_type": "mechanical-patch",
+        "canonical_text": "The Storyteller doesn't declare the Vizier is in play."
+      },
+      {
+        "partner_id": "courtier",
+        "sub_type": "mechanical-patch",
+        "canonical_text": "If the Vizier loses their ability, they learn this, and cannot die during the day."
+      },
+      {
+        "partner_id": "fearmonger",
+        "sub_type": "mechanical-patch",
+        "canonical_text": "The Vizier wakes with the Fearmonger, learns who they choose and cannot choose to immediately execute that player."
+      },
+      {
+        "partner_id": "investigator",
+        "sub_type": "mechanical-patch",
+        "canonical_text": "The Storyteller doesn't declare the Vizier is in play."
+      },
+      {
+        "partner_id": "politician",
+        "sub_type": "mechanical-patch",
+        "canonical_text": "The Politician might register as evil to the Vizier."
+      },
+      {
+        "partner_id": "preacher",
+        "sub_type": "mechanical-patch",
+        "canonical_text": "If the Vizier loses their ability, they learn this, and cannot die during the day."
+      },
+      {
+        "partner_id": "zealot",
+        "sub_type": "mechanical-patch",
+        "canonical_text": "The Zealot might register as evil to the Vizier."
+      },
+      {
+        "partner_id": "lil-monsta",
+        "sub_type": "mechanical-patch",
+        "canonical_text": "If the Vizier is babysitting Lil' Monsta, they die when executed."
+      }
+    ],
+    "open_questions": []
+  },
+  {
+    "id": "widow",
+    "name": "Widow",
+    "team": "minion",
+    "ability": "On your 1st night, look at the Grimoire & ¶choose a player: they are poisoned. ¶1 good player knows a Widow is in play.",
+    "setup": "",
+    "iconPath": "icons/alt/Widow_icon.png",
+    "iconPathOfficial": "icons/official/Widow_icon.png",
+    "markerCount": 1,
+    "lint": {
+      "misinfo": true,
+      "misinfoShape": "targeted",
+      "volume": "silent",
+      "grimpeeker": true,
+      "hateJinxPartners": [
+        "heretic"
+      ],
+      "mathematicianLoad": true
+    },
+    "grimoire_peek": "first_night_only",
+    "is_poison_source": "night_1_only",
+    "info_flow_to_good": "setup_widow_in_play",
+    "section_refs": [],
+    "status": "verified",
+    "jinxes": [
+      {
+        "partner_id": "heretic",
+        "sub_type": "hate",
+        "canonical_text": "Only 1 jinxed character can be in play."
+      },
+      {
+        "partner_id": "alchemist",
+        "sub_type": "mechanical-patch",
+        "canonical_text": "An Alchemist-Widow has no Widow ability & a Widow is in play. After each execution, a living Alchemist-Widow may publicly guess a living player as the Widow. If correct, the Demon must choose the Widow tonight."
+      },
+      {
+        "partner_id": "magician",
+        "sub_type": "setup-transparency-altering",
+        "canonical_text": "When the Widow sees the Grimoire, the Demon and Magician's character tokens are removed."
+      },
+      {
+        "partner_id": "damsel",
+        "sub_type": "mechanical-patch",
+        "canonical_text": "If the Widow is (or has been) in play, the Damsel is poisoned."
+      },
+      {
+        "partner_id": "poppy-grower",
+        "sub_type": "setup-transparency-altering",
+        "canonical_text": "If the Poppy Grower has their ability, the Widow does not see the Grimoire."
+      }
+    ],
+    "open_questions": []
+  },
+  {
+    "id": "witch",
+    "name": "Witch",
+    "team": "minion",
+    "ability": "Each night, choose a player: ¶if they nominate tomorrow, they die. ¶If just 3 players live, you lose this ability.",
+    "setup": "",
+    "iconPath": "icons/alt/Witch_icon.png",
+    "iconPathOfficial": "icons/official/Witch_icon.png",
+    "markerCount": 1,
+    "lint": {
+      "misinfo": true,
+      "misinfoShape": "arbitrary",
+      "volume": "pseudosilent",
+      "mathematicianLoad": true
+    },
+    "late_game_cap": "3_alive_disable",
+    "delayed_proc": "on_nominate_next_day",
+    "section_refs": [],
+    "status": "verified",
+    "jinxes": [],
+    "open_questions": []
+  },
+  {
+    "id": "wizard",
+    "name": "Wizard",
+    "team": "minion",
+    "ability": "Once per game, choose to make a wish. ¶If granted, it might have a price and ¶leave a clue as to its nature.",
+    "setup": "",
+    "iconPath": "icons/alt/Wizard_icon.png",
+    "iconPathOfficial": "icons/official/Wizard_icon.png",
+    "markerCount": 2,
+    "lint": {
+      "volume": "confoundable",
+      "nonconformistInfo": true
+    },
+    "proc_is_st_discretionary": true,
+    "section_refs": [],
+    "status": "verified",
+    "jinxes": [],
+    "open_questions": []
+  },
+  {
+    "id": "wraith",
+    "name": "Wraith",
+    "team": "minion",
+    "ability": "You may choose to open your eyes at night. ¶You wake when other evil players do.",
+    "setup": "",
+    "iconPath": "icons/alt/Wraith_icon.png",
+    "iconPathOfficial": "icons/official/Wraith_icon.png",
+    "markerCount": 0,
+    "lint": {
+      "volume": "confoundable"
+    },
+    "info_flow_to_evil": "night_phase_observation",
+    "evil_team_visibility_at_night": true,
+    "section_refs": [],
+    "status": "verified",
+    "jinxes": [
+      {
+        "partner_id": "alchemist",
+        "sub_type": "mechanical-patch",
+        "canonical_text": "An Alchemist-Wraith has no Wraith ability & a Wraith is in play. After each execution, a living Alchemist-Wraith may publicly guess a living player as the Wraith. If correct, the Demon must choose the Wraith tonight."
+      },
+      {
+        "partner_id": "magician",
+        "sub_type": "mechanical-patch",
+        "canonical_text": "After each execution, the living Magician may publicly guess a living player as the Wraith. If correct, the Demon must choose the Wraith tonight."
+      },
+      {
+        "partner_id": "plague-doctor",
+        "sub_type": "mechanical-patch",
+        "canonical_text": "If the Storyteller would gain the Wraith ability, a Minion gains it, and learns this."
+      }
+    ],
+    "open_questions": []
+  },
+  {
+    "id": "xaan",
+    "name": "Xaan",
+    "team": "minion",
+    "ability": "On night X, all Townsfolk are poisoned until dusk. ¶",
+    "setup": "[X Outsiders]",
+    "iconPath": "icons/alt/Xaan_icon.png",
+    "iconPathOfficial": "icons/official/Xaan_icon.png",
+    "markerCount": 5,
+    "lint": {
+      "misinfo": true,
+      "misinfoShape": "horizontal",
+      "volume": "pseudosilent",
+      "mathematicianLoad": true
+    },
+    "setup_alters": [
+      "outsider_count"
+    ],
+    "setup_modifying_role": "setup_adds_outsider_variable",
+    "is_poison_source": "mass_townsfolk_night_X",
+    "delayed_proc": "night_X_one_shot",
+    "section_refs": [
+      "8",
+      "10",
+      "11"
+    ],
+    "status": "verified",
+    "jinxes": [],
+    "open_questions": []
+  },
+  {
+    "id": "al-hadikhia",
+    "name": "Al-Hadikhia",
+    "team": "demon",
+    "ability": "Each night*, choose 3 players (all players learn who): ¶each silently chooses to live or die, ¶but if all live, all die.",
+    "setup": "",
+    "iconPath": "icons/alt/Al-Hadikhia_icon.png",
+    "iconPathOfficial": "icons/official/Al-Hadikhia_icon.png",
+    "markerCount": 3,
+    "lint": {
+      "loudDemon": true
+    },
+    "mass_kill_source": "chosen_three_dilemma",
+    "posthumous_revival_mechanic": "live_or_die_dilemma_revival",
+    "section_refs": [],
+    "status": "verified",
+    "jinxes": [
+      {
+        "partner_id": "scarlet-woman",
+        "sub_type": "mechanical-patch",
+        "canonical_text": "If there would be two Demons, one of which was the Scarlet Woman, the Scarlet Woman becomes the Scarlet Woman again."
+      },
+      {
+        "partner_id": "mastermind",
+        "sub_type": "mechanical-patch",
+        "canonical_text": "If the Al-Hadikhia dies by execution, and the Mastermind is alive, the Al-Hadikhia chooses 3 good players tonight: if all 3 choose to live, evil wins. Otherwise, good wins."
+      },
+      {
+        "partner_id": "princess",
+        "sub_type": "mechanical-patch",
+        "canonical_text": "If the Princess nominated & executed a player on their 1st day, no one dies to the Al-Hadikhia tonight."
+      }
+    ],
+    "open_questions": []
+  },
+  {
+    "id": "fang-gu",
+    "name": "Fang Gu",
+    "team": "demon",
+    "ability": "Each night*, choose a player: they die. ¶The 1st Outsider this kills becomes an evil Fang Gu & ¶you die instead.",
+    "setup": "[+1 Outsider]",
+    "iconPath": "icons/alt/Fang Gu_icon.png",
+    "iconPathOfficial": "icons/official/Fang Gu_icon.png",
+    "markerCount": 2,
+    "lint": {
+      "oMod": "+1",
+      "extraEvil": "strong",
+      "deadCanBeEvil": true
+    },
+    "setup_alters": [
+      "outsider_count",
+      "alignment"
+    ],
+    "character_replacement": "jumps_to_outsider",
+    "setup_modifying_role": "setup_adds_outsider_fixed",
+    "section_refs": [
+      "8",
+      "11",
+      "12"
+    ],
+    "status": "verified",
+    "jinxes": [
+      {
+        "partner_id": "scarlet-woman",
+        "sub_type": "mechanical-patch",
+        "canonical_text": "If there would be two Demons, one of which was the Scarlet Woman, the Scarlet Woman remains the Scarlet Woman."
+      }
+    ],
+    "open_questions": []
+  },
+  {
+    "id": "imp",
+    "name": "Imp",
+    "team": "demon",
+    "ability": "Each night*, choose a player: they die. ¶If you kill yourself this way, ¶a Minion becomes the Imp.",
+    "setup": "",
+    "iconPath": "icons/alt/Imp_icon.png",
+    "iconPathOfficial": "icons/official/Imp_icon.png",
+    "markerCount": 1,
+    "lint": {
+      "deadCanBeEvil": true
+    },
+    "section_refs": [],
+    "status": "verified",
+    "jinxes": [],
+    "open_questions": []
+  },
+  {
+    "id": "kazali",
+    "name": "Kazali",
+    "team": "demon",
+    "ability": "Each night*, choose a player: they die. ¶",
+    "setup": "[You choose which players are which Minions. -? to +? Outsiders]",
+    "iconPath": "icons/alt/Kazali_icon.png",
+    "iconPathOfficial": "icons/official/Kazali_icon.png",
+    "markerCount": 1,
+    "lint": {
+      "oMod": "variable"
+    },
+    "setup_alters": [
+      "outsider_count",
+      "minion_count",
+      "alignment"
+    ],
+    "setup_modifying_role": "setup_creates_evil_team_from_good_players",
+    "creates_minion_mechanic": true,
+    "setup_adds_outsider_variable": true,
+    "section_refs": [
+      "8",
+      "11"
+    ],
+    "status": "verified",
+    "jinxes": [
+      {
+        "partner_id": "bounty-hunter",
+        "sub_type": "mechanical-patch",
+        "canonical_text": "If the Kazali turns the Bounty Hunter into a Minion, an evil Townsfolk is not created."
+      },
+      {
+        "partner_id": "marionette",
+        "sub_type": "mechanical-patch",
+        "canonical_text": "If there would be a Marionette in play, they enter play after the Demon & must start as their neighbor."
+      },
+      {
+        "partner_id": "summoner",
+        "sub_type": "mechanical-patch",
+        "canonical_text": "If the Summoner creates a second living Demon, deaths tonight are arbitrary."
+      }
+    ],
+    "open_questions": []
+  },
+  {
+    "id": "legion",
+    "name": "Legion",
+    "team": "demon",
+    "ability": "Each night*, a player might die. ¶Executions fail if only evil voted. You register as a Minion too.",
+    "setup": "[Most players are Legion]",
+    "iconPath": "icons/alt/Legion_icon.png",
+    "iconPathOfficial": "icons/official/Legion_icon.png",
+    "markerCount": 1,
+    "is_multi_role": true,
+    "setup_modifying_role": "inverted_player_count",
+    "vote_modification_source": "zero_tally_if_only_evil_voted",
+    "even_if_dead_persistence": true,
+    "evil_team_visibility_at_setup": true,
+    "section_refs": [],
+    "status": "verified",
+    "jinxes": [
+      {
+        "partner_id": "magician",
+        "sub_type": "mechanical-patch",
+        "canonical_text": "The Magician wakes with Legion and might register as evil. Legion knows if a Magician is in play, but not which player it is."
+      },
+      {
+        "partner_id": "engineer",
+        "sub_type": "mechanical-patch",
+        "canonical_text": "If Legion is created, all evil players become Legion. If Legion is in play, the Engineer starts knowing this but has no ability."
+      },
+      {
+        "partner_id": "hatter",
+        "sub_type": "mechanical-patch",
+        "canonical_text": "If Legion is created, all evil players become Legion. If Legion is in play, the Hatter has no ability."
+      },
+      {
+        "partner_id": "minstrel",
+        "sub_type": "mechanical-patch",
+        "canonical_text": "If Legion died by execution today, Legion keeps their ability, but the Minstrel might learn they are Legion."
+      },
+      {
+        "partner_id": "politician",
+        "sub_type": "mechanical-patch",
+        "canonical_text": "The Politician might register as evil to Legion."
+      },
+      {
+        "partner_id": "preacher",
+        "sub_type": "mechanical-patch",
+        "canonical_text": "If the Preacher chooses Legion, Legion keeps their ability, but the Preacher might learn they are Legion."
+      },
+      {
+        "partner_id": "summoner",
+        "sub_type": "mechanical-patch",
+        "canonical_text": "If Legion is summoned, all evil players become Legion."
+      },
+      {
+        "partner_id": "zealot",
+        "sub_type": "mechanical-patch",
+        "canonical_text": "The Zealot might register as evil to Legion."
+      }
+    ],
+    "open_questions": []
+  },
+  {
+    "id": "leviathan",
+    "name": "Leviathan",
+    "team": "demon",
+    "ability": "If more than 1 good player is executed, you win. ¶All players know you are in play. ¶After day 5, evil wins.",
+    "setup": "",
+    "iconPath": "icons/alt/Leviathan_icon.png",
+    "iconPathOfficial": "icons/official/Leviathan_icon.png",
+    "markerCount": 6,
+    "lint": {
+      "loudDemon": true
+    },
+    "public_identity_at_setup": "demon",
+    "wincon_alt_path": "day_5_evil_wins",
+    "is_passive_demon": true,
+    "late_game_cap_inverse": "day_5_endgame_trigger",
+    "section_refs": [],
+    "status": "verified",
+    "jinxes": [
+      {
+        "partner_id": "banshee",
+        "sub_type": "mechanical-patch",
+        "canonical_text": "Each night*, the Leviathan chooses an alive good player (different to previous nights): a chosen Banshee dies & gains their ability."
+      },
+      {
+        "partner_id": "exorcist",
+        "sub_type": "mechanical-patch",
+        "canonical_text": "If the Leviathan nominates and executes the Exorcist-chosen player, good wins."
+      },
+      {
+        "partner_id": "farmer",
+        "sub_type": "mechanical-patch",
+        "canonical_text": "Each night*, the Leviathan chooses an alive good player (different to previous nights): a chosen Farmer uses their ability but does not die."
+      },
+      {
+        "partner_id": "grandmother",
+        "sub_type": "mechanical-patch",
+        "canonical_text": "If the Leviathan is in play and the Grandchild dies by execution, evil wins."
+      },
+      {
+        "partner_id": "hatter",
+        "sub_type": "mechanical-patch",
+        "canonical_text": "The Leviathan cannot enter play after day 5."
+      },
+      {
+        "partner_id": "innkeeper",
+        "sub_type": "mechanical-patch",
+        "canonical_text": "If the Leviathan nominates and executes an Innkeeper-protected player, good wins."
+      },
+      {
+        "partner_id": "king",
+        "sub_type": "mechanical-patch",
+        "canonical_text": "If the Leviathan is in play, and at least 1 player is dead, the King learns an alive character each night."
+      },
+      {
+        "partner_id": "mayor",
+        "sub_type": "wincon-modifying",
+        "canonical_text": "If the Leviathan and the Mayor are alive on day 5 & no execution occurs, good wins."
+      },
+      {
+        "partner_id": "monk",
+        "sub_type": "mechanical-patch",
+        "canonical_text": "If the Leviathan nominates and executes the Monk-protected player, good wins."
+      },
+      {
+        "partner_id": "pit-hag",
+        "sub_type": "mechanical-patch",
+        "canonical_text": "The Leviathan cannot enter play after day 5."
+      },
+      {
+        "partner_id": "ravenkeeper",
+        "sub_type": "mechanical-patch",
+        "canonical_text": "Each night*, the Leviathan chooses an alive player (different to previous nights): a chosen Ravenkeeper uses their ability but does not die."
+      },
+      {
+        "partner_id": "sage",
+        "sub_type": "mechanical-patch",
+        "canonical_text": "Each night*, the Leviathan chooses an alive good player (different to previous nights): a chosen Sage uses their ability but does not die."
+      },
+      {
+        "partner_id": "soldier",
+        "sub_type": "mechanical-patch",
+        "canonical_text": "If the Leviathan nominates and executes the Soldier, good wins."
+      }
+    ],
+    "open_questions": []
+  },
+  {
+    "id": "lil-monsta",
+    "name": "Lil' Monsta",
+    "team": "demon",
+    "ability": "Each night, Minions choose who ¶babysits Lil' Monsta's token & \"is the Demon\". ¶A player dies each night*.",
+    "setup": "[+1 Minion]",
+    "iconPath": "icons/alt/Lil' Monsta_icon.png",
+    "iconPathOfficial": "icons/official/Lil' Monsta_icon.png",
+    "markerCount": 1,
+    "setup_modifying_role": "setup_adds_minion",
+    "is_passive_demon": true,
+    "character_replacement": "nightly_demon_token_passing",
+    "section_refs": [],
+    "status": "verified",
+    "jinxes": [
+      {
+        "partner_id": "marionette",
+        "sub_type": "mechanical-patch",
+        "canonical_text": "If there would be a Marionette in play, they enter play after the Demon & must start as their neighbor."
+      },
+      {
+        "partner_id": "hatter",
+        "sub_type": "mechanical-patch",
+        "canonical_text": "If the Hatter dies & the Demon chooses Lil' Monsta, they also choose a Minion to become."
+      },
+      {
+        "partner_id": "magician",
+        "sub_type": "mechanical-patch",
+        "canonical_text": "If the Magician is alive, the Storyteller chooses which Minion babysits Lil' Monsta."
+      },
+      {
+        "partner_id": "poppy-grower",
+        "sub_type": "mechanical-patch",
+        "canonical_text": "If Lil' Monsta & the Poppy Grower are alive, Minions wake one by one, until one of them chooses to take the Lil' Monsta token."
+      },
+      {
+        "partner_id": "psychopath",
+        "sub_type": "mechanical-patch",
+        "canonical_text": "If the Psychopath is babysitting Lil' Monsta, they die when executed."
+      },
+      {
+        "partner_id": "scarlet-woman",
+        "sub_type": "mechanical-patch",
+        "canonical_text": "If Lil' Monsta dies with 5 or more players alive, the Scarlet Woman babysits Lil' Monsta for the rest of the game."
+      },
+      {
+        "partner_id": "vizier",
+        "sub_type": "mechanical-patch",
+        "canonical_text": "If the Vizier is babysitting Lil' Monsta, they die when executed."
+      }
+    ],
+    "open_questions": []
+  },
+  {
+    "id": "lleech",
+    "name": "Lleech",
+    "team": "demon",
+    "ability": "Each night*, choose a player: they die. ¶You start by choosing an alive player: they are poisoned. You die if & only if they die.",
+    "setup": "",
+    "iconPath": "icons/alt/Lleech_icon.png",
+    "iconPathOfficial": "icons/official/Lleech_icon.png",
+    "markerCount": 2,
+    "lint": {
+      "misinfo": true,
+      "deadCanBeEvil": true,
+      "hateJinxPartners": [
+        "heretic"
+      ]
+    },
+    "is_poison_source": "host_n1_only",
+    "unblockable_kill_source": "host_dependency_immunity",
+    "is_setup_deception_role_adjacent": true,
+    "section_refs": [],
+    "status": "verified",
+    "jinxes": [
+      {
+        "partner_id": "heretic",
+        "sub_type": "hate",
+        "canonical_text": "Only 1 jinxed character can be in play."
+      },
+      {
+        "partner_id": "mastermind",
+        "sub_type": "mechanical-patch",
+        "canonical_text": "If the Mastermind is alive and the Lleech host dies by execution, the Lleech lives but loses their ability."
+      },
+      {
+        "partner_id": "slayer",
+        "sub_type": "mechanical-patch",
+        "canonical_text": "If the Slayer slays the Lleech host, the host dies."
+      }
+    ],
+    "open_questions": []
+  },
+  {
+    "id": "lord-of-typhon",
+    "name": "Lord of Typhon",
+    "team": "demon",
+    "ability": "Each night*, choose a player: they die. ¶",
+    "setup": "[Evil characters are in a line. You are in the middle. ¶+1 Minion. -? to +? Outsiders]",
+    "iconPath": "icons/alt/Lord of Typhon_icon.png",
+    "iconPathOfficial": "icons/official/Lord of Typhon_icon.png",
+    "markerCount": 1,
+    "lint": {
+      "oMod": "variable",
+      "extraEvil": "strong"
+    },
+    "setup_alters": [
+      "outsider_count",
+      "minion_count",
+      "alignment"
+    ],
+    "seating_constraint": "line_of_minions",
+    "setup_modifying_role": "setup_adds_minion",
+    "section_refs": [
+      "8",
+      "11",
+      "12"
+    ],
+    "status": "verified",
+    "jinxes": [
+      {
+        "partner_id": "summoner",
+        "sub_type": "mechanical-patch",
+        "canonical_text": "If a Lord of Typhon is summoned, they must neighbor a Minion & their other neighbor becomes an evil Minion."
+      }
+    ],
+    "open_questions": []
+  },
+  {
+    "id": "no-dashii",
+    "name": "No Dashii",
+    "team": "demon",
+    "ability": "Each night*, choose a player: they die. ¶Your 2 Townsfolk neighbours are poisoned.",
+    "setup": "",
+    "iconPath": "icons/alt/No Dashii_icon.png",
+    "iconPathOfficial": "icons/official/No Dashii_icon.png",
+    "markerCount": 3,
+    "lint": {
+      "misinfo": true,
+      "misinfoShape": "persistent-column",
+      "mathematicianLoad": true
+    },
+    "is_poison_source": "passive_neighbour_townsfolk",
+    "seating_constraint_consequence": "neighbour_townsfolk_poisoned",
+    "section_refs": [],
+    "status": "verified",
+    "jinxes": [],
+    "open_questions": []
+  },
+  {
+    "id": "ojo",
+    "name": "Ojo",
+    "team": "demon",
+    "ability": "Each night*, choose a character: they die. ¶If they are not in play, ¶the Storyteller chooses who dies.",
+    "setup": "",
+    "iconPath": "icons/alt/Ojo_icon.png",
+    "iconPathOfficial": "icons/official/Ojo_icon.png",
+    "markerCount": 1,
+    "kill_attribution_confound": "character_targeting",
+    "proc_is_st_discretionary": true,
+    "section_refs": [],
+    "status": "verified",
+    "jinxes": [],
+    "open_questions": []
+  },
+  {
+    "id": "po",
+    "name": "Po",
+    "team": "demon",
+    "ability": "Each night*, you may choose a player: they die. ¶If your last choice was no-one, choose 3 players tonight.",
+    "setup": "",
+    "iconPath": "icons/alt/Po_icon.png",
+    "iconPathOfficial": "icons/official/Po_icon.png",
+    "markerCount": 4,
+    "built_in_confound": "no_kill_obfuscation",
+    "section_refs": [],
+    "status": "verified",
+    "jinxes": [],
+    "open_questions": []
+  },
+  {
+    "id": "pukka",
+    "name": "Pukka",
+    "team": "demon",
+    "ability": "Each night, choose a player: they are poisoned. ¶The previously poisoned player dies ¶then becomes healthy.",
+    "setup": "",
+    "iconPath": "icons/alt/Pukka_icon.png",
+    "iconPathOfficial": "icons/official/Pukka_icon.png",
+    "markerCount": 2,
+    "lint": {
+      "misinfo": true,
+      "misinfoShape": "arbitrary",
+      "mathematicianLoad": true
+    },
+    "is_poison_source": "each_night_2nd_pass_kill",
+    "delayed_proc": "poison_to_kill_chain",
+    "section_refs": [],
+    "status": "verified",
+    "jinxes": [
+      {
+        "partner_id": "summoner",
+        "sub_type": "mechanical-patch",
+        "canonical_text": "The Summoner may summon a Pukka on the 2nd night instead of the 3rd."
+      }
+    ],
+    "open_questions": []
+  },
+  {
+    "id": "riot",
+    "name": "Riot",
+    "team": "demon",
+    "ability": "Nominees die, but may nominate again immediately (on day 3, they must). ¶After day 3, evil wins.",
+    "setup": "[All Minions are Riot]",
+    "iconPath": "icons/alt/Riot_icon.png",
+    "iconPathOfficial": "icons/official/Riot_icon.png",
+    "markerCount": 3,
+    "lint": {
+      "loudDemon": true
+    },
+    "wincon_alt": "riot",
+    "vote_modification_source": "nominate_chain_force",
+    "mid_game_phase_modifier": "day_3_riot_phase",
+    "character_replacement": "day_3_minion_to_riot",
+    "is_passive_demon": true,
+    "section_refs": [
+      "6",
+      "10"
+    ],
+    "status": "verified",
+    "jinxes": [
+      {
+        "partner_id": "atheist",
+        "sub_type": "mechanical-patch",
+        "canonical_text": "During a riot, if the Storyteller is nominated, players vote. If they are 'about to die', the game ends. If not, they nominate again."
+      },
+      {
+        "partner_id": "banshee",
+        "sub_type": "mechanical-patch",
+        "canonical_text": "Each night*, Riot chooses an alive good player (different to previous nights): a chosen Banshee dies & gains their ability."
+      },
+      {
+        "partner_id": "exorcist",
+        "sub_type": "mechanical-patch",
+        "canonical_text": "If Riot nominates and executes the Exorcist-chosen player, good wins."
+      },
+      {
+        "partner_id": "farmer",
+        "sub_type": "mechanical-patch",
+        "canonical_text": "Each night*, Riot chooses an alive good player (different to previous nights): a chosen Farmer uses their ability but does not die."
+      },
+      {
+        "partner_id": "grandmother",
+        "sub_type": "mechanical-patch",
+        "canonical_text": "If Riot is in play and the Grandchild dies by execution, evil wins."
+      },
+      {
+        "partner_id": "innkeeper",
+        "sub_type": "mechanical-patch",
+        "canonical_text": "If Riot nominates and executes an Innkeeper-protected player, good wins."
+      },
+      {
+        "partner_id": "king",
+        "sub_type": "mechanical-patch",
+        "canonical_text": "If Riot is in play, and at least 1 player is dead, the King learns an alive character each night."
+      },
+      {
+        "partner_id": "mayor",
+        "sub_type": "wincon-modifying",
+        "canonical_text": "The Mayor may choose to stop the riot. If they do so when only 1 Riot is alive, good wins. Otherwise, evil wins."
+      },
+      {
+        "partner_id": "monk",
+        "sub_type": "mechanical-patch",
+        "canonical_text": "If Riot nominates and executes the Monk-protected player, good wins."
+      },
+      {
+        "partner_id": "ravenkeeper",
+        "sub_type": "mechanical-patch",
+        "canonical_text": "Each night*, Riot chooses an alive good player (different to previous nights): a chosen Ravenkeeper uses their ability but does not die."
+      },
+      {
+        "partner_id": "sage",
+        "sub_type": "mechanical-patch",
+        "canonical_text": "Each night*, Riot chooses an alive good player (different to previous nights): a chosen Sage uses their ability but does not die."
+      },
+      {
+        "partner_id": "soldier",
+        "sub_type": "mechanical-patch",
+        "canonical_text": "If Riot nominates and executes the Soldier, good wins."
+      }
+    ],
+    "open_questions": []
+  },
+  {
+    "id": "shabaloth",
+    "name": "Shabaloth",
+    "team": "demon",
+    "ability": "Each night*, choose 2 players: they die. ¶A dead player you chose last night ¶might be regurgitated.",
+    "setup": "",
+    "iconPath": "icons/alt/Shabaloth_icon.png",
+    "iconPathOfficial": "icons/official/Shabaloth_icon.png",
+    "markerCount": 3,
+    "lint": {
+      "shabalothCounterpart": true
+    },
+    "mass_kill_source": "nightly_2_target",
+    "posthumous_revival_mechanic": "regurgitation_chosen_by_storyteller",
+    "proc_is_st_discretionary": true,
+    "is_st_balancing_role": true,
+    "section_refs": [],
+    "status": "verified",
+    "jinxes": [],
+    "open_questions": []
+  },
+  {
+    "id": "vigormortis",
+    "name": "Vigormortis",
+    "team": "demon",
+    "ability": "Each night*, choose a player: they die. ¶Minions you kill keep their ability & ¶poison 1 Townsfolk neighbour.",
+    "setup": "[-1 Outsider]",
+    "iconPath": "icons/alt/Vigormortis_icon.png",
+    "iconPathOfficial": "icons/official/Vigormortis_icon.png",
+    "markerCount": 7,
+    "lint": {
+      "misinfo": true,
+      "misinfoShape": "arbitrary",
+      "oMod": "-1",
+      "deadCanBeEvil": true,
+      "mathematicianLoad": true
+    },
+    "setup_alters": [
+      "outsider_count"
+    ],
+    "posthumous_minion_persistence_source": true,
+    "is_poison_source": "minion_neighbour_townsfolk",
+    "section_refs": [
+      "8",
+      "11"
+    ],
+    "status": "verified",
+    "jinxes": [
+      {
+        "partner_id": "mastermind",
+        "sub_type": "mechanical-patch",
+        "canonical_text": "A Mastermind that has their ability keeps it if the Vigormortis dies."
+      }
+    ],
+    "open_questions": []
+  },
+  {
+    "id": "vortox",
+    "name": "Vortox",
+    "team": "demon",
+    "ability": "Each night*, choose a player: they die. ¶Townsfolk abilities yield false info. ¶Each day, if no-one is executed, evil wins.",
+    "setup": "",
+    "iconPath": "icons/alt/Vortox_icon.png",
+    "iconPathOfficial": "icons/official/Vortox_icon.png",
+    "markerCount": 1,
+    "lint": {
+      "misinfo": true,
+      "misinfoShape": "arbitrary",
+      "vortoxFlag": true,
+      "mathematicianLoad": true
+    },
+    "is_drunkenness_source": "global_townsfolk_false_info",
+    "wincon_alt_path": "good_loses_on_no_execution",
+    "section_refs": [],
+    "status": "verified",
+    "jinxes": [
+      {
+        "partner_id": "banshee",
+        "sub_type": "mechanical-patch",
+        "canonical_text": "If the Vortox kills the Banshee, all players learn that the Banshee has died."
+      }
+    ],
+    "open_questions": []
+  },
+  {
+    "id": "yaggababble",
+    "name": "Yaggababble",
+    "team": "demon",
+    "ability": "You start knowing a secret phrase. ¶For each time you said it publicly today, ¶a player might die.",
+    "setup": "",
+    "iconPath": "icons/alt/Yaggababble_icon.png",
+    "iconPathOfficial": "icons/official/Yaggababble_icon.png",
+    "markerCount": 5,
+    "kill_as_info": "phrase_count_kill",
+    "start_knowing_info_shape": "secret_phrase",
+    "proc_is_st_discretionary": true,
+    "section_refs": [],
+    "status": "verified",
+    "jinxes": [
+      {
+        "partner_id": "exorcist",
+        "sub_type": "mechanical-patch",
+        "canonical_text": "If the Exorcist chooses the Yaggababble, the Yaggababble does not kill tonight."
+      }
+    ],
+    "open_questions": []
+  },
+  {
+    "id": "zombuul",
+    "name": "Zombuul",
+    "team": "demon",
+    "ability": "Each night*, if no-one died today, ¶choose a player: they die. ¶The 1st time you die, you live but register as dead.",
+    "setup": "",
+    "iconPath": "icons/alt/Zombuul_icon.png",
+    "iconPathOfficial": "icons/official/Zombuul_icon.png",
+    "markerCount": 2,
+    "lint": {
+      "deadCanBeEvil": true,
+      "misregistration": true,
+      "mathematicianLoad": true
+    },
+    "built_in_confound": "day_death_blocks_night_kill",
+    "kill_attribution_confound": true,
+    "section_refs": [],
+    "status": "verified",
+    "jinxes": [
+      {
+        "partner_id": "summoner",
+        "sub_type": "mechanical-patch",
+        "canonical_text": "If the Summoner summons a dead player into the Zombuul, the Zombuul has already 'died once'."
+      }
+    ],
+    "open_questions": []
+  },
+  {
+    "id": "apprentice",
+    "name": "Apprentice",
+    "team": "traveller",
+    "ability": "On your 1st night, you gain a Townsfolk ability (if good) or a Minion ability (if evil).",
+    "setup": "",
+    "iconPath": "icons/alt/Apprentice_icon.png",
+    "iconPathOfficial": "icons/official/Apprentice_icon.png",
+    "markerCount": 1
+  },
+  {
+    "id": "barista",
+    "name": "Barista",
+    "team": "traveller",
+    "ability": "Each night, until dusk, 1) a player becomes sober, healthy & gets true info, or 2) their ability works twice. They learn which.",
+    "setup": "",
+    "iconPath": "icons/alt/Barista_icon.png",
+    "iconPathOfficial": "icons/official/Barista_icon.png",
+    "markerCount": 2
+  },
+  {
+    "id": "beggar",
+    "name": "Beggar",
+    "team": "traveller",
+    "ability": "You must use a vote token to vote. Dead players may choose to give you theirs. If so, you learn their alignment. You are sober & healthy.",
+    "setup": "",
+    "iconPath": "icons/alt/Beggar_icon.png",
+    "iconPathOfficial": "icons/official/Beggar_icon.png",
+    "markerCount": 0
+  },
+  {
+    "id": "bishop",
+    "name": "Bishop",
+    "team": "traveller",
+    "ability": "Only the Storyteller can nominate. At least 1 opposite player must be nominated each day.",
+    "setup": "",
+    "iconPath": "icons/alt/Bishop_icon.png",
+    "iconPathOfficial": "icons/official/Bishop_icon.png",
+    "markerCount": 1
+  },
+  {
+    "id": "bone-collector",
+    "name": "Bone Collector",
+    "team": "traveller",
+    "ability": "Once per game, at night, choose a dead player: they regain their ability until dusk.",
+    "setup": "",
+    "iconPath": "icons/alt/Bone Collector_icon.png",
+    "iconPathOfficial": "icons/official/Bone Collector_icon.png",
+    "markerCount": 2
+  },
+  {
+    "id": "bureaucrat",
+    "name": "Bureaucrat",
+    "team": "traveller",
+    "ability": "Each night, choose a player (not yourself): their vote counts as 3 votes tomorrow.",
+    "setup": "",
+    "iconPath": "icons/alt/Bureaucrat_icon.png",
+    "iconPathOfficial": "icons/official/Bureaucrat_icon.png",
+    "markerCount": 1
+  },
+  {
+    "id": "butcher",
+    "name": "Butcher",
+    "team": "traveller",
+    "ability": "Each day, after the 1st execution, you may nominate again.",
+    "setup": "",
+    "iconPath": "icons/alt/Butcher_icon.png",
+    "iconPathOfficial": "icons/official/Butcher_icon.png",
+    "markerCount": 0
+  },
+  {
+    "id": "cacklejack",
+    "name": "Cacklejack",
+    "team": "traveller",
+    "ability": "Each day, choose a player: a different player changes character tonight.",
+    "setup": "",
+    "iconPath": "icons/alt/Cacklejack_icon.png",
+    "iconPathOfficial": "icons/official/Cacklejack_icon.png",
+    "markerCount": 1
+  },
+  {
+    "id": "deviant",
+    "name": "Deviant",
+    "team": "traveller",
+    "ability": "If you were funny today, you cannot die by exile.",
+    "setup": "",
+    "iconPath": "icons/alt/Deviant_icon.png",
+    "iconPathOfficial": "icons/official/Deviant_icon.png",
+    "markerCount": 0
+  },
+  {
+    "id": "gangster",
+    "name": "Gangster",
+    "team": "traveller",
+    "ability": "Once per day, you may choose to kill an alive neighbour, if your other alive neighbour agrees.",
+    "setup": "",
+    "iconPath": "icons/alt/Gangster_icon.png",
+    "iconPathOfficial": "icons/official/Gangster_icon.png",
+    "markerCount": 0
+  },
+  {
+    "id": "gnome",
+    "name": "Gnome",
+    "team": "traveller",
+    "ability": "All players start knowing a player of your alignment. You may choose to kill anyone who nominates them.",
+    "setup": "",
+    "iconPath": "icons/alt/Gnome_icon.png",
+    "iconPathOfficial": "icons/official/Gnome_icon.png",
+    "markerCount": 1
+  },
+  {
+    "id": "gunslinger",
+    "name": "Gunslinger",
+    "team": "traveller",
+    "ability": "Each day, after the 1st vote has been tallied, you may choose a player that voted: they die.",
+    "setup": "",
+    "iconPath": "icons/alt/Gunslinger_icon.png",
+    "iconPathOfficial": "icons/official/Gunslinger_icon.png",
+    "markerCount": 0
+  },
+  {
+    "id": "harlot",
+    "name": "Harlot",
+    "team": "traveller",
+    "ability": "Each night*, choose a living player: if they agree, you learn their character, but you both might die.",
+    "setup": "",
+    "iconPath": "icons/alt/Harlot_icon.png",
+    "iconPathOfficial": "icons/official/Harlot_icon.png",
+    "markerCount": 0
+  },
+  {
+    "id": "judge",
+    "name": "Judge",
+    "team": "traveller",
+    "ability": "Once per game, if another player nominated, you may choose to force the current execution to pass or fail.",
+    "setup": "",
+    "iconPath": "icons/alt/Judge_icon.png",
+    "iconPathOfficial": "icons/official/Judge_icon.png",
+    "markerCount": 0
+  },
+  {
+    "id": "matron",
+    "name": "Matron",
+    "team": "traveller",
+    "ability": "Each day, you may choose up to 3 sets of 2 players to swap seats. Players may not leave their seats to talk in private.",
+    "setup": "",
+    "iconPath": "icons/alt/Matron_icon.png",
+    "iconPathOfficial": "icons/official/Matron_icon.png",
+    "markerCount": 0
+  },
+  {
+    "id": "scapegoat",
+    "name": "Scapegoat",
+    "team": "traveller",
+    "ability": "If a player of your alignment is executed, you might be executed instead.",
+    "setup": "",
+    "iconPath": "icons/alt/Scapegoat_icon.png",
+    "iconPathOfficial": "icons/official/Scapegoat_icon.png",
+    "markerCount": 0
+  },
+  {
+    "id": "thief",
+    "name": "Thief",
+    "team": "traveller",
+    "ability": "Each night, choose a player (not yourself): their vote counts negatively tomorrow.",
+    "setup": "",
+    "iconPath": "icons/alt/Thief_icon.png",
+    "iconPathOfficial": "icons/official/Thief_icon.png",
+    "markerCount": 0
+  },
+  {
+    "id": "voudon",
+    "name": "Voudon",
+    "team": "traveller",
+    "ability": "Only you & the dead can vote. They don't need a vote token to do so. A 50% majority isn't required.",
+    "setup": "",
+    "iconPath": "icons/alt/Voudon_icon.png",
+    "iconPathOfficial": "icons/official/Voudon_icon.png",
+    "markerCount": 0
+  },
+  {
+    "id": "angel",
+    "name": "Angel",
+    "team": "fabled",
+    "ability": "Something bad might happen to whoever is most responsible for the death of a new player.",
+    "setup": "",
+    "iconPath": "icons/alt/Angel_icon.png",
+    "iconPathOfficial": "icons/official/Angel_icon.png",
+    "markerCount": 0
+  },
+  {
+    "id": "bootlegger",
+    "name": "Bootlegger",
+    "team": "loric",
+    "ability": "This script has homebrew characters or rules.",
+    "setup": "",
+    "iconPath": "icons/_placeholder.png",
+    "iconPathOfficial": "icons/official/Bootlegger_icon.png",
+    "markerCount": 0
+  },
+  {
+    "id": "buddhist",
+    "name": "Buddhist",
+    "team": "fabled",
+    "ability": "For the first 2 minutes of each day, veteran players may not talk.",
+    "setup": "",
+    "iconPath": "icons/alt/Buddhist_icon.png",
+    "iconPathOfficial": "icons/official/Buddhist_icon.png",
+    "markerCount": 0
+  },
+  {
+    "id": "deus-ex-fiasco",
+    "name": "Deus ex Fiasco",
+    "team": "fabled",
+    "ability": "At least once per game, the Storyteller will make a mistake, correct it, and publicly admit to it.",
+    "setup": "",
+    "iconPath": "icons/alt/Deus ex Fiasco_icon.png",
+    "iconPathOfficial": "icons/official/Deus ex Fiasco_icon.png",
+    "markerCount": 1
+  },
+  {
+    "id": "djinn",
+    "name": "Djinn",
+    "team": "fabled",
+    "ability": "Use the Djinn's special rule. All players know what it is.",
+    "setup": "",
+    "iconPath": "icons/alt/Djinn_icon.png",
+    "iconPathOfficial": "icons/official/Djinn_icon.png",
+    "markerCount": 1
+  },
+  {
+    "id": "doomsayer",
+    "name": "Doomsayer",
+    "team": "fabled",
+    "ability": "If 4 or more players live, each living player may publicly choose (once per game) that a player of their own alignment dies.",
+    "setup": "",
+    "iconPath": "icons/alt/Doomsayer_icon.png",
+    "iconPathOfficial": "icons/official/Doomsayer_icon.png",
+    "markerCount": 0
+  },
+  {
+    "id": "duchess",
+    "name": "Duchess",
+    "team": "fabled",
+    "ability": "Each day, 3 players may choose to visit you. At night*, each visitor learns how many visitors are evil, but 1 gets false info.",
+    "setup": "",
+    "iconPath": "icons/alt/Duchess_icon.png",
+    "iconPathOfficial": "icons/official/Duchess_icon.png",
+    "markerCount": 3
+  },
+  {
+    "id": "ferryman",
+    "name": "Ferryman",
+    "team": "fabled",
+    "ability": "On the final day, all dead players regain their vote token.",
+    "setup": "",
+    "iconPath": "icons/alt/Ferryman_icon.png",
+    "iconPathOfficial": "icons/official/Ferryman_icon.png",
+    "markerCount": 0
+  },
+  {
+    "id": "fibbin",
+    "name": "Fibbin",
+    "team": "fabled",
+    "ability": "Once per game, 1 good player might get incorrect information.",
+    "setup": "",
+    "iconPath": "icons/alt/Fibbin_icon.png",
+    "iconPathOfficial": "icons/official/Fibbin_icon.png",
+    "markerCount": 1,
+    "lint": {
+      "misinfo": true,
+      "misinfoShape": "arbitrary"
+    }
+  },
+  {
+    "id": "fiddler",
+    "name": "Fiddler",
+    "team": "fabled",
+    "ability": "Once per game, the Demon secretly chooses an opposing player: all players choose which of these 2 players win.",
+    "setup": "",
+    "iconPath": "icons/alt/Fiddler_icon.png",
+    "iconPathOfficial": "icons/official/Fiddler_icon.png",
+    "markerCount": 0
+  },
+  {
+    "id": "gardener",
+    "name": "Gardener",
+    "team": "fabled",
+    "ability": "The Storyteller assigns all players' characters.",
+    "setup": "",
+    "iconPath": "icons/alt/Gardener_icon.png",
+    "iconPathOfficial": "icons/official/Gardener_icon.png",
+    "markerCount": 0
+  },
+  {
+    "id": "hells-librarian",
+    "name": "Hell's Librarian",
+    "team": "fabled",
+    "ability": "Something bad might happen to whoever talks when the Storyteller has asked for silence.",
+    "setup": "",
+    "iconPath": "icons/alt/Hell's Librarian_icon.png",
+    "iconPathOfficial": "icons/official/Hell's Librarian_icon.png",
+    "markerCount": 0
+  },
+  {
+    "id": "revolutionary",
+    "name": "Revolutionary",
+    "team": "fabled",
+    "ability": "2 neighboring players are known to be the same alignment. Once per game, 1 of them registers falsely.",
+    "setup": "",
+    "iconPath": "icons/alt/Revolutionary_icon.png",
+    "iconPathOfficial": "icons/official/Revolutionary_icon.png",
+    "markerCount": 0
+  },
+  {
+    "id": "sentinel",
+    "name": "Sentinel",
+    "team": "fabled",
+    "ability": "There might be 1 extra or 1 fewer Outsider in play.",
+    "setup": "",
+    "iconPath": "icons/alt/Sentinel_icon.png",
+    "iconPathOfficial": "icons/official/Sentinel_icon.png",
+    "markerCount": 0,
+    "lint": {
+      "oMod": "+1"
+    }
+  },
+  {
+    "id": "spirit-of-ivory",
+    "name": "Spirit of Ivory",
+    "team": "fabled",
+    "ability": "There can't be more than 1 extra evil player.",
+    "setup": "",
+    "iconPath": "icons/alt/Spirit of Ivory_icon.png",
+    "iconPathOfficial": "icons/official/Spirit of Ivory_icon.png",
+    "markerCount": 0
+  },
+  {
+    "id": "storm-catcher",
+    "name": "Storm Catcher",
+    "team": "loric",
+    "ability": "Name a good character. If in play, they can only die by execution, but evil players learn which player it is.",
+    "setup": "",
+    "iconPath": "icons/_placeholder.png",
+    "iconPathOfficial": "icons/official/Stormcatcher_icon.png",
+    "markerCount": 0
+  },
+  {
+    "id": "toymaker",
+    "name": "Toymaker",
+    "team": "fabled",
+    "ability": "The Demon may choose not to attack and must do this at least once per game. Evil players get normal starting info.",
+    "setup": "",
+    "iconPath": "icons/alt/Toymaker_icon.png",
+    "iconPathOfficial": "icons/official/Toymaker_icon.png",
+    "markerCount": 0
+  }
+]

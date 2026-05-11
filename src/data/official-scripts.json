@@ -1,0 +1,38 @@
+[
+  {
+    "id": "trouble-brewing",
+    "name": "Trouble Brewing",
+    "characters": [
+      "washerwoman", "librarian", "investigator", "chef", "empath",
+      "fortune-teller", "undertaker", "monk", "ravenkeeper", "slayer",
+      "soldier", "virgin", "mayor",
+      "butler", "drunk", "recluse", "saint",
+      "poisoner", "spy", "scarlet-woman", "baron",
+      "imp"
+    ]
+  },
+  {
+    "id": "bad-moon-rising",
+    "name": "Bad Moon Rising",
+    "characters": [
+      "grandmother", "sailor", "chambermaid", "exorcist", "innkeeper",
+      "gambler", "gossip", "courtier", "professor", "minstrel",
+      "tea-lady", "pacifist", "fool",
+      "goon", "lunatic", "tinker", "moonchild",
+      "godfather", "devils-advocate", "assassin", "mastermind",
+      "zombuul", "pukka", "shabaloth", "po"
+    ]
+  },
+  {
+    "id": "sects-and-violets",
+    "name": "Sects and Violets",
+    "characters": [
+      "clockmaker", "dreamer", "snake-charmer", "mathematician", "flowergirl",
+      "town-crier", "oracle", "savant", "seamstress", "philosopher",
+      "artist", "juggler", "sage",
+      "mutant", "sweetheart", "barber", "klutz",
+      "evil-twin", "witch", "cerenovus", "pit-hag",
+      "vigormortis", "no-dashii", "vortox", "fang-gu"
+    ]
+  }
+]

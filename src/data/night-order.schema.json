@@ -1,0 +1,32 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "array",
+  "items": {
+    "oneOf": [
+      {
+        "type": "object",
+        "required": ["type", "name", "effect"],
+        "additionalProperties": false,
+        "properties": {
+          "type": { "type": "string", "const": "phase" },
+          "name": {
+            "type": "string",
+            "enum": ["Dusk", "Dawn", "Minion info", "Demon info"]
+          },
+          "effect": { "type": "string" }
+        }
+      },
+      {
+        "type": "object",
+        "required": ["type", "id", "effect", "token"],
+        "additionalProperties": false,
+        "properties": {
+          "type": { "type": "string", "const": "character" },
+          "id": { "type": "string", "minLength": 1 },
+          "effect": { "type": "string" },
+          "token": { "type": "string" }
+        }
+      }
+    ]
+  }
+}

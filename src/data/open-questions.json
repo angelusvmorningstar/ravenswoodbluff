@@ -1,0 +1,38 @@
+[
+  {
+    "id": "22.1",
+    "text": "Tea Lady's dual mode — treat as execution-survival role (requiring proc-confounder) or as night-protection role (no counterpart requirement)? v2.1 recommends execution-survival treatment, but designers may disagree.",
+    "resolved": false,
+    "trigger": { "type": "any_on_script", "characters": ["tea-lady"] }
+  },
+  {
+    "id": "22.2",
+    "text": "Lleech as a partial execution-survival counterpart — scripts with Pacifist/Sailor/Fool/Tea Lady and Lleech as Demon but no Devil's Advocate: is Lleech satisfying the proc-confounder requirement? v2.1 treats it as partial (warning, not error).",
+    "resolved": false,
+    "trigger": { "type": "cross_group", "group_a": ["pacifist", "sailor", "fool", "tea-lady"], "group_b": ["lleech"] }
+  },
+  {
+    "id": "22.3",
+    "text": "When does Boffin-as-X create plausible bluff space? Boffin covers confirmations only when the role is on script, not in play, and not excluded by a jinx. Whether this satisfies a proc-confounder requirement depends on bag-arithmetic.",
+    "resolved": false,
+    "trigger": { "type": "any_on_script", "characters": ["boffin"] }
+  },
+  {
+    "id": "22.4",
+    "text": "Slayer with Boffin as the only proc-confounder — Boffin-only Slayer cover is partial: Boffin only matters when Slayer is not in play. A Slayer+Boffin-only script has no cover for the 'Slayer in play and shoots Demon' scenario.",
+    "resolved": false,
+    "trigger": { "type": "all_on_script", "characters": ["slayer", "boffin"] }
+  },
+  {
+    "id": "22.5",
+    "text": "Mayor's bounce-confounders versus claim-confounders — Lunatic and Magician muddy kill patterns (bounce-confounders) but do not undermine the Mayor claim itself. They should not satisfy the claim-confounder hard-error lint alone.",
+    "resolved": false,
+    "trigger": { "type": "cross_group", "group_a": ["mayor"], "group_b": ["lunatic", "magician"] }
+  },
+  {
+    "id": "22.6",
+    "text": "Cannibal-as-Professor — Cannibal eating a dead Professor produces a Professor confirmation signature. This is a proc-confounder for Professor confirmations, but good-aligned (good-on-good doubt, not evil bluff). Surface for designer awareness.",
+    "resolved": false,
+    "trigger": { "type": "all_on_script", "characters": ["professor", "cannibal"] }
+  }
+]

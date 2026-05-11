@@ -1,0 +1,174 @@
+/* Ravenswood Bluff – Homepage Landing Styles */
+
+/* ── FULL-SCREEN HERO ───────────────────────────────────────────────────── */
+
+.rvb-hero--fullscreen {
+  min-height: calc(100dvh - var(--nav-h, 3.25rem));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ── SECTION ENTRY CARDS ────────────────────────────────────────────────── */
+
+.rvb-section-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+  gap: var(--space-5);
+  margin-bottom: var(--space-7);
+}
+
+.rvb-section-card {
+  background: var(--surface-2);
+  border: 1px solid var(--border-hairline);
+  border-radius: var(--radius-1);
+  padding: var(--space-5);
+  text-decoration: none;
+  color: var(--text);
+  display: block;
+  @media (prefers-reduced-motion: no-preference) {
+    transition: box-shadow var(--motion-fast) var(--easing-default),
+                border-color var(--motion-fast) var(--easing-default);
+  }
+}
+.rvb-section-card:hover {
+  box-shadow: var(--shadow-2);
+  border-color: var(--accent-dim);
+}
+.rvb-section-card:focus-visible {
+  outline: 2px solid var(--focus-ring);
+  outline-offset: 3px;
+  border-radius: var(--radius-2);
+}
+
+.rvb-section-card__eyebrow {
+  font-family: var(--font-h);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--accent);
+  display: block;
+  margin-bottom: var(--space-2);
+}
+
+.rvb-section-card__title {
+  font-family: var(--font-h);
+  font-size: clamp(1.0625rem, 2vw, 1.25rem);
+  font-weight: 700;
+  color: var(--text);
+  margin: 0 0 var(--space-3);
+  line-height: 1.2;
+}
+
+.rvb-section-card__body {
+  font-family: var(--font-b);
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  color: var(--text-dim);
+  margin: 0;
+}
+
+/* ── INVICTUS CROSS-LINK CARD ─────────────────────────────────────────────── */
+
+.rvb-cross-link {
+  background: var(--surface-2);
+  border: 1px solid var(--accent-ghost);
+  border-radius: var(--radius-1);
+  padding: var(--space-5) var(--space-6);
+  display: flex;
+  align-items: center;
+  gap: var(--space-5);
+  text-decoration: none;
+  color: var(--text);
+  max-width: 40rem;
+  @media (prefers-reduced-motion: no-preference) {
+    transition: border-color var(--motion-fast) var(--easing-default);
+  }
+}
+.rvb-cross-link:hover { border-color: var(--accent-dim); }
+.rvb-cross-link:focus-visible {
+  outline: 2px solid var(--focus-ring);
+  outline-offset: 3px;
+  border-radius: var(--radius-2);
+}
+
+.rvb-cross-link__label {
+  font-family: var(--font-h);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  display: block;
+  margin-bottom: var(--space-1);
+}
+.rvb-cross-link__title {
+  font-family: var(--font-h);
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--text);
+  margin: 0 0 var(--space-2);
+}
+.rvb-cross-link__body {
+  font-family: var(--font-b);
+  font-size: 0.9375rem;
+  color: var(--text-dim);
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* ── HERO CTA BUTTON ─────────────────────────────────────────────────────── */
+
+.rvb-hero-cta {
+  display: inline-block;
+  margin-top: var(--space-5);
+  padding: 0.7rem var(--space-6);
+  background: var(--accent);
+  color: var(--parchment);
+  font-family: var(--font-h);
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  text-decoration: none;
+  border-radius: var(--radius-2);
+  border: 1px solid transparent;
+  @media (prefers-reduced-motion: no-preference) {
+    transition: background var(--motion-fast) var(--easing-default),
+                box-shadow var(--motion-fast) var(--easing-default);
+  }
+}
+.rvb-hero-cta:hover {
+  background: var(--accent-hi);
+  box-shadow: var(--shadow-2);
+}
+
+/* ── PULL-QUOTE BAND ─────────────────────────────────────────────────────── */
+
+.rvb-pull-quote {
+  background: var(--surface-3);
+  border-top: 1px solid var(--border-hairline);
+  border-bottom: 1px solid var(--border-hairline);
+  padding: clamp(var(--space-6), 6vw, var(--space-8)) clamp(var(--space-4), 4vw, var(--space-7));
+  text-align: center;
+  margin-bottom: var(--space-7);
+}
+
+.rvb-pull-quote__text {
+  font-family: var(--font-b);
+  font-style: italic;
+  font-size: clamp(1.125rem, 2.5vw, 1.5rem);
+  line-height: 1.55;
+  color: var(--text);
+  max-width: 38rem;
+  margin: 0 auto var(--space-3);
+}
+
+.rvb-pull-quote__rule {
+  display: block;
+  width: 3rem;
+  height: 1px;
+  background: var(--accent);
+  margin: 0 auto;
+}

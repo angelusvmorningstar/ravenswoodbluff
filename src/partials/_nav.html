@@ -1,0 +1,91 @@
+<header class="rvb-site-header">
+  <nav class="rvb-site-nav" aria-label="Site navigation">
+    <a class="rvb-site-nav-home" href="/">Ravenswood Bluff</a>
+
+    <ul class="rvb-site-nav-links" role="list">
+      <li><a href="/scripts/">Scripts</a></li>
+    </ul>
+
+    <div class="rvb-site-nav-peer">
+      <!-- Update href to the live Invictus URL when available -->
+      <a href="#" rel="noopener" aria-label="Invictus RPG – another project by Angelus Morningstar">Invictus</a>
+    </div>
+
+    <button
+      class="rvb-hamburger"
+      aria-label="Open navigation"
+      aria-expanded="false"
+      aria-controls="rvb-nav-overlay"
+      type="button"
+    >
+      <span class="rvb-hamburger-bar" aria-hidden="true"></span>
+      <span class="rvb-hamburger-bar" aria-hidden="true"></span>
+      <span class="rvb-hamburger-bar" aria-hidden="true"></span>
+    </button>
+  </nav>
+</header>
+
+<!-- Mobile navigation overlay -->
+<div
+  class="rvb-nav-overlay"
+  id="rvb-nav-overlay"
+  role="dialog"
+  aria-modal="true"
+  aria-label="Navigation"
+  hidden
+>
+  <button class="rvb-nav-overlay-close" type="button" aria-label="Close navigation">&#x2715;</button>
+  <ul role="list">
+    <li><a href="/scripts/">Scripts</a></li>
+    <li><a href="#" rel="noopener">Invictus</a></li>
+  </ul>
+</div>
+
+<script>
+(function () {
+  /* Sets aria-current on the active nav link based on pathname. */
+  var path = window.location.pathname;
+  document.querySelectorAll('.rvb-site-nav-links a, .rvb-nav-overlay a').forEach(function (a) {
+    var href = a.getAttribute('href');
+    if (!href || href === '#') return;
+    var isActive = href === '/' ? path === '/' : path.startsWith(href);
+    if (isActive) a.setAttribute('aria-current', 'page');
+  });
+
+  /* Hamburger toggle. */
+  var btn = document.querySelector('.rvb-hamburger');
+  var overlay = document.getElementById('rvb-nav-overlay');
+  var closeBtn = overlay && overlay.querySelector('.rvb-nav-overlay-close');
+  if (!btn || !overlay) return;
+
+  function openOverlay() {
+    overlay.hidden = false;
+    btn.setAttribute('aria-expanded', 'true');
+    btn.setAttribute('aria-label', 'Close navigation');
+    if (closeBtn) closeBtn.focus();
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeOverlay() {
+    overlay.hidden = true;
+    btn.setAttribute('aria-expanded', 'false');
+    btn.setAttribute('aria-label', 'Open navigation');
+    btn.focus();
+    document.body.style.overflow = '';
+  }
+
+  btn.addEventListener('click', function () {
+    overlay.hidden ? openOverlay() : closeOverlay();
+  });
+
+  if (closeBtn) closeBtn.addEventListener('click', closeOverlay);
+
+  overlay.addEventListener('click', function (e) {
+    if (e.target === overlay) closeOverlay();
+  });
+
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && !overlay.hidden) closeOverlay();
+  });
+}());
+</script>

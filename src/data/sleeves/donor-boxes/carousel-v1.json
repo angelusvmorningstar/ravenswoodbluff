@@ -1,0 +1,17 @@
+{
+  "id": "carousel-v1",
+  "label": "Carousel (TPI Bookshelf-format box, first edition)",
+  "version": 1,
+  "dimensions": {
+    "length": 280,
+    "depth": 60,
+    "height": 33.5,
+    "unit": "mm"
+  },
+  "clearance": {
+    "lengthAxis": 1.5,
+    "crossSectionPerAxis": 1.5,
+    "unit": "mm"
+  },
+  "notes": "Measured 2026-05-01. Per AR5 in epics-phase2-box-sleeve.md, re-confirm against a real Carousel unit with callipers before locking for production."
+}

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <!-- @include: partials/_head.html -->
+  <title>Box Sleeve – Ravenswood Bluff</title>
+  <link rel="stylesheet" href="/css/sleeve.css">
+  <meta name="description" content="Print-at-home paper sleeve that wraps your TPI Carousel-format Blood on the Clocktower box on its long axis, leaving the short ends bare.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Box Sleeve – Ravenswood Bluff">
+  <meta property="og:description" content="Print-at-home paper sleeve that wraps your TPI Carousel-format box on the long axis, leaving the short ends bare.">
+  <meta property="og:image" content="/images/og-default.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Box Sleeve – Ravenswood Bluff">
+  <meta name="twitter:description" content="Print-at-home paper sleeve that wraps your TPI Carousel-format box on the long axis, leaving the short ends bare.">
+  <meta name="twitter:image" content="/images/og-default.png">
+</head>
+<body>
+  <a class="rvb-skip-link" href="#main">Skip to main content</a>
+  <!-- @include: partials/_nav.html -->
+
+  <main id="main" tabindex="-1">
+
+    <section
+      class="rvb-hero rvb-hero--section"
+      aria-label="Box sleeve generator"
+    >
+      <div class="rvb-hero__inner">
+        <span class="rvb-hero__eyebrow">Phase 2</span>
+        <h1 class="rvb-hero__title">Box Sleeve</h1>
+        <p class="rvb-hero__subtitle">
+          A print-at-home paper sleeve that wraps your TPI Carousel-format box on the long axis,
+          leaving the short ends of the box bare so its own art still shows.
+        </p>
+        <span class="rvb-hero__rule" aria-hidden="true"></span>
+      </div>
+    </section>
+
+    <div class="rvb-content">
+
+      <h2 class="rvb-section-heading">Choose a Theme</h2>
+      <span class="rvb-section-rule" aria-hidden="true"></span>
+      <div id="theme-picker" class="rvb-theme-picker" role="group" aria-label="Sleeve theme">
+      </div>
+
+      <h2 class="rvb-section-heading rvb-section-heading--spaced">Sleeve Title</h2>
+      <span class="rvb-section-rule" aria-hidden="true"></span>
+      <div class="rvb-sleeve-title-control">
+        <label class="rvb-sleeve-label" for="sleeve-title">Title text</label>
+        <input
+          class="rvb-sleeve-input"
+          id="sleeve-title"
+          type="text"
+          placeholder="e.g. Into the Woods, Ravenswood Bluff"
+          maxlength="80"
+          autocomplete="off"
+          spellcheck="false"
+        >
+        <p class="rvb-sleeve-hint">Appears centred on the front face of the sleeve. Leave blank for no title.</p>
+      </div>
+
+    </div>
+
+    <div class="rvb-content">
+
+      <h2 class="rvb-section-heading">Preview</h2>
+      <span class="rvb-section-rule" aria-hidden="true"></span>
+
+      <div class="rvb-sleeve-paper-toggle">
+        <span class="rvb-sleeve-paper-toggle__label">Paper size</span>
+        <div class="rvb-sleeve-paper-toggle__buttons" role="group" aria-label="Paper size for print">
+          <button type="button" class="rvb-paper-btn" data-paper="A4" aria-pressed="true">A4</button>
+          <button type="button" class="rvb-paper-btn" data-paper="Letter" aria-pressed="false">Letter</button>
+        </div>
+      </div>
+
+      <div id="sleeve-preview" class="rvb-sleeve-preview" aria-busy="true">
+        <p class="rvb-prose">Preparing preview&hellip;</p>
+      </div>
+
+      <div class="rvb-sleeve-download-row">
+        <button type="button" id="sleeve-download-btn" class="rvb-btn-primary" disabled>
+          Download sleeve PDF
+        </button>
+        <span id="sleeve-download-status" class="rvb-sleeve-download-status" aria-live="polite"></span>
+      </div>
+
+      <p class="rvb-sleeve-print-guidance">
+        Print on 160&ndash;200gsm card for best results. Standard paper will work but the sleeve will be flimsy.
+      </p>
+
+    </div>
+
+  </main>
+
+  <!-- @include: partials/_footer.html -->
+
+  <script type="module" src="/js/sleeve-page.js"></script>
+</body>
+</html>

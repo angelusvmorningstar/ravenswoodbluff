@@ -1,0 +1,21 @@
+{
+  "name": "ravenswood-bluff",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Ravenswood Bluff – unofficial fan site for Blood on the Clocktower custom scripts and Into the Woods.",
+  "scripts": {
+    "dev": "node scripts/build-pages.mjs && vite",
+    "prebuild": "node scripts/build-pages.mjs && node scripts/validate-night-order.mjs",
+    "build": "vite build",
+    "preview": "vite preview",
+    "test": "vitest run"
+  },
+  "devDependencies": {
+    "vite": "^8.0.1",
+    "vitest": "^4.1.5"
+  },
+  "dependencies": {
+    "pdf-lib": "^1.17.1"
+  }
+}

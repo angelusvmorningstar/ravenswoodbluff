@@ -1,0 +1,418 @@
+[
+  {
+    "type": "phase",
+    "name": "Dusk",
+    "effect": "Confirm all eyes shut; resolve any dusk‑timed Travellers or Fabled."
+  },
+  {
+    "type": "character",
+    "id": "lord-of-typhon",
+    "effect": "Convert neighbours into unique Minions; let them know.",
+    "token": ""
+  },
+  {
+    "type": "character",
+    "id": "kazali",
+    "effect": "Kazali chooses players to be Minions; let them know.",
+    "token": ""
+  },
+  {
+    "type": "character",
+    "id": "boffin",
+    "effect": "Reveal to Boffin & Demon the Demon's Townsfolk ability.",
+    "token": ""
+  },
+  {
+    "type": "character",
+    "id": "philosopher",
+    "effect": "Philosopher may adopt any good ability; if duplicated, the original becomes drunk.",
+    "token": "●●"
+  },
+  {
+    "type": "character",
+    "id": "alchemist",
+    "effect": "Reveal to Alchemist their Minion ability.",
+    "token": ""
+  },
+  {
+    "type": "character",
+    "id": "poppy-grower",
+    "effect": "Skip Minion & Demon phases, except for bluffs.",
+    "token": ""
+  },
+  {
+    "type": "character",
+    "id": "yaggababble",
+    "effect": "Give the Secret Phrase.",
+    "token": ""
+  },
+  {
+    "type": "character",
+    "id": "magician",
+    "effect": "In Minion and Demon info, reveal the Magician.",
+    "token": ""
+  },
+  {
+    "type": "phase",
+    "name": "Minion info",
+    "effect": "Show Minions each other and the Demon."
+  },
+  {
+    "type": "character",
+    "id": "snitch",
+    "effect": "Show 3 not-in-play characters to the Minions.",
+    "token": ""
+  },
+  {
+    "type": "character",
+    "id": "lunatic",
+    "effect": "Simulate Demon info to Lunatic; reveal to the Demon the Lunatic & their targets.",
+    "token": "●●●"
+  },
+  {
+    "type": "character",
+    "id": "summoner",
+    "effect": "Add the Night Marker. Show Summoner 3 bluffs.",
+    "token": "●"
+  },
+  {
+    "type": "phase",
+    "name": "Demon info",
+    "effect": "Show the Demon their Minions, then 3 bluffs."
+  },
+  {
+    "type": "character",
+    "id": "king",
+    "effect": "Reveal to the Demon who the King is.",
+    "token": ""
+  },
+  {
+    "type": "character",
+    "id": "sailor",
+    "effect": "Sailor chooses a player; either that player or the Sailor is drunk.",
+    "token": "●"
+  },
+  {
+    "type": "character",
+    "id": "marionette",
+    "effect": "Reveal to the Demon the Marionette.",
+    "token": ""
+  },
+  {
+    "type": "character",
+    "id": "engineer",
+    "effect": "Engineer may swap the Demon or all Minions; let them know.",
+    "token": "●"
+  },
+  {
+    "type": "character",
+    "id": "preacher",
+    "effect": "Preacher chooses a player; if a Minion, they lose the ability & learn who the Preacher is.",
+    "token": "●"
+  },
+  {
+    "type": "character",
+    "id": "lil-monsta",
+    "effect": "Minions choose Lil' Monsta's token babysitter.",
+    "token": "●"
+  },
+  {
+    "type": "character",
+    "id": "lleech",
+    "effect": "Lleech chooses a host; poison them.",
+    "token": "●"
+  },
+  {
+    "type": "character",
+    "id": "xaan",
+    "effect": "Add the night marker. If this is X, everyone is poisoned.",
+    "token": "●"
+  },
+  {
+    "type": "character",
+    "id": "poisoner",
+    "effect": "Poisoner poisons a player.",
+    "token": "●"
+  },
+  {
+    "type": "character",
+    "id": "widow",
+    "effect": "Show the Widow the Grimoire, then let them poison a player.",
+    "token": "●"
+  },
+  {
+    "type": "character",
+    "id": "courtier",
+    "effect": "Courtier may choose a character to become drunk.",
+    "token": "●"
+  },
+  {
+    "type": "character",
+    "id": "snake-charmer",
+    "effect": "Snake Charmer chooses a player; if Demon, swap tokens & poison new Snake Charmer.",
+    "token": "●"
+  },
+  {
+    "type": "character",
+    "id": "godfather",
+    "effect": "Show which Outsiders are in play.",
+    "token": ""
+  },
+  {
+    "type": "character",
+    "id": "organ-grinder",
+    "effect": "Organ Grinder may make themself drunk.",
+    "token": "●"
+  },
+  {
+    "type": "character",
+    "id": "devils-advocate",
+    "effect": "Devil's Advocate chooses a player; they are safe from execution tomorrow.",
+    "token": "●"
+  },
+  {
+    "type": "character",
+    "id": "evil-twin",
+    "effect": "Wake both twins together; reveal each other’s character.",
+    "token": "●"
+  },
+  {
+    "type": "character",
+    "id": "witch",
+    "effect": "Witch curses a player.",
+    "token": "●"
+  },
+  {
+    "type": "character",
+    "id": "cerenovus",
+    "effect": "Cerenovus makes a player mad as a chosen good character.",
+    "token": "●"
+  },
+  {
+    "type": "character",
+    "id": "fearmonger",
+    "effect": "Fearmonger chooses a player. Announce a choice was made.",
+    "token": "●"
+  },
+  {
+    "type": "character",
+    "id": "harpy",
+    "effect": "Harpy makes a player mad another is evil.",
+    "token": "●●"
+  },
+  {
+    "type": "character",
+    "id": "mezepheles",
+    "effect": "Give Mezepheles the secret word.",
+    "token": ""
+  },
+  {
+    "type": "character",
+    "id": "pukka",
+    "effect": "Pukka poisons a player.",
+    "token": "●"
+  },
+  {
+    "type": "character",
+    "id": "pixie",
+    "effect": "Show Pixie an in‑play Townsfolk token.",
+    "token": "●"
+  },
+  {
+    "type": "character",
+    "id": "huntsman",
+    "effect": "Huntsman may choose a player; if Damsel, they become a Townsfolk; let them know.",
+    "token": "●"
+  },
+  {
+    "type": "character",
+    "id": "damsel",
+    "effect": "Show the Damsel token to the Minions.",
+    "token": ""
+  },
+  {
+    "type": "character",
+    "id": "amnesiac",
+    "effect": "Amnesiac may wake, and might take actions.",
+    "token": "●●"
+  },
+  {
+    "type": "character",
+    "id": "washerwoman",
+    "effect": "Reveal a Townfolk & 2 players.",
+    "token": ""
+  },
+  {
+    "type": "character",
+    "id": "librarian",
+    "effect": "Reveal an Outsider & 2 players, OR indicate 0.",
+    "token": ""
+  },
+  {
+    "type": "character",
+    "id": "investigator",
+    "effect": "Reveal a Minion & 2 players.",
+    "token": ""
+  },
+  {
+    "type": "character",
+    "id": "chef",
+    "effect": "Indicate the number of evil pairs.",
+    "token": ""
+  },
+  {
+    "type": "character",
+    "id": "empath",
+    "effect": "Indicate how many neighbours are evil.",
+    "token": ""
+  },
+  {
+    "type": "character",
+    "id": "fortune-teller",
+    "effect": "Fortune Teller chooses 2 players. Indicate if either is the Demon.",
+    "token": ""
+  },
+  {
+    "type": "character",
+    "id": "grandmother",
+    "effect": "Show the Grandmother their grandchild.",
+    "token": "●"
+  },
+  {
+    "type": "character",
+    "id": "clockmaker",
+    "effect": "Indicate steps between closest Minion & Demon.",
+    "token": ""
+  },
+  {
+    "type": "character",
+    "id": "dreamer",
+    "effect": "Dreamer chooses a player. Reveal 1 true & 1 false character.",
+    "token": ""
+  },
+  {
+    "type": "character",
+    "id": "seamstress",
+    "effect": "Seamstress may chooses 2 players. Indicate if they're aligned.",
+    "token": "●"
+  },
+  {
+    "type": "character",
+    "id": "steward",
+    "effect": "Reveal 1 good player.",
+    "token": ""
+  },
+  {
+    "type": "character",
+    "id": "knight",
+    "effect": "Reveal 2 non-Demon players.",
+    "token": ""
+  },
+  {
+    "type": "character",
+    "id": "noble",
+    "effect": "Reveal 2 good players & 1 evil player.",
+    "token": ""
+  },
+  {
+    "type": "character",
+    "id": "balloonist",
+    "effect": "Indicate a player of a character type not yet shown.",
+    "token": "●"
+  },
+  {
+    "type": "character",
+    "id": "shugenja",
+    "effect": "Indicate the direction of evil.",
+    "token": ""
+  },
+  {
+    "type": "character",
+    "id": "village-idiot",
+    "effect": "Each Village Idiot chooses a player; indicate their alignment.",
+    "token": ""
+  },
+  {
+    "type": "character",
+    "id": "bounty-hunter",
+    "effect": "Reveal to the Bounty Hunter their target.",
+    "token": "●"
+  },
+  {
+    "type": "character",
+    "id": "nightwatchman",
+    "effect": "Nightwatchman may choose a player; reveal who the Nightwatchman is to them.",
+    "token": "●"
+  },
+  {
+    "type": "character",
+    "id": "cult-leader",
+    "effect": "Inform the Cult Leader if their alignment has changed.",
+    "token": ""
+  },
+  {
+    "type": "character",
+    "id": "goon",
+    "effect": "Inform the Goon if their alignment has changed.",
+    "token": ""
+  },
+  {
+    "type": "character",
+    "id": "butler",
+    "effect": "Butler chooses a Master.",
+    "token": "●"
+  },
+  {
+    "type": "character",
+    "id": "spy",
+    "effect": "Show the Spy the Grimoire.",
+    "token": ""
+  },
+  {
+    "type": "character",
+    "id": "ogre",
+    "effect": "Ogre chooses a player. If evil, invert the Ogre.",
+    "token": ""
+  },
+  {
+    "type": "character",
+    "id": "high-priestess",
+    "effect": "Indicate the best player to speak to.",
+    "token": ""
+  },
+  {
+    "type": "character",
+    "id": "general",
+    "effect": "Indicate which side is winning.",
+    "token": ""
+  },
+  {
+    "type": "character",
+    "id": "chambermaid",
+    "effect": "Chambermaid chooses 2 players; indicate how many acted tonight.",
+    "token": ""
+  },
+  {
+    "type": "character",
+    "id": "mathematician",
+    "effect": "Indicate how many abilities malfunctioned tonight.",
+    "token": ""
+  },
+  {
+    "type": "phase",
+    "name": "Dawn",
+    "effect": "Wake all players up."
+  },
+  {
+    "type": "character",
+    "id": "leviathan",
+    "effect": "Reveal that a Leviathan is in play. Set the day marker to 1.",
+    "token": "●"
+  },
+  {
+    "type": "character",
+    "id": "vizier",
+    "effect": "Reveal the Vizier to all.",
+    "token": ""
+  }
+]

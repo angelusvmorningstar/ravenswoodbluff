@@ -1,0 +1,653 @@
+/* Print sheet — A4 canvas with absolute-positioned content matching the Affinity master */
+
+/* ── Sheet canvas ────────────────────────────────────────────────────────── */
+
+#print-sheet,
+#print-sheet-back {
+  --page-width: 210mm;
+  --page-height: 297mm;
+  position: relative;
+  width: var(--page-width);
+  height: var(--page-height);
+  background-image: var(--spine-bg, url('/backgrounds/navy-blue.png'));
+  background-size: var(--page-width) var(--page-height);
+  background-position: 0 0;
+  background-repeat: no-repeat;
+  border-radius: var(--radius-2);
+  box-shadow: var(--shadow-3);
+  overflow: hidden;
+}
+
+/* ── Parchment overlay (alpha-aware drop shadow on the torn edge) ────────── */
+
+.sheet-parchment {
+  position: absolute;
+  inset: 0;
+  background-image: url('/backgrounds/parchment.png');
+  background-size: var(--page-width) var(--page-height);
+  background-position: 0 0;
+  background-repeat: no-repeat;
+  filter: drop-shadow(-10px 0 10px rgba(0, 0, 0, 0.125));
+  pointer-events: none;
+}
+
+/* ── Top chrome: logo / title / byline ───────────────────────────────────── */
+
+.sheet-logo {
+  position: absolute;
+  left: 46.6mm;
+  top: 2.5mm;
+  width: 20mm;
+  height: 20mm;
+  object-fit: contain;
+}
+
+.paper-size--letter .sheet-logo {
+  left: 50mm;
+}
+
+.paper-size--letter .sheet-title {
+  height: 22.5mm;
+}
+
+.paper-size--letter .sheet-byline {
+  left: 136.1mm;
+  top: 22.5mm;
+}
+
+.sheet-title {
+  position: absolute;
+  left: 91.2mm;
+  top: 0mm;
+  width: 115mm;
+  height: 25.5mm;
+  margin: 0;
+  font-family: var(--sheet-title-font, 'MedievalSharp', serif);
+  font-size: var(--sheet-title-size, 30pt);
+  font-weight: var(--sheet-title-weight, 400);
+  text-transform: none;
+  letter-spacing: 0.02em;
+  color: #1a0e05;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  line-height: 1.05;
+}
+
+.sheet-byline {
+  position: absolute;
+  left: 133.1mm;
+  top: 25.5mm;
+  width: 70mm;
+  height: 10mm;
+  margin: 0;
+  font-family: Lora, Georgia, serif;
+  font-size: 10pt;
+  font-style: italic;
+  color: #2a1a0a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+/* ── Spine team labels (vertical) ────────────────────────────────────────── */
+
+.sheet-spine-label {
+  position: absolute;
+  left: 2.8mm;
+  width: 10mm;
+  height: 42mm;
+  font-family: Cinzel, serif;
+  font-size: 10pt;
+  font-weight: 700;
+  line-height: 0.85;
+  text-transform: uppercase;
+  letter-spacing: 0;
+  color: var(--parchment, #ede3cc);
+  paint-order: stroke fill;
+  -webkit-text-stroke: 3px #000;
+  text-shadow: 0.7mm 0.7mm 1mm rgba(0, 0, 0, 0.5);
+  writing-mode: vertical-rl;
+  text-orientation: upright;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin: 0;
+}
+
+.sheet-spine-label[data-team="townsfolk"] { top: 69.7mm; }
+.sheet-spine-label[data-team="outsider"]  { top: 158.6mm; }
+.sheet-spine-label[data-team="minion"]    { top: 200.9mm; }
+.sheet-spine-label[data-team="demon"]     { top: 243.2mm; }
+
+.paper-size--letter .sheet-spine-label[data-team="townsfolk"] { top: 65.5mm; }
+.paper-size--letter .sheet-spine-label[data-team="outsider"]  { top: 149mm; }
+.paper-size--letter .sheet-spine-label[data-team="minion"]    { top: 188.7mm; }
+.paper-size--letter .sheet-spine-label[data-team="demon"]     { top: 228.5mm; }
+
+.paper-size--letter .sheet-footer                { top: 269.6mm; }
+.paper-size--letter .sheet-footer--legend        { left: 103.25mm; }
+.paper-size--letter .sheet-footer--hosted        { left: 167.9mm; }
+
+.paper-size--letter .sheet-back-title {
+  left: 40.5mm;
+  top: 60mm;
+  height: 52mm;
+}
+
+.paper-size--letter .sheet-back-logo {
+  left: 68.85mm;
+  top: 182mm;
+}
+
+/* ── Letter parchment backgrounds — uncomment once Affinity exports are in public/backgrounds/
+.paper-size--letter .sheet-parchment              { background-image: url('/backgrounds/parchment-letter.png'); }
+.paper-size--letter .sheet--back .sheet-parchment { background-image: url('/backgrounds/back-letter.png'); }
+.paper-size--letter .night-parchment              { background-image: url('/backgrounds/night-sheet-letter.png'); }
+*/
+
+.paper-size--letter .night-spine-label {
+  left: 204mm;
+  height: 180mm;
+}
+
+.paper-size--letter .night-wordmark {
+  left: 70mm;
+  width: 123mm;
+}
+
+.paper-size--letter #night-sheet .sheet-footer--built-at,
+.paper-size--letter #night-sheet-back .sheet-footer--built-at {
+  left: 154mm;
+}
+
+/* ── Character slot (icon + name + ability) ──────────────────────────────── */
+
+.sheet-slot {
+  position: absolute;
+  width: 88.1mm;
+  height: 17.5mm;
+}
+
+.sheet-slot__icon {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 15mm;
+  height: 15mm;
+  object-fit: contain;
+  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.45));
+}
+
+.sheet-slot__name {
+  position: absolute;
+  left: 18.1mm;
+  top: -0.6mm;
+  width: 72.5mm;
+  height: 4mm;
+  margin: 0;
+  font-family: 'Spectral', Georgia, serif;
+  font-size: 10pt;
+  font-weight: 700;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+}
+
+.sheet-slot__ability {
+  position: absolute;
+  left: 18.1mm;
+  top: 3.4mm;
+  width: 72.5mm;
+  height: 13.5mm;
+  margin: 0;
+  font-family: var(--body-font, 'Atkinson Hyperlegible'), Georgia, serif;
+  font-size: var(--body-size, 8pt);
+  line-height: 1.25;
+  color: #2a1a0a;
+}
+
+/* Team colour coding for character names */
+.sheet-slot[data-team="townsfolk"] .sheet-slot__name,
+.sheet-slot[data-team="outsider"]  .sheet-slot__name {
+  color: #0047ab;
+}
+
+.sheet-slot[data-team="minion"] .sheet-slot__name,
+.sheet-slot[data-team="demon"]  .sheet-slot__name {
+  color: #cf1e25;
+}
+
+/* ── Footer trio (all anchored at y = 291.6mm, white outer-glow) ─────────── */
+
+.sheet-footer {
+  position: absolute;
+  top: 289.1mm;
+  margin: 0;
+  font-family: 'Libre Baskerville', Georgia, serif;
+  font-size: 7pt;
+  font-weight: 700;
+  line-height: 1.2;
+  color: #2a1a0a;
+  text-shadow:
+    -1px -1px 0 rgba(255, 255, 255, 0.8),
+     1px -1px 0 rgba(255, 255, 255, 0.8),
+    -1px  1px 0 rgba(255, 255, 255, 0.8),
+     1px  1px 0 rgba(255, 255, 255, 0.8),
+    0 0 10px rgba(255, 255, 255, 0.85);
+  display: flex;
+  align-items: flex-start; /* top-anchor like Affinity text frames */
+}
+
+.sheet-footer--copyright {
+  left: 20mm;
+  width: 71.4mm;
+  height: 6.5mm;
+}
+
+.sheet-footer--legend {
+  left: 99.5mm;
+  width: 25.5mm;
+  height: 9.7mm;
+  font-style: italic;
+  justify-content: center;
+  text-align: center;
+}
+
+.sheet-footer--hosted {
+  left: 161.9mm;
+  width: 40.3mm;
+  height: 6.5mm;
+  justify-content: flex-end;
+  align-items: flex-end;
+  text-align: right;
+}
+
+/* ── Back side preview ───────────────────────────────────────────────────── */
+
+.sheet--back .sheet-parchment {
+  background-image: url('/backgrounds/back.png');
+  filter: drop-shadow(10px 0 10px rgba(0, 0, 0, 0.125));
+}
+
+.sheet--back .sheet-logo,
+.sheet--back .sheet-title,
+.sheet--back .sheet-byline,
+.sheet--back .sheet-spine-label,
+.sheet--back .sheet-slot,
+.sheet--back .sheet-footer { display: none; }
+
+.sheet-back-title {
+  position: absolute;
+  left: 36.7mm;
+  top: 63.5mm;
+  width: 135mm;
+  height: 55.7mm;
+  margin: 0;
+  font-family: var(--sheet-title-font, 'MedievalSharp', serif);
+  font-size: var(--sheet-back-title-size, 52pt);
+  font-weight: var(--sheet-title-weight, 400);
+  text-transform: none;
+  letter-spacing: 0.04em;
+  color: #1a0e05;
+  display: none !important;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  line-height: 1.05;
+}
+
+.sheet--back .sheet-back-title {
+  display: flex !important;
+}
+
+.sheet-back-logo {
+  position: absolute;
+  left: 64.6mm;
+  top: 193.2mm;
+  width: 78.3mm;
+  height: 78.3mm;
+  object-fit: contain;
+  display: none !important;
+}
+
+.sheet--back .sheet-back-logo {
+  display: block !important;
+}
+
+/* ── Textured-fill title (grunge mottled with the picked spine colour) ───── */
+
+.sheet--textured .sheet-title,
+.sheet--textured .sheet-back-title {
+  color: transparent;
+  background-image:
+    url('/images/grunge.png'),
+    linear-gradient(var(--spine-color, #1a0e05), var(--spine-color, #1a0e05));
+  background-size: cover, auto;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-blend-mode: overlay;
+  -webkit-background-clip: text;
+  background-clip: text;
+  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.45));
+}
+
+/* ── Night sheet canvas ──────────────────────────────────────────────────── */
+
+#night-sheet,
+#night-sheet-back {
+  --page-width: 210mm;
+  --page-height: 297mm;
+  position: relative;
+  width: var(--page-width);
+  height: var(--page-height);
+  background-image: var(--spine-bg, url('/backgrounds/navy-blue.png'));
+  background-size: var(--page-width) var(--page-height);
+  background-position: 0 0;
+  background-repeat: no-repeat;
+  border-radius: var(--radius-2);
+  box-shadow: var(--shadow-3);
+  overflow: hidden;
+}
+
+.night-parchment {
+  position: absolute;
+  inset: 0;
+  background-image: url('/backgrounds/night-sheet.png');
+  background-size: var(--page-width) var(--page-height);
+  background-position: 0 0;
+  background-repeat: no-repeat;
+  filter: drop-shadow(10px 0 10px rgba(0, 0, 0, 0.125));
+  pointer-events: none;
+}
+
+/* ── Night spine label — right side, 198×7.5, 10×120mm ──────────────────── */
+
+.night-spine-label {
+  position: absolute;
+  left: 198mm;
+  top: 7.5mm;
+  width: 10mm;
+  height: 180mm;
+  margin: 0;
+  font-family: Cinzel, serif;
+  font-size: 30pt;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--parchment, #ede3cc);
+  paint-order: stroke fill;
+  -webkit-text-stroke: 3px rgba(51, 51, 51, 0.75);
+  text-shadow: 0.7mm 0.7mm 1mm rgba(0, 0, 0, 0.5);
+  writing-mode: vertical-rl;
+  text-orientation: upright;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+/* ── Night rows — icon|name|effect, step 12mm, first anchor y=7.5mm ─────── */
+
+.night-row {
+  position: absolute;
+  left: 10mm;
+  height: 10mm;
+}
+
+.night-row__icon {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 10mm;
+  height: 10mm;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.night-row__icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.45));
+}
+
+/* Placeholder shown when phase icon PNG is absent */
+.night-row__icon--missing {
+  background-color: rgba(90, 122, 138, 0.25);
+  border-radius: 2px;
+  width: 10mm;
+  height: 10mm;
+}
+
+.night-row__name {
+  position: absolute;
+  left: 15mm;
+  top: 0;
+  width: 30mm;
+  height: 10mm;
+  margin: 0;
+  font-family: 'Spectral', Georgia, serif;
+  font-size: 11pt;
+  font-weight: 700;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  text-align: right;
+  color: #2a1a0a;
+  overflow: hidden;
+}
+
+.night-row__name--townsfolk,
+.night-row__name--outsider  { color: #0047ab; }
+
+.night-row__name--minion,
+.night-row__name--demon     { color: #cf1e25; }
+
+.night-row__name--phase     { color: #5a7a8a; }
+
+.night-row__effect {
+  position: absolute;
+  left: 50mm;
+  top: 0;
+  width: 130mm;
+  height: 10mm;
+  margin: 0;
+  font-family: var(--body-font, 'Atkinson Hyperlegible'), Georgia, serif;
+  font-size: var(--body-size, 8pt);
+  font-weight: 400;
+  line-height: 10mm;
+  color: #2a1a0a;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.night-row__token {
+  margin-left: 3mm;
+  font-size: 11pt;
+  vertical-align: middle;
+  color: #1a0e05;
+}
+
+/* ── Corner wordmark — Gothicus, grunge+spine-colour overlay, shrink-to-fit */
+
+.night-wordmark {
+  position: absolute;
+  left: 68mm;
+  bottom: 14mm;
+  width: 120mm;
+  height: 14mm;
+  margin: 0;
+  font-family: 'Gothicus', serif;
+  font-size: 24pt;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  line-height: 1.05;
+  color: transparent;
+  background-image:
+    url('/images/grunge.png'),
+    linear-gradient(var(--spine-color, #1a0e05), var(--spine-color, #1a0e05));
+  background-size: cover, auto;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-blend-mode: overlay;
+  -webkit-background-clip: text;
+  background-clip: text;
+  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.45));
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  text-align: right;
+  overflow: hidden;
+}
+
+/* ── Night footer — copyright flush with row-icon column, "built at" right ──*/
+
+#night-sheet .sheet-footer--copyright,
+#night-sheet-back .sheet-footer--copyright {
+  left: 10mm;
+}
+
+.sheet-footer--built-at {
+  left: 147.9mm;
+  width: 40.3mm;
+  height: 6.5mm;
+  justify-content: flex-end;
+  align-items: flex-end;
+  text-align: right;
+}
+
+/* ── Sheet mode + face — screen visibility ───────────────────────────────── */
+
+/* Hide every sheet element by default; the state rules below show exactly one */
+.builder-sheet-panel #print-sheet,
+.builder-sheet-panel #print-sheet-back,
+.builder-sheet-panel #night-sheet,
+.builder-sheet-panel #night-sheet-back { display: none; }
+
+/* Character + front (default)  — show #print-sheet */
+.builder-sheet-panel:not(.sheet-mode--night):not(.preview-back) #print-sheet { display: block; }
+
+/* Character + back              — show #print-sheet-back */
+.builder-sheet-panel:not(.sheet-mode--night).preview-back #print-sheet-back  { display: block; }
+
+/* Night + front (First Night)   — show #night-sheet */
+.builder-sheet-panel.sheet-mode--night:not(.preview-back) #night-sheet       { display: block; }
+
+/* Night + back (Other Nights)   — show #night-sheet-back */
+.builder-sheet-panel.sheet-mode--night.preview-back #night-sheet-back        { display: block; }
+
+/* ── Night sheet debug outlines ──────────────────────────────────────────── */
+
+.debug-frames .night-spine-label,
+.debug-frames .night-row,
+.debug-frames .night-row__icon,
+.debug-frames .night-row__name,
+.debug-frames .night-row__effect,
+.debug-frames .night-wordmark {
+  outline: 1px solid rgba(0, 128, 255, 0.75);
+  outline-offset: -1px;
+}
+
+/* ── Debug: spec frame outlines (toggle via `d` key or ?debug URL) ───────── */
+
+.debug-frames .sheet-logo,
+.debug-frames .sheet-title,
+.debug-frames .sheet-byline,
+.debug-frames .sheet-spine-label,
+.debug-frames .sheet-footer,
+.debug-frames .sheet-slot,
+.debug-frames .sheet-slot__icon,
+.debug-frames .sheet-slot__name,
+.debug-frames .sheet-slot__ability,
+.debug-frames .sheet-back-title,
+.debug-frames .sheet-back-logo {
+  outline: 1px solid rgba(255, 0, 0, 0.75);
+  outline-offset: -1px;
+}
+
+/* ── Page setup ──────────────────────────────────────────────────────────── */
+
+@page {
+  size: A4 portrait;
+  margin: 0;
+}
+
+/* ── Print overrides ─────────────────────────────────────────────────────── */
+
+@media print {
+  .builder-sidebar { display: none !important; }
+
+  html, body {
+    height: auto !important;
+    overflow: visible !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    background: transparent !important;
+  }
+
+  #builder-root {
+    display: block !important;
+    height: auto !important;
+    overflow: visible !important;
+  }
+
+  .builder-sheet-panel {
+    height: auto !important;
+    overflow: visible !important;
+    display: block !important;
+    padding: 0 !important;
+  }
+
+  #print-sheet,
+  #print-sheet-back,
+  #night-sheet,
+  #night-sheet-back {
+    zoom: 1 !important;
+    border-radius: 0;
+    box-shadow: none;
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
+  }
+
+  /* Active sheet type: show both faces with a page break between */
+  .builder-sheet-panel:not(.sheet-mode--night) #print-sheet,
+  .builder-sheet-panel:not(.sheet-mode--night) #print-sheet-back {
+    display: block !important;
+  }
+  .builder-sheet-panel.sheet-mode--night #night-sheet,
+  .builder-sheet-panel.sheet-mode--night #night-sheet-back {
+    display: block !important;
+  }
+
+  /* Inactive sheet type stays hidden */
+  .builder-sheet-panel:not(.sheet-mode--night) #night-sheet,
+  .builder-sheet-panel:not(.sheet-mode--night) #night-sheet-back,
+  .builder-sheet-panel.sheet-mode--night #print-sheet,
+  .builder-sheet-panel.sheet-mode--night #print-sheet-back {
+    display: none !important;
+  }
+
+  /* Page break between front and back of the active sheet */
+  #print-sheet-back,
+  #night-sheet-back {
+    break-before: page;
+    page-break-before: always;
+  }
+
+  /* Official-script block: hide all sheet faces so Ctrl+P prints blank */
+  .builder-sheet-panel--blocked #print-sheet,
+  .builder-sheet-panel--blocked #print-sheet-back,
+  .builder-sheet-panel--blocked #night-sheet,
+  .builder-sheet-panel--blocked #night-sheet-back {
+    display: none !important;
+  }
+
+  /* Sleeve panel is never printed via browser print — export via PDF download only */
+  .sleeve-builder-panel { display: none !important; }
+}

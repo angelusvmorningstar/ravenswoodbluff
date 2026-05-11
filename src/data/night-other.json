@@ -1,0 +1,504 @@
+[
+  {
+    "type": "phase",
+    "name": "Dusk",
+    "effect": "Confirm all eyes shut; resolve any dusk‑timed Travellers or Fabled."
+  },
+  {
+    "type": "character",
+    "id": "minstrel",
+    "effect": "If a Minion was executed today, make every player drunk tonight.",
+    "token": "●"
+  },
+  {
+    "type": "character",
+    "id": "philosopher",
+    "effect": "Philosopher may adopt any good ability; if duplicated, the original becomes drunk.",
+    "token": "●●"
+  },
+  {
+    "type": "character",
+    "id": "sailor",
+    "effect": "Sailor chooses a player; either that player or the Sailor is drunk.",
+    "token": "●"
+  },
+  {
+    "type": "character",
+    "id": "engineer",
+    "effect": "Engineer may swap the Demon or all Minions; let them know.",
+    "token": "●"
+  },
+  {
+    "type": "character",
+    "id": "preacher",
+    "effect": "Preacher chooses a player; if a Minion, they lose the ability & learn who the Preacher is.",
+    "token": "●"
+  },
+  {
+    "type": "character",
+    "id": "xaan",
+    "effect": "Update the night marker. If this is X, everyone is poisoned.",
+    "token": "●"
+  },
+  {
+    "type": "character",
+    "id": "poisoner",
+    "effect": "Poisoner poisons a player.",
+    "token": "●"
+  },
+  {
+    "type": "character",
+    "id": "courtier",
+    "effect": "Update night marker. Otherwise the Courtier might make a character drunk.",
+    "token": "●"
+  },
+  {
+    "type": "character",
+    "id": "innkeeper",
+    "effect": "Innkeeper chooses 2 players; they are both safe, but 1 is drunk.",
+    "token": "●●●"
+  },
+  {
+    "type": "character",
+    "id": "gambler",
+    "effect": "Gambler might guess a player & their character;  they die if wrong.",
+    "token": "●"
+  },
+  {
+    "type": "character",
+    "id": "acrobat",
+    "effect": "If either good living neighbour is drunk or poisoned, the Acrobat dies.",
+    "token": "●"
+  },
+  {
+    "type": "character",
+    "id": "snake-charmer",
+    "effect": "Snake Charmer chooses a player; if Demon, swap tokens & poison new Snake Charmer.",
+    "token": "●"
+  },
+  {
+    "type": "character",
+    "id": "monk",
+    "effect": "Monk chooses a player; they're safe from the Demon.",
+    "token": "●"
+  },
+  {
+    "type": "character",
+    "id": "organ-grinder",
+    "effect": "Organ Grinder may make themself drunk.",
+    "token": "●"
+  },
+  {
+    "type": "character",
+    "id": "devils-advocate",
+    "effect": "Devil's Advocate chooses a player; they're safe from execution.",
+    "token": "●"
+  },
+  {
+    "type": "character",
+    "id": "witch",
+    "effect": "Witch curses a player.",
+    "token": "●"
+  },
+  {
+    "type": "character",
+    "id": "cerenovus",
+    "effect": "Cerenovus makes a player mad as a chosen good character.",
+    "token": "●"
+  },
+  {
+    "type": "character",
+    "id": "pit-hag",
+    "effect": "Pit-Hag changes a player into another good character if possible; they learn this.",
+    "token": "●"
+  },
+  {
+    "type": "character",
+    "id": "mezepheles",
+    "effect": "The speaker of the password turns evil.",
+    "token": "●"
+  },
+  {
+    "type": "character",
+    "id": "harpy",
+    "effect": "Harpy makes a player mad another is evil.",
+    "token": "●●"
+  },
+  {
+    "type": "character",
+    "id": "scarlet-woman",
+    "effect": "If the Scarlet Woman became the Demon, let them know.",
+    "token": "●"
+  },
+  {
+    "type": "character",
+    "id": "summoner",
+    "effect": "Update night marker. Night 3, Summoner make a player the Demon; let them know.",
+    "token": "●"
+  },
+  {
+    "type": "character",
+    "id": "lunatic",
+    "effect": "Simulate Demon attack; reveal to the Demon the Lunatic's targets.",
+    "token": "●●●"
+  },
+  {
+    "type": "character",
+    "id": "exorcist",
+    "effect": "Exorcist chooses a player; if the Demon, block their attack & reveal to them the Exorcist.",
+    "token": "●"
+  },
+  {
+    "type": "character",
+    "id": "lycanthrope",
+    "effect": "Lycanthrope chooses a living player; if good, they die and are the only player that dies tonight.",
+    "token": "●"
+  },
+  {
+    "type": "character",
+    "id": "legion",
+    "effect": "A player might die.",
+    "token": ""
+  },
+  {
+    "type": "character",
+    "id": "imp",
+    "effect": "The Imp kills a player; if themselves, a Minion becomes the Imp; let them know.",
+    "token": "●"
+  },
+  {
+    "type": "character",
+    "id": "zombuul",
+    "effect": "If no one died today: Zombuul kills a player.",
+    "token": "●"
+  },
+  {
+    "type": "character",
+    "id": "pukka",
+    "effect": "Previously poisoned player dies. Pukka poisons a player.",
+    "token": "●●"
+  },
+  {
+    "type": "character",
+    "id": "shabaloth",
+    "effect": "May revive a player eaten last night. The Shabaloth chooses 2 players to die.",
+    "token": "●●"
+  },
+  {
+    "type": "character",
+    "id": "po",
+    "effect": "Po chooses 0, 1, or 3 players to die.",
+    "token": "●●●"
+  },
+  {
+    "type": "character",
+    "id": "fang-gu",
+    "effect": "Fang Gu chooses a character to die; if 1st Outsider, they become a Fang Gu, & original dies; let them know.",
+    "token": "●"
+  },
+  {
+    "type": "character",
+    "id": "no-dashii",
+    "effect": "No Dashii kills a player.",
+    "token": "●"
+  },
+  {
+    "type": "character",
+    "id": "vortox",
+    "effect": "Vortox kills a player.",
+    "token": "●"
+  },
+  {
+    "type": "character",
+    "id": "lord-of-typhon",
+    "effect": "Lord of Typhon kills a player.",
+    "token": "●"
+  },
+  {
+    "type": "character",
+    "id": "vigormortis",
+    "effect": "Vigormortis kills a player; if a Minion, they keep ability & poison a neighbour Townsfolk.",
+    "token": "●●"
+  },
+  {
+    "type": "character",
+    "id": "ojo",
+    "effect": "Ojo chooses a character; if not in play, a player dies.",
+    "token": "●"
+  },
+  {
+    "type": "character",
+    "id": "lil-monsta",
+    "effect": "Let the Minions choose the Lil' Monsta token babysitter. A player dies.",
+    "token": "●●"
+  },
+  {
+    "type": "character",
+    "id": "lleech",
+    "effect": "Lleech kills a player.",
+    "token": "●"
+  },
+  {
+    "type": "character",
+    "id": "al-hadikhia",
+    "effect": "Al-Hadikhia chooses 3 players; each player secretly chooses to live or die.",
+    "token": "●●●"
+  },
+  {
+    "type": "character",
+    "id": "yaggababble",
+    "effect": "For each Yaggababble marker, a player might die.",
+    "token": "●●●●●"
+  },
+  {
+    "type": "character",
+    "id": "kazali",
+    "effect": "Kazali kills a player.",
+    "token": "●"
+  },
+  {
+    "type": "character",
+    "id": "assassin",
+    "effect": "Assassin kills a player, ignoring any protections.",
+    "token": "●●"
+  },
+  {
+    "type": "character",
+    "id": "godfather",
+    "effect": "If an Outsider died today: Godfather kills a player.",
+    "token": "●"
+  },
+  {
+    "type": "character",
+    "id": "gossip",
+    "effect": "The gossip was true, a player dies.",
+    "token": "●"
+  },
+  {
+    "type": "character",
+    "id": "hatter",
+    "effect": "If dead: Demons and Minions can change characters.",
+    "token": ""
+  },
+  {
+    "type": "character",
+    "id": "barber",
+    "effect": "If dead, the Demon might swap two players; let them know.",
+    "token": ""
+  },
+  {
+    "type": "character",
+    "id": "sweetheart",
+    "effect": "If dead, a player becomes drunk.",
+    "token": "●"
+  },
+  {
+    "type": "character",
+    "id": "plague-doctor",
+    "effect": "If dead: pick a Minion ability to have.",
+    "token": "●"
+  },
+  {
+    "type": "character",
+    "id": "sage",
+    "effect": "If died tonight, indicate 2 players, 1 being the Demon.",
+    "token": ""
+  },
+  {
+    "type": "character",
+    "id": "banshee",
+    "effect": "If killed by the Demon: reveal the Banshee publicly; give them their ability.",
+    "token": "●"
+  },
+  {
+    "type": "character",
+    "id": "professor",
+    "effect": "Professor chooses a dead player: if Townfolk, they revive.",
+    "token": "●●"
+  },
+  {
+    "type": "character",
+    "id": "choirboy",
+    "effect": "If the Demon killed the King, indicate who the Demon is.",
+    "token": "●"
+  },
+  {
+    "type": "character",
+    "id": "huntsman",
+    "effect": "Huntsman may choose a player; if Damsel, they become a Townsfolk; let them know.",
+    "token": "●"
+  },
+  {
+    "type": "character",
+    "id": "amnesiac",
+    "effect": "Amnesiac may wake, and might take actions.",
+    "token": "●●"
+  },
+  {
+    "type": "character",
+    "id": "farmer",
+    "effect": "If died tonight, a good player becomes a Farmer; let them know.",
+    "token": "●"
+  },
+  {
+    "type": "character",
+    "id": "tinker",
+    "effect": "Tinker might die.",
+    "token": ""
+  },
+  {
+    "type": "character",
+    "id": "moonchild",
+    "effect": "The chosen player dies, if good.",
+    "token": ""
+  },
+  {
+    "type": "character",
+    "id": "grandmother",
+    "effect": "If the grandchild died tonight, the Grandmother dies.",
+    "token": ""
+  },
+  {
+    "type": "character",
+    "id": "ravenkeeper",
+    "effect": "If they died tonight, Ravenkeeper chooses a player, & learns their character.",
+    "token": ""
+  },
+  {
+    "type": "character",
+    "id": "empath",
+    "effect": "Indicate how many neighbours are evil.",
+    "token": ""
+  },
+  {
+    "type": "character",
+    "id": "fortune-teller",
+    "effect": "Fortune Teller chooses 2 players. Indicate if either is the Demon.",
+    "token": ""
+  },
+  {
+    "type": "character",
+    "id": "undertaker",
+    "effect": "Reveal the player executed today.",
+    "token": ""
+  },
+  {
+    "type": "character",
+    "id": "dreamer",
+    "effect": "Dreamer chooses a player. Reveal 1 true & 1 false character.",
+    "token": ""
+  },
+  {
+    "type": "character",
+    "id": "flowergirl",
+    "effect": "Indicate if the Demon voted.",
+    "token": "●"
+  },
+  {
+    "type": "character",
+    "id": "town-crier",
+    "effect": "Indicate if a Minion nominated.",
+    "token": "●"
+  },
+  {
+    "type": "character",
+    "id": "oracle",
+    "effect": "Indicate how many dead players are evil.",
+    "token": ""
+  },
+  {
+    "type": "character",
+    "id": "seamstress",
+    "effect": "Seamstress may choose 2 players. Indicate if they're aligned.",
+    "token": "●"
+  },
+  {
+    "type": "character",
+    "id": "juggler",
+    "effect": "Indicate how many guesses were correct.",
+    "token": ""
+  },
+  {
+    "type": "character",
+    "id": "balloonist",
+    "effect": "Indicate a player of a character type not yet shown.",
+    "token": "●"
+  },
+  {
+    "type": "character",
+    "id": "village-idiot",
+    "effect": "Each Village Idiot chooses a player; indicate their alignment.",
+    "token": ""
+  },
+  {
+    "type": "character",
+    "id": "king",
+    "effect": "If the dead outnumber the living, reveal an alive character to the King.",
+    "token": ""
+  },
+  {
+    "type": "character",
+    "id": "bounty-hunter",
+    "effect": "If the target died today or tonight, indicate to the Bounty Hunter their new target.",
+    "token": "●"
+  },
+  {
+    "type": "character",
+    "id": "cult-leader",
+    "effect": "If the Cult Leader changes alignment, let them know.",
+    "token": ""
+  },
+  {
+    "type": "character",
+    "id": "goon",
+    "effect": "If the Goon changes alignment, let them know.",
+    "token": ""
+  },
+  {
+    "type": "character",
+    "id": "butler",
+    "effect": "Butler chooses a Master.",
+    "token": "●"
+  },
+  {
+    "type": "character",
+    "id": "spy",
+    "effect": "Show the Spy the Grimoire.",
+    "token": ""
+  },
+  {
+    "type": "character",
+    "id": "high-priestess",
+    "effect": "Indicate the best player to speak to.",
+    "token": ""
+  },
+  {
+    "type": "character",
+    "id": "general",
+    "effect": "Indicate which side is winning.",
+    "token": ""
+  },
+  {
+    "type": "character",
+    "id": "chambermaid",
+    "effect": "Chambermaid chooses 2 players; indicate how many acted tonight.",
+    "token": ""
+  },
+  {
+    "type": "character",
+    "id": "mathematician",
+    "effect": "Indicate how many abilities malfunctioned today & tonight.",
+    "token": ""
+  },
+  {
+    "type": "phase",
+    "name": "Dawn",
+    "effect": "Wake all players up. Announce the night's results."
+  },
+  {
+    "type": "character",
+    "id": "leviathan",
+    "effect": "Reveal that a Leviathan is in play. Update the day marker.",
+    "token": ""
+  }
+]

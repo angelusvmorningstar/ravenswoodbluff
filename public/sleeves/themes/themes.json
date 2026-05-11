@@ -1,0 +1,13 @@
+{
+  "themes": [
+    {
+      "id": "manuscript",
+      "label": "Manuscript",
+      "brocadeKeys": [],
+      "status": "active",
+      "art": "/sleeves/themes/manuscript/scroll.png",
+      "placement": "front-centre",
+      "designedFor": { "paperSize": "A4", "shaved": true }
+    }
+  ]
+}
