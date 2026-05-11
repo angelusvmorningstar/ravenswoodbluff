@@ -49,7 +49,7 @@ const TITLE_MODES = {
 let activeTeam = 'townsfolk';
 const selection = new Set();
 let scriptName = '';
-let scriptAuthor = 'Angelus Morningstar';
+let scriptAuthor = '';
 const designState = {
   brocade: DEFAULT_BROCADE,
   titleMode: 'ornate',
@@ -841,7 +841,7 @@ function buildMetaPanel() {
             id="builder-author"
             type="text"
             autocomplete="off"
-            value="Angelus Morningstar">
+            value="">
         </div>
         ${myScripts.length > 0 ? `
         <div class="builder-field">
@@ -929,12 +929,6 @@ function buildMetaPanel() {
           <div class="segmented" role="group" aria-labelledby="title-mode-label">
             <button class="segmented__btn${designState.titleMode === 'plain'  ? ' segmented__btn--active' : ''}" type="button" data-mode="plain"  aria-pressed="${designState.titleMode === 'plain'}">Plain</button>
             <button class="segmented__btn${designState.titleMode === 'ornate' ? ' segmented__btn--active' : ''}" type="button" data-mode="ornate" aria-pressed="${designState.titleMode === 'ornate'}">Ornate</button>
-          </div>
-        </div>
-        <div class="builder-field">
-          <p class="builder-field__label" id="icon-set-label">Icons</p>
-          <div class="segmented" role="group" aria-labelledby="icon-set-label">
-            <button class="segmented__btn segmented__btn--active" type="button" data-iconset="alt" aria-pressed="true">Alternative</button>
           </div>
         </div>
         <div class="builder-field">
@@ -1310,7 +1304,14 @@ async function init() {
     renderNightSheet();
   });
 
+  function lockAuthor() {
+    scriptAuthor = 'Angelus Morningstar';
+    authorInput.value = scriptAuthor;
+    authorInput.readOnly = true;
+  }
+
   authorInput.addEventListener('input', () => {
+    if (authorInput.readOnly) return;
     scriptAuthor = authorInput.value;
     renderPrintSheet();
   });
@@ -1327,21 +1328,6 @@ async function init() {
     });
     applyTitleMode();
     if (sheetMode === 'sleeve') renderSleevePanelPreview();
-  });
-
-  const iconSetPicker = metaPanel.querySelector('[aria-labelledby="icon-set-label"]');
-  iconSetPicker.addEventListener('click', e => {
-    const btn = e.target.closest('.segmented__btn');
-    if (!btn || !btn.dataset.iconset) return;
-    designState.iconSet = btn.dataset.iconset;
-    iconSetPicker.querySelectorAll('.segmented__btn').forEach(b => {
-      const active = b.dataset.iconset === designState.iconSet;
-      b.classList.toggle('segmented__btn--active', active);
-      b.setAttribute('aria-pressed', String(active));
-    });
-    activateTeam(activeTeam, tablist, grid);
-    renderPrintSheet();
-    renderNightSheet();
   });
 
   function applyBodyVar(varName, value) {
@@ -1568,10 +1554,11 @@ async function init() {
 
   function loadScriptData(data, { fallbackName = '' } = {}) {
     scriptName   = '';
-    scriptAuthor = 'Angelus Morningstar';
+    scriptAuthor = '';
     designState.logo   = '';
     nameInput.value   = '';
-    authorInput.value = scriptAuthor;
+    authorInput.value = '';
+    authorInput.readOnly = false;
 
     const meta = data.find(item => item?.id === '_meta');
     if (meta?.name)    { scriptName   = meta.name;   nameInput.value   = scriptName; }
@@ -1621,6 +1608,7 @@ async function init() {
         ...entry.characters,
       ];
       loadScriptData(synthesised);
+      lockAuthor();
       showBlurb(entry.blurb ?? '');
       setMyScriptsPopoverOpen(false);
       myScriptsTrigger.focus();
@@ -1647,6 +1635,7 @@ async function init() {
   // Apply URL preset (?preset=) now that DOM is wired and helpers are defined.
   if (presetData) {
     loadScriptData(presetData);
+    lockAuthor();
     const presetId = new URLSearchParams(window.location.search).get('preset');
     const presetEntry = myScripts.find(s => s.id === presetId);
     showBlurb(presetEntry?.blurb ?? '');
