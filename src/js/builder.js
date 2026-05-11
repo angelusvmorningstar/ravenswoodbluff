@@ -53,7 +53,7 @@ let scriptAuthor = 'Angelus Morningstar';
 const designState = {
   brocade: DEFAULT_BROCADE,
   titleMode: 'ornate',
-  iconSet: 'official',
+  iconSet: 'alt',
   logo: '',
 };
 
@@ -934,8 +934,7 @@ function buildMetaPanel() {
         <div class="builder-field">
           <p class="builder-field__label" id="icon-set-label">Icons</p>
           <div class="segmented" role="group" aria-labelledby="icon-set-label">
-            <button class="segmented__btn${designState.iconSet === 'official' ? ' segmented__btn--active' : ''}" type="button" data-iconset="official" aria-pressed="${designState.iconSet === 'official'}">Official</button>
-            <button class="segmented__btn${designState.iconSet === 'alt'      ? ' segmented__btn--active' : ''}" type="button" data-iconset="alt"      aria-pressed="${designState.iconSet === 'alt'}">Alternative</button>
+            <button class="segmented__btn segmented__btn--active" type="button" data-iconset="alt" aria-pressed="true">Alternative</button>
           </div>
         </div>
         <div class="builder-field">
