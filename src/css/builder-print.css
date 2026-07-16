@@ -615,6 +615,14 @@
     -webkit-print-color-adjust: exact;
   }
 
+  /* Filters force Chromium to emit PDF transparency groups that PDFium
+     (Chrome/Edge's own viewer) fails to composite, dropping the brocade
+     layer beneath. The torn-edge shadow is invisible at print anyway. */
+  .sheet-parchment,
+  .night-parchment {
+    filter: none !important;
+  }
+
   /* Active sheet type: show both faces with a page break between */
   .builder-sheet-panel:not(.sheet-mode--night) #print-sheet,
   .builder-sheet-panel:not(.sheet-mode--night) #print-sheet-back {
