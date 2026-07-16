@@ -71,6 +71,13 @@
 @font-face {
   font-family: 'Spectral';
   font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Spectral Regular'), url('/fonts/spectral-regular.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Spectral';
+  font-style: normal;
   font-weight: 700;
   font-display: swap;
   src: local('Spectral Bold'), url('/fonts/spectral-bold.woff2') format('woff2');
@@ -88,6 +95,54 @@
   font-weight: 700;
   font-display: swap;
   src: local('Libre Baskerville Bold'), url('/fonts/libre-baskerville-bold.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Atkinson Hyperlegible';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Atkinson Hyperlegible Regular'), local('AtkinsonHyperlegible-Regular'),
+       url('/fonts/atkinson-hyperlegible-regular.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Atkinson Hyperlegible';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: local('Atkinson Hyperlegible Bold'), local('AtkinsonHyperlegible-Bold'),
+       url('/fonts/atkinson-hyperlegible-bold.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Atkinson Hyperlegible';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Atkinson Hyperlegible Italic'), local('AtkinsonHyperlegible-Italic'),
+       url('/fonts/atkinson-hyperlegible-italic.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Merriweather';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Merriweather Regular'), local('Merriweather-Regular'),
+       url('/fonts/merriweather-regular.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Merriweather';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: local('Merriweather Bold'), local('Merriweather-Bold'),
+       url('/fonts/merriweather-bold.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Merriweather';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Merriweather Italic'), local('Merriweather-Italic'),
+       url('/fonts/merriweather-italic.woff2') format('woff2');
 }
 @font-face {
   font-family: 'MedievalSharp';
