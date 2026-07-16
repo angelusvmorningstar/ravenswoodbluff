@@ -1633,11 +1633,21 @@ async function init() {
   applyTitleMode();
 
   // Apply URL preset (?preset=) now that DOM is wired and helpers are defined.
+  // The per-script JSON under src/data/scripts/ only carries name/author in
+  // _meta; logo and brocade live in my-scripts.json (the My Scripts popover's
+  // source of truth). Fall back to that entry here so a visitor arriving via
+  // a script page's "Build & Print" link gets the same logo/brocade as one
+  // who picks the script from the My Scripts popover.
   if (presetData) {
-    loadScriptData(presetData);
-    lockAuthor();
     const presetId = new URLSearchParams(window.location.search).get('preset');
     const presetEntry = myScripts.find(s => s.id === presetId);
+    const dataToLoad = presetEntry
+      ? presetData.map(item => item?.id === '_meta'
+          ? { ...item, logo: item.logo ?? presetEntry.logo, brocade: item.brocade ?? presetEntry.brocade }
+          : item)
+      : presetData;
+    loadScriptData(dataToLoad);
+    lockAuthor();
     showBlurb(presetEntry?.blurb ?? '');
   }
 
