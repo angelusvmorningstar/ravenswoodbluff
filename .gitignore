@@ -1,6 +1,7 @@
 node_modules/
 dist/
 public/icons/official/
+exports/
 
 .env
 .env.local
