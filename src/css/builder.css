@@ -445,7 +445,8 @@ body.page-builder {
   border-radius: var(--radius-1);
   color: var(--text);
   font-family: var(--font-b);
-  font-size: 0.9375rem;
+  /* iOS Safari zooms the viewport on focus for any text input under 16px. */
+  font-size: 1rem;
   padding: var(--space-2) var(--space-3);
   width: 100%;
 }
