@@ -144,6 +144,21 @@ function makeCharFinding(rule_id, severity, message, characters = [], missing_mi
   };
 }
 
+// Advisory findings (kind: 'advisory') are the qualitative layer's observations. They carry
+// severity: null and a provenance tag, and they are routed to their own `advisories` stream —
+// never into errors/warnings/notices, so they can never gate a script (Section 24.16, story v3.1).
+// `value` is an optional numeric readout for the Fingerprint stat display (story v3.2 / C6).
+function makeAdvisory(rule_id, message, { provenance = null, noticeText = '', explainerText = '', value = null, characters = [] } = {}) {
+  return {
+    rule: rule_id, message, characters,
+    type: 'script', rule_id, severity: null,
+    kind: 'advisory', provenance, value,
+    notice_text: noticeText, explainer_text: explainerText,
+    affected_characters: [...characters],
+    missing_mitigations: [],
+  };
+}
+
 export function ruleE02(roster, scriptContext) {
   if (scriptContext.droizonDensity !== 0) return null;
   return makeScriptFinding(
@@ -704,7 +719,27 @@ export function ruleOpenQuestions(roster, charById, scriptContext) {
   return findings;
 }
 
+// ─── Pass 2b: Advisory rules (kind: 'advisory') ──────────────────────────────
+// The qualitative layer. These emit observations, never verdicts, and are routed to the
+// `advisories` stream. First one (A01) is a deliberately cheap, non-relational readout that
+// proves the advisory pipeline end to end; the relational corrective-Fabled advisory is C4.
+
+export function ruleA01(roster, scriptContext, charById) {
+  const n = scriptContext.droizonDensity;
+  return makeAdvisory('A01',
+    `Droison sources: ${n}. Most published scripts run 2 to 4.`,
+    {
+      provenance: 'community',
+      value: n,
+      noticeText: 'Droison sources',
+      explainerText: 'Droison (drunk or poison) sources are what stop the good team trusting every piece of night information. Most published scripts carry two to four; fewer can let good solve the script through reliable deduction, more can tip play toward guesswork. This is a rule of thumb, not a target — where your script sits is your call, and the table is the only real judge.',
+    });
+}
+
 function addFinding(errors, warnings, notices, finding, atheist_mode) {
+  // Verdict-only gate: advisories/reflections must never enter the error/warning/notice
+  // buckets (they route to their own streams). This guard enforces the invariant structurally.
+  if (finding.kind && finding.kind !== 'verdict') return;
   const effective = atheist_mode
     ? finding.severity === 'hard_error'   ? 'soft_warning'
     : finding.severity === 'soft_warning' ? 'informational'
@@ -719,9 +754,10 @@ function addFinding(errors, warnings, notices, finding, atheist_mode) {
 export function runRules(roster, charById, scriptContext, options = {}) {
   const { atheist_mode: explicitMode } = options;
   const atheist_mode = explicitMode !== undefined ? explicitMode : scriptContext.hasAtheist;
-  const errors   = [];
-  const warnings = [];
-  const notices  = [];
+  const errors    = [];
+  const warnings  = [];
+  const notices   = [];
+  const advisories = [];
 
   let f;
   for (const fi of ruleE01(roster, scriptContext, charById)) addFinding(errors, warnings, notices, fi, atheist_mode);
@@ -830,7 +866,14 @@ export function runRules(roster, charById, scriptContext, options = {}) {
   // TODO: N104 — setup_adds_minion cluster (Section 21 #104). Requires: Lil' Monsta / Lord of Typhon ID check
   // TODO: N105 — setup_removes_outsider_fixed cluster (Section 21 #105). Requires: Vigormortis ID check + outsiderCount
 
-  return { errors, warnings, notices, djinn_required };
+  // ── Pass 2b: advisory rules (kind: 'advisory', routed to their own stream) ──
+  // Advisories never pass through addFinding, so they cannot reach the errors/warnings gate.
+  {
+    let a;
+    if (a = ruleA01(roster, scriptContext, charById)) advisories.push(a);
+  }
+
+  return { errors, warnings, notices, advisories, djinn_required };
 }
 
 // ─────────────────────────────────────────────────────────────────────────────
@@ -839,7 +882,7 @@ export function runRules(roster, charById, scriptContext, options = {}) {
  * @param {Set<string>} selectedIds
  * @param {Map<string, object>} charById
  * @param {{ teensyville?: boolean }} [options]
- * @returns {{ errors: Finding[], warnings: Finding[], notices: Finding[] }}
+ * @returns {{ errors: Finding[], warnings: Finding[], notices: Finding[], advisories: Finding[], djinn_required: boolean }}
  */
 export function analyseScript(selectedIds, charById, options = {}) {
   const roster = Array.from(selectedIds);

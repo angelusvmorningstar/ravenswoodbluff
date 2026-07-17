@@ -143,3 +143,35 @@ describe('Finding kind/provenance foundation (v3.1)', () => {
     expect(() => JSON.stringify({ errors, warnings, notices })).not.toThrow();
   });
 });
+
+describe('Advisory pipeline (v3.3 / C3)', () => {
+  const roster = ['empath', 'chef', 'imp', 'poisoner'];
+
+  it('ruleA01 emits a kind:"advisory" finding with severity null and a provenance tag', async () => {
+    const { ruleA01 } = await import('../../js/analyser.js');
+    const a = ruleA01(roster, makeContext({ droizonDensity: 1 }), charById);
+    expect(a.kind).toBe('advisory');
+    expect(a.severity).toBeNull();
+    expect(a.rule_id).toBe('A01');
+    expect(a.provenance).toBe('community');
+    expect(a.value).toBe(1);
+  });
+
+  it('runRules returns an advisories stream containing the advisory', () => {
+    const { advisories } = runRules(roster, charById, makeContext());
+    expect(Array.isArray(advisories)).toBe(true);
+    expect(advisories.some(a => a.rule_id === 'A01')).toBe(true);
+  });
+
+  it('advisories never leak into the errors/warnings/notices gate', () => {
+    // droizonDensity 0 forces hard errors + warnings to also fire, exercising the gate.
+    const { errors, warnings, notices, advisories } = runRules(
+      roster, charById, makeContext({ droizonDensity: 0, townsfolkCount: 13, hasOutsiderObfuscation: false }),
+    );
+    for (const bucket of [errors, warnings, notices]) {
+      for (const f of bucket) expect(f.kind).toBe('verdict');
+    }
+    expect(advisories.every(a => a.kind === 'advisory')).toBe(true);
+    expect(advisories.length).toBeGreaterThan(0);
+  });
+});
