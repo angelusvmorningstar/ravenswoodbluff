@@ -159,6 +159,21 @@ function makeAdvisory(rule_id, message, { provenance = null, noticeText = '', ex
   };
 }
 
+// Reflection findings (kind: 'reflection') are guided questions, not observations and not verdicts.
+// They carry a `prompt` (the question) and a `why` (why it surfaced), no severity, and route to
+// the `reflections` stream. They must be CONTEXT-TRIGGERED — fired only when a real script
+// condition makes the question pointed — never evergreen (Section 24.7 / 24.16). The tool never
+// reads or grades the answer.
+function makeReflection(rule_id, prompt, { why = '', provenance = null, characters = [] } = {}) {
+  return {
+    rule: rule_id, rule_id, kind: 'reflection', severity: null,
+    type: 'script', prompt, why, provenance,
+    message: prompt,
+    characters, affected_characters: [...characters],
+    missing_mitigations: [],
+  };
+}
+
 export function ruleE02(roster, scriptContext) {
   if (scriptContext.droizonDensity !== 0) return null;
   return makeScriptFinding(
@@ -788,6 +803,29 @@ export function advisoriesCorrectiveFabled(roster, scriptContext, charById) {
   return out;
 }
 
+// ─── Pass 2c: Reflection rules (kind: 'reflection', context-triggered) ────────
+
+export function ruleRF01(roster, scriptContext, charById) {
+  if (scriptContext.demonCount !== 1) return null;
+  return makeReflection('RF-solo-demon',
+    'This script has a single Demon, so the good team never has to work out which Demon is in play. Is that the puzzle you want — or would a second Demon add a layer of doubt?',
+    {
+      why: 'With one Demon on the script, "which Demon?" is never a question. That keeps play focused, but it removes a whole axis of deduction that a second Demon would restore.',
+      provenance: 'community',
+    });
+}
+
+export function ruleRF02(roster, scriptContext, charById) {
+  if (scriptContext.confirmationCluster.size < 3) return null;
+  return makeReflection('RF-confirmation-heavy',
+    'Several roles here can hard-confirm who they are. Once those confirmations land, does evil still have players left to frame — or does the script solve itself?',
+    {
+      why: 'Dense confirmation can collapse the possible worlds early. Chaos roles — madness, transformation, misregistration — are what keep evil in the game once the town starts proving identities.',
+      provenance: 'community',
+      characters: [...scriptContext.confirmationCluster],
+    });
+}
+
 function addFinding(errors, warnings, notices, finding, atheist_mode) {
   // Verdict-only gate: advisories/reflections must never enter the error/warning/notice
   // buckets (they route to their own streams). This guard enforces the invariant structurally.
@@ -806,10 +844,11 @@ function addFinding(errors, warnings, notices, finding, atheist_mode) {
 export function runRules(roster, charById, scriptContext, options = {}) {
   const { atheist_mode: explicitMode } = options;
   const atheist_mode = explicitMode !== undefined ? explicitMode : scriptContext.hasAtheist;
-  const errors    = [];
-  const warnings  = [];
-  const notices   = [];
+  const errors     = [];
+  const warnings   = [];
+  const notices    = [];
   const advisories = [];
+  const reflections = [];
 
   let f;
   for (const fi of ruleE01(roster, scriptContext, charById)) addFinding(errors, warnings, notices, fi, atheist_mode);
@@ -926,7 +965,14 @@ export function runRules(roster, charById, scriptContext, options = {}) {
     advisories.push(...advisoriesCorrectiveFabled(roster, scriptContext, charById));
   }
 
-  return { errors, warnings, notices, advisories, djinn_required };
+  // ── Pass 2c: reflection rules (kind: 'reflection', context-triggered, own stream) ──
+  {
+    let r;
+    if (r = ruleRF01(roster, scriptContext, charById)) reflections.push(r);
+    if (r = ruleRF02(roster, scriptContext, charById)) reflections.push(r);
+  }
+
+  return { errors, warnings, notices, advisories, reflections, djinn_required };
 }
 
 // ─────────────────────────────────────────────────────────────────────────────
@@ -935,7 +981,7 @@ export function runRules(roster, charById, scriptContext, options = {}) {
  * @param {Set<string>} selectedIds
  * @param {Map<string, object>} charById
  * @param {{ teensyville?: boolean }} [options]
- * @returns {{ errors: Finding[], warnings: Finding[], notices: Finding[], advisories: Finding[], djinn_required: boolean }}
+ * @returns {{ errors: Finding[], warnings: Finding[], notices: Finding[], advisories: Finding[], reflections: Finding[], djinn_required: boolean }}
  */
 export function analyseScript(selectedIds, charById, options = {}) {
   const roster = Array.from(selectedIds);
