@@ -468,6 +468,17 @@ export function ruleW07(roster, scriptContext, charById) {
 }
 
 
+export function ruleW08(roster, scriptContext, charById) {
+  if (scriptContext.demonCount < 2) return null;
+  if (roster.some(id => charById.get(id)?.lint?.deadCanBeEvil === true)) return null;
+  return makeScriptFinding('W08', 'soft_warning',
+    'Multiple Demons on script with no dead-can-be-evil source. "Died at night means good" becomes reliable, which undercuts the multi-Demon design.',
+    [], [],
+    'Multi-Demon script with no dead-can-be-evil source',
+    'On a multi-Demon script, the good team should not be able to assume that a player who died at night is automatically good. A dead-can-be-evil mechanism — an Imp star-pass, a Scarlet Woman takeover, kept-alive Minions, or similar — keeps night deaths ambiguous so the good team cannot fully trust the dead. Without any such source, every night death confirms a good player for free, which is unusually generous to good and defeats much of the point of running more than one Demon. Add a role that makes at least some deaths untrustworthy, or confirm the clean-death dynamic is intended.'
+  );
+}
+
 export function ruleW09(roster, scriptContext, charById) {
   const demons = roster.filter(id => charById.get(id)?.team === 'demon');
   const loud   = demons.filter(id => charById.get(id)?.lint?.loudDemon === true);
@@ -713,8 +724,9 @@ export function runRules(roster, charById, scriptContext, options = {}) {
   for (const fi of ruleE08(roster, scriptContext, charById)) addFinding(errors, warnings, notices, fi, atheist_mode);
   for (const fi of ruleE11(roster, scriptContext, charById)) addFinding(errors, warnings, notices, fi, atheist_mode);
   if (f = ruleW01(roster, scriptContext, charById)) addFinding(errors, warnings, notices, f, atheist_mode);
-if (f = ruleW06(roster, scriptContext, charById)) addFinding(errors, warnings, notices, f, atheist_mode);
+  if (f = ruleW06(roster, scriptContext, charById)) addFinding(errors, warnings, notices, f, atheist_mode);
   if (f = ruleW07(roster, scriptContext, charById)) addFinding(errors, warnings, notices, f, atheist_mode);
+  if (f = ruleW08(roster, scriptContext, charById)) addFinding(errors, warnings, notices, f, atheist_mode);
   if (f = ruleW09(roster, scriptContext, charById)) addFinding(errors, warnings, notices, f, atheist_mode);
   for (const fi of ruleW10(roster, scriptContext, charById)) addFinding(errors, warnings, notices, fi, atheist_mode);
   if (f = ruleW11(roster, scriptContext, charById)) addFinding(errors, warnings, notices, f, atheist_mode);

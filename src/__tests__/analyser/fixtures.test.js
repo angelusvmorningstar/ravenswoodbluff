@@ -5,7 +5,7 @@
 import { describe, it, expect } from 'vitest';
 import {
   ruleE01, ruleE03, ruleE04, ruleE05, ruleE06, ruleE07, ruleE08, ruleE11,
-  ruleW06, ruleW07, ruleW09, ruleW10, ruleW11, ruleW13,
+  ruleW06, ruleW07, ruleW08, ruleW09, ruleW10, ruleW11, ruleW13,
   ruleW15, ruleW16, ruleW17, ruleW18, ruleW20, ruleW21, ruleW22, ruleW23,
   runRules,
 } from '../../js/analyser.js';
@@ -223,6 +223,15 @@ describe('Group B — Role interaction warnings', () => {
   it('W09: fires when loud (leviathan) and quiet (imp) demons are both on roster', () => {
     const f = ruleW09(['leviathan', 'imp', 'poisoner'], makeContext(), realCharById);
     expect(f?.rule_id).toBe('W09');
+  });
+
+  it('W08: fires when 2+ Demons and no dead-can-be-evil source on roster', () => {
+    const f = ruleW08(['no-dashii', 'pukka', 'poisoner'], makeContext({ demonCount: 2 }), realCharById);
+    expect(f?.rule_id).toBe('W08');
+  });
+
+  it('W08: returns null when a dead-can-be-evil source is present', () => {
+    expect(ruleW08(['no-dashii', 'imp', 'poisoner'], makeContext({ demonCount: 2 }), realCharById)).toBeNull();
   });
 
   it('W15: fires when boffin + 3 hard-confirmation roles on roster', () => {

@@ -1,6 +1,6 @@
 import { describe, it, expect } from 'vitest';
 import {
-  ruleW01, ruleW06, ruleW07, ruleW09, ruleW10, ruleW11,
+  ruleW01, ruleW06, ruleW07, ruleW08, ruleW09, ruleW10, ruleW11,
   ruleW13, ruleW15, ruleW16, ruleW17, ruleW18, ruleW20,
   runRules,
 } from '../../js/analyser.js';
@@ -104,6 +104,31 @@ describe('ruleW07 — misinfo overload', () => {
 
   it('returns a Finding when droizonDensity > 5', () => {
     expect(ruleW07([], makeContext({ droizonDensity: 6 }), realCharById)).not.toBeNull();
+  });
+});
+
+
+// ─── ruleW08 — multi-Demon with no dead-can-be-evil ──────────────────────────
+
+describe('ruleW08 — multi-Demon with no dead-can-be-evil source', () => {
+  it('returns null when only one Demon on script', () => {
+    expect(ruleW08(['no-dashii', 'poisoner'], makeContext({ demonCount: 1 }), realCharById)).toBeNull();
+  });
+
+  it('returns a Finding when 2+ Demons and no dead-can-be-evil source', () => {
+    const f = ruleW08(['no-dashii', 'pukka', 'poisoner'], makeContext({ demonCount: 2 }), realCharById);
+    expect(f).not.toBeNull();
+    expect(f.rule_id).toBe('W08');
+    expect(f.severity).toBe('soft_warning');
+    expect(f.type).toBe('script');
+  });
+
+  it('returns null when a dead-can-be-evil Demon is present (imp)', () => {
+    expect(ruleW08(['no-dashii', 'imp', 'poisoner'], makeContext({ demonCount: 2 }), realCharById)).toBeNull();
+  });
+
+  it('returns null when a dead-can-be-evil Minion is present (scarlet-woman)', () => {
+    expect(ruleW08(['no-dashii', 'pukka', 'scarlet-woman'], makeContext({ demonCount: 2 }), realCharById)).toBeNull();
   });
 });
 
