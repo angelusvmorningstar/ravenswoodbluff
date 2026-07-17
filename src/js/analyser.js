@@ -736,6 +736,58 @@ export function ruleA01(roster, scriptContext, charById) {
     });
 }
 
+// ── Corrective-Fabled advisories (its own logical module; Section 24.4) ───────
+// Medway (Behind the Curtain #7) names Storytellers omitting corrective Fabled as the biggest
+// real balance failure in custom games — bigger than any unbalanced combo. Relational: each rule
+// fires when the script STRUCTURE demands a Fabled and it is absent. Advisory only — it observes
+// and hands judgement back, never gates. Physically in-file for now; a split to
+// advisories/correctiveFabled.js is an easy follow-up if this table grows (would pair with
+// extracting the finding factories into a shared module to avoid a circular import).
+// Duchess is deliberately omitted: its "structure demands it" predicate is unresolved (OQ 24.F).
+const CORRECTIVE_FABLED = [
+  {
+    rule_id: 'AF-sentinel',
+    demanded: (ctx) => !ctx.hasOutsiderObfuscation,
+    absent:   (ctx) => !ctx.hasSentinel,
+    provenance: 'official',
+    message: 'The Outsider count on this script is fixed — nothing hides or modifies it, so good can deduce it exactly. A Sentinel would make it uncertain again.',
+    notice: 'Consider a Sentinel',
+    explainer: 'When the Outsider count is knowable, bluffing as an Outsider becomes risky and roles like the Drunk and Lunatic get easier to solve. The Sentinel Fabled makes the count uncertain (there might be one more or one fewer Outsider than expected), which is the canonical Fabled fix. The game\'s designer specifically flags a known Outsider count with no Sentinel as "crushing for the evil team". This is a suggestion, not a requirement — a Fabled is one way to answer the fixed-count concern; changing the roster is another.',
+  },
+  {
+    rule_id: 'AF-fibbin',
+    demanded: (ctx) => ctx.droizonDensity === 0,
+    absent:   (ctx, roster) => !roster.includes('fibbin'),
+    provenance: 'official',
+    message: 'No source of drunkenness or poisoning on this script. A Fibbin would give the good team a reason to doubt its night information.',
+    notice: 'Consider a Fibbin',
+    explainer: 'With no droison source, every Townsfolk receives accurate information every night and good can solve the script through deduction alone. The Fibbin Fabled supplies a once-per-game piece of false information, restoring a little uncertainty. The game\'s designer names a script with no possibility of drunkenness or poisoning and no Fibbin as "very unfair to the evil players". Adding a droison character is the alternative; the Fabled is the lighter-touch fix.',
+  },
+  {
+    rule_id: 'AF-spirit-of-ivory',
+    demanded: (ctx) => ctx.hasExtraEvil,
+    absent:   (ctx) => !ctx.hasSpiritOfIvory,
+    provenance: 'official',
+    message: 'This script has a source of extra evil players. A Spirit of Ivory caps the extra evils at one — though opinions differ on whether it is the right tool.',
+    notice: 'Consider a Spirit of Ivory (with a caveat)',
+    explainer: 'When a script can create extra evil players, the good team can find itself outnumbered beyond the intended balance. The game\'s designer names the Spirit of Ivory as a corrective: it guarantees no more than one extra evil player. The counter-view, held by several community designers, is that the Spirit of Ivory is widely misused — it does not fix a script that can produce +2 evils, it only locks one of the +Evil abilities out of that game. Both positions are worth weighing; this is genuinely a design judgement, not a fix to apply automatically.',
+  },
+];
+
+export function advisoriesCorrectiveFabled(roster, scriptContext, charById) {
+  const out = [];
+  for (const rule of CORRECTIVE_FABLED) {
+    if (rule.demanded(scriptContext, roster) && rule.absent(scriptContext, roster)) {
+      out.push(makeAdvisory(rule.rule_id, rule.message, {
+        provenance: rule.provenance,
+        noticeText: rule.notice,
+        explainerText: rule.explainer,
+      }));
+    }
+  }
+  return out;
+}
+
 function addFinding(errors, warnings, notices, finding, atheist_mode) {
   // Verdict-only gate: advisories/reflections must never enter the error/warning/notice
   // buckets (they route to their own streams). This guard enforces the invariant structurally.
@@ -871,6 +923,7 @@ export function runRules(roster, charById, scriptContext, options = {}) {
   {
     let a;
     if (a = ruleA01(roster, scriptContext, charById)) advisories.push(a);
+    advisories.push(...advisoriesCorrectiveFabled(roster, scriptContext, charById));
   }
 
   return { errors, warnings, notices, advisories, djinn_required };
