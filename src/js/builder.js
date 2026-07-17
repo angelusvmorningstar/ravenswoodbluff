@@ -84,6 +84,8 @@ let noticesByCharId   = new Map();   // charId → Finding[]
 let stripRef          = null;        // .builder-strip element
 let openStripRuleId   = null;        // rule_id of expanded strip item
 let errorBannerRef    = null;        // .builder-error-banner element
+let qualRef           = null;        // .builder-qual reading surface (advisories + reflections)
+const dismissedReflections = new Set(); // reflection rule_ids set aside this session
 
 let sleeveModulesCache = null;
 let sleeveDownloading = false;
@@ -416,9 +418,76 @@ function updateErrorBanner(errors) {
   errorBannerRef.hidden = false;
 }
 
+const PROVENANCE_LABEL = {
+  official: 'Official',
+  community: 'Community',
+  'single-blogger': 'Rule of thumb',
+  derived: 'Derived',
+};
+
+// The qualitative reading surface: advisories (Fingerprint) + reflections. Reads only the
+// non-verdict streams, so it can never show an error/warning and can never gate a script.
+function updateQualitative(advisories, reflections) {
+  if (!qualRef) return;
+
+  const liveReflections = reflections.filter(r => !dismissedReflections.has(r.rule_id));
+
+  if (!advisories.length && !liveReflections.length) {
+    qualRef.hidden = true;
+    qualRef.innerHTML = '';
+    return;
+  }
+
+  const stats = advisories.filter(a => a.value !== null && a.value !== undefined);
+  const notes = advisories.filter(a => a.value === null || a.value === undefined);
+
+  const statHtml = stats.map(a => {
+    const caption = String(a.message || '').replace(/^[^.]*\.\s*/, '');
+    return `
+      <div class="fp-stat">
+        <p class="fp-stat__label">${escapeHtml(a.notice_text || a.rule_id)}</p>
+        <p class="fp-stat__value">${escapeHtml(String(a.value))}</p>
+        <p class="fp-stat__caption">${escapeHtml(caption)}</p>
+      </div>`;
+  }).join('');
+
+  const noteHtml = notes.map(a => `
+    <div class="fp-note">
+      <p class="fp-note__head">${escapeHtml(a.notice_text || a.rule_id)}</p>
+      <p class="fp-note__body">${escapeHtml(a.message || '')}</p>
+      <p class="fp-note__byline"><span class="fp-note__src">${escapeHtml(PROVENANCE_LABEL[a.provenance] || 'Note')}</span></p>
+    </div>`).join('');
+
+  const fingerprint = advisories.length ? `
+    <p class="builder-qual__title">Script Fingerprint</p>
+    <div class="fp-card">
+      ${stats.length ? `<div class="fp-stat-grid">${statHtml}</div>` : ''}
+      ${notes.length ? `<div class="fp-notes">${noteHtml}</div>` : ''}
+    </div>` : '';
+
+  const reflectHtml = liveReflections.map(r => `
+    <div class="reflect">
+      <p class="reflect__q">${escapeHtml(r.prompt || r.message)}</p>
+      ${r.why ? `<p class="reflect__why">${escapeHtml(r.why)}</p>` : ''}
+      <button class="reflect__set-aside" type="button" data-reflect="${escapeHtml(r.rule_id)}">Set aside</button>
+    </div>`).join('');
+
+  const reflectionsBlock = liveReflections.length ? `
+    <p class="builder-qual__title">Reflections</p>
+    ${reflectHtml}` : '';
+
+  qualRef.innerHTML = `
+    <p class="builder-qual__frame">None of this is a verdict. It's a mirror. The table is the only judge.</p>
+    <div class="builder-qual__seam"><span>The reading surface</span></div>
+    ${fingerprint}
+    ${reflectionsBlock}
+  `;
+  qualRef.hidden = false;
+}
+
 function updateAnalysis() {
   if (!tileGridRef) return;
-  const { errors, warnings, notices } = analyseScript(selection, charById);
+  const { errors, warnings, notices, advisories, reflections } = analyseScript(selection, charById);
 
   const allIds = new Set([errors, warnings, notices].flatMap(arr => arr.flatMap(f => f.characters ?? [])));
   applyTileHighlights(allIds);
@@ -428,6 +497,7 @@ function updateAnalysis() {
   updateOpenDrop();
   updateNoticeStrip(errors, warnings, notices);
   updateErrorBanner(errors);
+  updateQualitative(advisories, reflections);
 }
 
 let printSheet     = null;
@@ -1231,6 +1301,20 @@ async function init() {
     } else {
       openStripItem(btn);
     }
+  });
+
+  // ── Sidebar: qualitative reading surface (advisories + reflections) ────────
+  const qualEl = document.createElement('div');
+  qualEl.className = 'builder-qual';
+  qualEl.hidden = true;
+  sidebar.appendChild(qualEl);
+  qualRef = qualEl;
+
+  qualEl.addEventListener('click', e => {
+    const setAside = e.target.closest('.reflect__set-aside');
+    if (!setAside) return;
+    dismissedReflections.add(setAside.dataset.reflect);
+    updateAnalysis();
   });
 
   // ── Sidebar: balance indicator ────────────────────────────────────────────

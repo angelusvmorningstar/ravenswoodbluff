@@ -1176,3 +1176,171 @@ body.page-builder {
 .builder-field--hidden {
   display: none;
 }
+
+/* ── Qualitative reading surface (advisories + reflections) ─────────────────
+   Deliberately distinct from the red/yellow checks: gold identity, no severity
+   stripes. Locked design: analyser-v3-2 / qualitative-surface-mockup-locked.html */
+.builder-qual {
+  margin-top: var(--space-5);
+  padding-top: var(--space-4);
+}
+
+.builder-qual__frame {
+  font-family: var(--font-h);
+  font-size: 0.82rem;
+  line-height: 1.4;
+  color: var(--parchment);
+  margin: 0 0 var(--space-4);
+  text-wrap: balance;
+}
+
+.builder-qual__seam {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  margin: 0 0 var(--space-4);
+  color: var(--amber);
+}
+.builder-qual__seam::before,
+.builder-qual__seam::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(200, 144, 10, 0.32), transparent);
+}
+.builder-qual__seam span {
+  font-family: var(--font-h);
+  font-size: 0.56rem;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.builder-qual__title {
+  font-family: var(--font-h);
+  font-size: 0.68rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--amber-lt);
+  margin: var(--space-4) 0 var(--space-3);
+}
+
+/* Fingerprint card (advisories) */
+.fp-card {
+  background:
+    linear-gradient(180deg, rgba(200, 144, 10, 0.05), transparent 40%),
+    var(--surface-2);
+  border: 1px solid rgba(200, 144, 10, 0.32);
+  border-top: 2px solid var(--amber);
+  border-radius: var(--radius-2);
+  padding: var(--space-4);
+}
+
+.fp-stat-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(96px, 1fr));
+  gap: var(--space-3) var(--space-4);
+}
+.fp-stat__label {
+  font-family: var(--font-h);
+  font-size: 0.56rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  margin: 0 0 2px;
+}
+.fp-stat__value {
+  font-variant-numeric: tabular-nums;
+  font-size: 1.5rem;
+  line-height: 1;
+  color: var(--amber-lt);
+  margin: 0;
+}
+.fp-stat__caption {
+  font-size: 0.72rem;
+  font-style: italic;
+  color: var(--text-dim);
+  margin: 2px 0 0;
+}
+
+.fp-notes {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+.fp-card .fp-stat-grid + .fp-notes {
+  margin-top: var(--space-4);
+  padding-top: var(--space-4);
+  border-top: 1px solid var(--border-hairline);
+}
+.fp-note__head {
+  font-family: var(--font-h);
+  font-size: 0.7rem;
+  letter-spacing: 0.04em;
+  color: var(--parchment);
+  margin: 0 0 var(--space-1);
+}
+.fp-note__body {
+  font-size: 0.85rem;
+  line-height: 1.45;
+  color: var(--parchment);
+  margin: 0;
+}
+.fp-note__byline {
+  margin: var(--space-2) 0 0;
+}
+.fp-note__src {
+  font-family: var(--font-h);
+  font-size: 0.52rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--amber);
+  border: 1px solid rgba(200, 144, 10, 0.32);
+  border-radius: 999px;
+  padding: 1px 8px;
+}
+
+/* Reflections */
+.reflect {
+  border-left: 2px solid rgba(200, 144, 10, 0.32);
+  padding: var(--space-1) 0 var(--space-1) var(--space-4);
+  margin-bottom: var(--space-4);
+}
+.reflect__q {
+  font-family: var(--font-b);
+  font-style: italic;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: var(--parchment);
+  margin: 0 0 var(--space-2);
+  text-wrap: pretty;
+}
+.reflect__why {
+  font-size: 0.78rem;
+  color: var(--text-dim);
+  margin: 0 0 var(--space-3);
+}
+.reflect__set-aside {
+  font-family: var(--font-h);
+  font-size: 0.56rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  background: transparent;
+  border: 1px solid var(--border-hairline);
+  border-radius: var(--radius-1);
+  padding: 4px 12px;
+  cursor: pointer;
+}
+.reflect__set-aside:hover {
+  color: var(--parchment);
+  border-color: var(--amber-dim, rgba(200, 144, 10, 0.5));
+}
+.reflect__set-aside:focus-visible {
+  outline: 2px solid var(--focus-ring);
+  outline-offset: 2px;
+}
+
+@media print {
+  .builder-qual { display: none; }
+}
