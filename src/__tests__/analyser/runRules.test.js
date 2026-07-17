@@ -119,3 +119,27 @@ describe('runRules — full output shape', () => {
     expect(result.notices).toHaveLength(0);
   });
 });
+
+describe('Finding kind/provenance foundation (v3.1)', () => {
+  it('every finding carries kind:"verdict" and a null provenance', () => {
+    const roster = ['empath', 'chef', 'vortox', 'poisoner'];
+    const ctx = makeContext({ droizonDensity: 0, townsfolkCount: 13, hasOutsiderObfuscation: false });
+    const { errors, warnings, notices } = runRules(roster, charById, ctx);
+    const all = [...errors, ...warnings, ...notices];
+    expect(all.length).toBeGreaterThan(0);
+    for (const f of all) {
+      expect(f.kind).toBe('verdict');
+      expect('provenance' in f).toBe(true);
+      expect(f.provenance).toBeNull();
+    }
+  });
+
+  it('findings remain JSON-serialisable with the new fields', () => {
+    const { errors, warnings, notices } = runRules(
+      ['empath', 'chef', 'vortox', 'poisoner'],
+      charById,
+      makeContext({ droizonDensity: 0 }),
+    );
+    expect(() => JSON.stringify({ errors, warnings, notices })).not.toThrow();
+  });
+});

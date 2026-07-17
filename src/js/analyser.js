@@ -117,10 +117,16 @@ export function buildScriptContext(roster, charById) {
 
 // ─── Pass 2: Rule Functions and Runner ───────────────────────────────────────
 
+// Every finding carries `kind` (verdict | advisory | reflection) and a first-class,
+// nullable `provenance`. Mechanical rules are all `kind: 'verdict'` with `provenance: null`;
+// the qualitative layer (v3) is the only source of advisory/reflection kinds and of a
+// non-null provenance. The pass/fail path filters `kind === 'verdict'`, so the qualitative
+// layer is structurally incapable of gating a script. See Section 24.16.
 function makeScriptFinding(rule_id, severity, message, characters = [], missing_mitigations = [], noticeText = '', explainerText = '') {
   return {
     rule: rule_id, message, characters,
     type: 'script', rule_id, severity,
+    kind: 'verdict', provenance: null,
     notice_text: noticeText, explainer_text: explainerText,
     affected_characters: [...characters],
     missing_mitigations,
@@ -131,6 +137,7 @@ function makeCharFinding(rule_id, severity, message, characters = [], missing_mi
   return {
     rule: rule_id, message, characters,
     type: 'character', rule_id, severity,
+    kind: 'verdict', provenance: null,
     notice_text: noticeText, explainer_text: explainerText,
     affected_characters: [...characters],
     missing_mitigations,
@@ -324,6 +331,7 @@ export function ruleE04(roster, scriptContext, charById) {
       rule: 'E04', message: 'Hate-jinxed pair on script without Sentinel Fabled.',
       characters: [...j.characters],
       type: 'pair', rule_id: 'E04', severity: 'hard_error',
+      kind: 'verdict', provenance: null,
       notice_text: 'Hate-jinxed pair without Sentinel Fabled',
       explainer_text: 'A hate jinx is a character combination that is rules-incompatible or creates a broken game state when both are in play. Unlike standard jinxes — which have an additional rule to resolve the interaction — hate jinxes have no resolution: the characters simply cannot coexist. Sentinel Fabled allows the Storyteller to remove characters from the script mid-game, which is the canonical mitigation for a hate jinx. Without Sentinel, this pair makes the script structurally unsound and it cannot be safely run as-is.',
       affected_characters: [...j.characters], missing_mitigations: ['sentinel'],
@@ -646,6 +654,7 @@ export function ruleJinxPairs(roster, charById) {
       findings.push({
         rule: 'N01', message: j.djinnRule, characters: [...j.characters],
         type: 'pair', rule_id: 'N01', severity: 'informational',
+        kind: 'verdict', provenance: null,
         notice_text: j.djinnRule,
         explainer_text: 'Jinx rules are additional mechanics that apply when both characters are on the same script. The Djinn (or Storyteller) announces these rules to all players before the game begins so everyone is aware of the interaction. Refer to the rule text above for the specific mechanic.',
         affected_characters: [...j.characters], missing_mitigations: [],
@@ -686,6 +695,7 @@ export function ruleOpenQuestions(roster, charById, scriptContext) {
       findings.push({
         rule: `OQ-${oq.id}`, message: oq.text, characters: [],
         type: 'character', rule_id: `OQ-${oq.id}`, severity: 'informational',
+        kind: 'verdict', provenance: null,
         notice_text: `Open Question ${oq.id}`, explainer_text: oq.text,
         affected_characters: [], missing_mitigations: [],
       });
