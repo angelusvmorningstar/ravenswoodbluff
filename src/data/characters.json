@@ -747,7 +747,9 @@
     ],
     "status": "verified",
     "jinxes": [],
-    "open_questions": []
+    "open_questions": [
+      "22.7"
+    ]
   },
   {
     "id": "general",

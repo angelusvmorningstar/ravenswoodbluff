@@ -34,5 +34,11 @@
     "text": "Cannibal-as-Professor — Cannibal eating a dead Professor produces a Professor confirmation signature. This is a proc-confounder for Professor confirmations, but good-aligned (good-on-good doubt, not evil bluff). Surface for designer awareness.",
     "resolved": false,
     "trigger": { "type": "all_on_script", "characters": ["professor", "cannibal"] }
+  },
+  {
+    "id": "22.7",
+    "text": "Gambler + Evil Twin — a Gambler can guess a Traveller (never a script character, so a guaranteed-wrong guess and certain death) to deliberately die and thereby prove they held the real Gambler ability. This certain-death-on-demand lets a genuine Gambler confirm their identity at will, eroding the identity/bluff uncertainty the Evil Twin pair relies on (evil loses a clean way to contest a Gambler claim). Surfaces on Sugar & Spice. Consider a jinx/ruling, or escalating to a warning.",
+    "resolved": false,
+    "trigger": { "type": "all_on_script", "characters": ["gambler", "evil-twin"] }
   }
 ]

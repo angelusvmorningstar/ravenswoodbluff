@@ -204,6 +204,23 @@ describe('ruleOpenQuestions — de-duplication', () => {
   });
 });
 
+// ─── OQ 22.7 — all_on_script: gambler + evil-twin ────────────────────────────
+
+describe('ruleOpenQuestions — OQ 22.7 (gambler + evil-twin)', () => {
+  it('fires OQ-22.7 when both gambler and evil-twin are on roster', () => {
+    const findings = ruleOpenQuestions(['gambler', 'evil-twin', 'imp'], realCharById, makeContext());
+    const oq = findings.find(f => f.rule_id === 'OQ-22.7');
+    expect(oq).toBeDefined();
+    expect(oq.severity).toBe('informational');
+  });
+
+  it('does not fire OQ-22.7 when only gambler is on roster', () => {
+    // gambler has open_questions: ['22.7'] but the trigger requires evil-twin too
+    const findings = ruleOpenQuestions(['gambler', 'imp', 'chef'], realCharById, makeContext());
+    expect(findings.some(f => f.rule_id === 'OQ-22.7')).toBe(false);
+  });
+});
+
 // ─── runRules integration ─────────────────────────────────────────────────────
 
 describe('runRules — open-questions integration', () => {
