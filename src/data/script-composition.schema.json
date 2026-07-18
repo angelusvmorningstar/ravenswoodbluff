@@ -1,0 +1,31 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://ravenswoodbluff/script-composition.schema.json",
+  "title": "Script composition (my-scripts.json entry)",
+  "description": "The canonical runtime form of one script in src/data/my-scripts.json. Character ids are ALWAYS the canonical hyphenated kebab-case form used by characters.json (e.g. 'bounty-hunter', 'plague-doctor', 'lord-of-typhon'), NOT the legacy no-hyphen form that appears in the jsons/ build source. Enforced by src/__tests__/data-integrity.test.js.",
+  "type": "object",
+  "required": ["id", "name", "characters"],
+  "additionalProperties": true,
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Slug; must equal the src/data/scripts/<id>.json preset filename.",
+      "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$"
+    },
+    "name": {
+      "type": "string",
+      "description": "Human name; must equal the jsons/<name>.json source filename (minus extension)."
+    },
+    "characters": {
+      "type": "array",
+      "description": "Roster of canonical character ids. 13 townsfolk + 4 outsider + 4 minion + N demon (N=2 for Gentle Night, else 4). No Fabled, no Travellers, no duplicates. Every id must exist in characters.json.",
+      "minItems": 23,
+      "maxItems": 25,
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$"
+      }
+    }
+  }
+}
